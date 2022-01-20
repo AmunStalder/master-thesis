@@ -7,7 +7,10 @@
     <title>Apo Calculator</title>
   </head>
   <body>
-    
+    <div class="container">
+      {% block body_block %}
+      {% endblock %}      
+    </div>
   </body>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </html>
