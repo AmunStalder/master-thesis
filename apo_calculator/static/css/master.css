@@ -3,5 +3,11 @@
 /* brand image in base.html */
 #brand-image{
   height: 50px;
-  
+}
+
+
+.custom-jumbo{
+    background-color: #eee;
+    padding: 10%;
+
 }

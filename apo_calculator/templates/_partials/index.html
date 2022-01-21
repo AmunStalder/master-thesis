@@ -1,4 +1,22 @@
 {% extends "_partials/base.html" %}
 {% block body_block %}
-  <h1>Hello</h1>
+  <div class="container">
+    <div class="jumbotron custom-jumbo">
+      <h1 class="display-4">Welcome to Apo-Calculator!</h1>
+      <p class="lead">This website has been programmed for pharmacists by a
+        pharmacist. Apo-Calculator offers help for everyday calculations
+        in the pharmacy laboratory like the following: <span class="glyphicon glyphicon-user"></span>
+    </p>
+    <i class='fas fa-capsules' style='font-size:24px'></i>
+    <i style='font-size:24px' class='fas'>&#xf46b;</i>
+    <ul>
+      <li><i class='fas fa-capsules' style='font-size:24px'></i></li>
+    </ul>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'authenticate:signup' %}" role="button">Signup</a>
+      </p>
+    </div>
+  </div>
 {% endblock %}
