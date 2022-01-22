@@ -28,4 +28,6 @@ urlpatterns = [
     path('authenticate/', include('django.contrib.auth.urls')),
     #for capsules
     path('capsules/', include('capsules.urls', namespace = 'capsules')),
+    #for Suppositories
+    path('suppositories/', include('suppositories.urls', namespace = 'suppositories')),
 ]
