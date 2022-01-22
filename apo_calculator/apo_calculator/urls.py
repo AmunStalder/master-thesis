@@ -26,4 +26,6 @@ urlpatterns = [
     path('authenticate/',include('authenticate.urls', namespace ='authenticate')),
     #for default stuff
     path('authenticate/', include('django.contrib.auth.urls')),
+    #for capsules
+    path('capsules/', include('capsules.urls', namespace = 'capsules')),
 ]
