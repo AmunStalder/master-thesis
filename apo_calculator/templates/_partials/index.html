@@ -1,7 +1,5 @@
 {% extends "_partials/base.html" %}
 {% block body_block %}
-  <div class="container">
-    <div class="jumbotron custom-jumbo">
       <h1 class="display-4">Welcome to Apo-Calculator!</h1>
       <p class="lead">This website has been programmed for pharmacists by a
         pharmacist. Apo-Calculator offers help for everyday calculations
@@ -15,6 +13,4 @@
       <p class="lead">
         <a class="btn btn-primary btn-lg" href="{% url 'authenticate:signup' %}" role="button">Signup</a>
       </p>
-    </div>
-  </div>
 {% endblock %}

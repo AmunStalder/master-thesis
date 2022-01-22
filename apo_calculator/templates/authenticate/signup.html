@@ -1,14 +1,10 @@
 {% extends "_partials/base.html" %}
 {% load django_bootstrap5 %}
 {% block body_block %}
-  <div class="container">
-    <div class="jumbotron custom-jumbo">
       <h1>Sign Up</h1>
       <form class="custom-form" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
         <input type="submit" class="btn btn-primary" value="Sign Up">
       </form>
-    </div>
-  </div>
 {% endblock %}
