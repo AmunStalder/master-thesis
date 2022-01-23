@@ -22,7 +22,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #get to the homepage
     path('',views.IndexView.as_view(), name = 'index'),
-    #get to login or sign up
+    #get to landing page
+    path('landing',views.LandingView.as_view(), name = 'landing'),
+    #get to thanks page
+    path('thanks',views.ThanksView.as_view(), name = 'thanks'),
+
     path('authenticate/',include('authenticate.urls', namespace ='authenticate')),
     #for default stuff
     path('authenticate/', include('django.contrib.auth.urls')),

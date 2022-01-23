@@ -11,6 +11,6 @@ class UserCreateForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         #Make a new Label for the username
-        self.fields['username'].label = 'Display Name'
+        self.fields['username'].label = 'Username'
         #Make a new Label for the mail address
-        self.fields['username'].email = 'Email Address'
+        self.fields['email'].label = 'Email address'
