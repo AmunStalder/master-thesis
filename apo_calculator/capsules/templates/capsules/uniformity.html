@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% block body_block %}
+  <h1>Enter capsules data</h1>
+  <form class="custom-form" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" class="btn btn-primary" value="check">
+  </form>
+  {% if form.is_valid %}
+    <!-- Results should be displayed here! -->
+  {% endif %}
+
+{% endblock %}
