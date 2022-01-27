@@ -30,6 +30,7 @@ class CapsulesUniformityOfMassView(FormView):
         upper2 = mean_content*(1+2*diff)
         lower1 = mean_content*(1-diff)
         lower2 = mean_content*(1-2*diff)
+        print(upper1)
         return super().form_valid(form)
 
 
