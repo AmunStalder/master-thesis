@@ -1,7 +1,13 @@
 from django import forms
+from .models import Uniformity
 
-class CapsulesUniformityOfMass(forms.Form):
-    mass_1_caps_empty = forms.FloatField(label='Mass of 1 empty capsules [g]')
-    mass_20_caps_full = forms.FloatField(label='Mass of 20 full capsules [g]')
-    mass_max1 = forms.FloatField(label='Mass of heaviest capsule [g]')
-    mass_min1 = forms.FloatField(label='Mass of lightest capsule [g]')
+class UniformityForm(forms.ModelForm):
+    class Meta:
+        model = Uniformity
+        fields = [
+            'caps_name',
+            'mass_1_caps_empty',
+            'mass_20_caps_full',
+            'mass_max1',
+            'mass_min1',
+        ]

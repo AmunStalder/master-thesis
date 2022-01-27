@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body_block %}
+  <h1>Welcome to the Capsules detail page</h1>
+  <p>Name: {{ caps_detail.caps_name }}</p>
+  <p>Mean content: {{ caps_detail.mean_content }}</p>
+  <p><a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk%}">Update</a></p>
+{% endblock %}

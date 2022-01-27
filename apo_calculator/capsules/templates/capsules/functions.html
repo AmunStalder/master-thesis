@@ -6,10 +6,10 @@
   <div class="row">
     <!-- column 1 -->
     <div class="col-lg-4">
-          <img class="rounded-circle border border-3" src="{% static 'img/Capsules_Prod.png' %}" height="150" width="150">
-      <h2>Production</h2>
-      <p>Produce capsules from pure active ingredient or from tablet using the XXXXX or YYYYY method. This tool enables quick and safe calculations for capsules including mass balance</p>
-      <p><a class="btn btn-primary" href="#" role="button">Produce</a></p>
+          <img class="rounded-circle border border-3" src="{% static 'img/Capsules_List.png' %}" height="150" width="150">
+      <h2>List of calculations</h2>
+      <p>Check out previous calculations and update or delete them, if needed.</p>
+      <p><a class="btn btn-primary" href="{% url 'capsules:list' %}" role="button">Show</a></p>
     </div><!-- /.col-lg-4 -->
     <!-- column 2 -->
     <div class="col-lg-4">

@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% load django_bootstrap5 %}
 {% block body_block %}
-  <h1>Enter capsules data</h1>
+  <h1>
+    {% if not form.instance.pk %}
+      Enter capsules data
+    {% else %}
+      Update input data for calculation
+    {% endif %}
+  </h1>
   <form class="custom-form" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}

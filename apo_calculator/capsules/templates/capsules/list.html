@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% block body_block %}
+
+      <h1>Hello</h1>
+
+      <ol>
+      {% for caps in caps_list %}
+        <h2><li><a href="{% url 'capsules:detail' pk=caps.pk%}"> {{ caps.caps_name }} </a></li></h2>
+      {% endfor %}
+      </ol>
+
+{% endblock %}
