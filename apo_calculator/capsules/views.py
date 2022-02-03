@@ -3,6 +3,7 @@ from .forms import UniformityForm
 from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.http import HttpResponse
 from . import models
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -29,7 +30,11 @@ class CapsUnifCreateView(CreateView):
         'mass_1_caps_empty',
         'mass_20_caps_full',
         'mass_max1',
+        'mass_max2',
+        'mass_max3',
         'mass_min1',
+        'mass_min2',
+        'mass_min3',
     )
 
 class CapsUnifUpdateView(UpdateView):
@@ -38,32 +43,15 @@ class CapsUnifUpdateView(UpdateView):
         'mass_1_caps_empty',
         'mass_20_caps_full',
         'mass_max1',
+        'mass_max2',
+        'mass_max3',
         'mass_min1',
+        'mass_min2',
+        'mass_min3',
     )
     model = models.Uniformity
-    # def form_valid(self, form):
-    #     # Threshold to determine if +/- 10 or 15% apply for uniformity
-    #     THRESHOLD_CAPS = 0.3
-    #     mass_1_caps_empty = form.cleaned_data['mass_1_caps_empty']
-    #     mass_20_caps_full = form.cleaned_data['mass_20_caps_full']
-    #     mass_max1 = form.cleaned_data['mass_max1']
-    #     mass_min1 = form.cleaned_data['mass_min1']
-    #     mean_content = mass_20_caps_full/20 - mass_1_caps_empty
-    #     if mean_content <= THRESHOLD_CAPS:
-    #         diff = 0.1
-    #     else:
-    #         diff = 0.15
-    #     upper1 = mean_content*(1+diff)
-    #     upper2 = mean_content*(1+2*diff)
-    #     lower1 = mean_content*(1-diff)
-    #     lower2 = mean_content*(1-2*diff)
-    #     print(form.cleaned_data)
-    #     return super().form_valid(form)
-    #
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     return context
 
-
-# class ResultView(TemplateView):
-#     template_name = 'capsules/result.html'
+class CapsUnifDeleteView(DeleteView):
+    context_object_name = 'uniformity'
+    model = models.Uniformity
+    success_url = reverse_lazy("capsules:list")

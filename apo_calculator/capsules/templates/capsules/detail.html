@@ -1,7 +1,100 @@
 {% extends "base.html" %}
 {% block body_block %}
-  <h1>Welcome to the Capsules detail page</h1>
-  <p>Name: {{ caps_detail.caps_name }}</p>
-  <p>Mean content: {{ caps_detail.mean_content }}</p>
-  <p><a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk%}">Update</a></p>
+  <h1>{{ caps_detail.caps_name }}</h1>
+  <p>{{ caps_detail.calc_date }}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Input data</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Mass one caps empty</th>
+              <td>{{ caps_detail.mass_1_caps_empty }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass 20 caps full</th>
+              <td>{{ caps_detail.mass_20_caps_full }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass max1</th>
+              <td>{{ caps_detail.mass_max1 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass max2</th>
+              <td>{{ caps_detail.mass_max2 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass max3</th>
+              <td>{{ caps_detail.mass_max3 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass min1</th>
+              <td>{{ caps_detail.mass_min1 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass min2</th>
+              <td>{{ caps_detail.mass_min2 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass min3</th>
+              <td>{{ caps_detail.mass_min3 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Calculated data</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"> + {{ caps_detail.results.diff_x2 }} % </th>
+              <td> {{ caps_detail.results.plus_2_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> + {{ caps_detail.results.diff }} % </th>
+              <td> {{ caps_detail.results.plus_1_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row">Mean content</th>
+              <td> {{ caps_detail.results.mean }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> - {{ caps_detail.results.diff }} % </th>
+              <td> {{ caps_detail.results.minus_1_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> - {{ caps_detail.results.diff_x2 }} % </th>
+              <td> {{ caps_detail.results.minus_2_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> # of caps over +/- {{ caps_detail.results.diff_x2 }} %:</th>
+              <td> {{ caps_detail.results.counter_above_2_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> # of caps over +/- {{ caps_detail.results.diff }} %:</th>
+              <td> {{ caps_detail.results.counter_above_1_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> # of caps over +/- {{ caps_detail.results.diff }} %:</th>
+              <td> {{ caps_detail.results.release_note }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <p>
+    <a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk%}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'capsules:delete' pk=caps_detail.pk%}">Delete</a>
+  </p>
 {% endblock %}
