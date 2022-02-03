@@ -3,13 +3,13 @@ import base64
 from io import BytesIO
 
 class UniformityCalculator:
-    CAPS_THRESHOLD_UNIFORMITY   = 300
-    CAPS_DIFF_BELOW_THRESHOLD   = 0.1
-    CAPS_DIFF_ABOVE_THRESHOLD   = 0.075
-    CAPS_THRESHOLD_BALANCE      = 0.1
+    CAPS_THRESHOLD_UNIFORMITY   = 0.3
+    CAPS_DIFF_BELOW_THRESHOLD   = 10
+    CAPS_DIFF_ABOVE_THRESHOLD   = 7.5
+    CAPS_THRESHOLD_BALANCE      = 10
     CAPS_AMOUNT_WEIGHED         = 20
     SUPPOS_AMOUNT_WEIGHED       = 10
-    SUPPOS_DIFF                 = 0.05
+    SUPPOS_DIFF                 = 5
 
     def __init__(self, gal_form, total_mass, mass_max1, mass_max2, mass_max3, mass_min1, mass_min2, mass_min3,
     mass_1_caps_empty=0):
@@ -19,15 +19,15 @@ class UniformityCalculator:
         self.masses                 = [mass_max1-self.mass_1_caps_empty, mass_max2-self.mass_1_caps_empty, mass_max3-self.mass_1_caps_empty, mass_min1-self.mass_1_caps_empty, mass_min2-self.mass_1_caps_empty, mass_min3-self.mass_1_caps_empty]
         self.diff                   = self.get_diff()[1]
         self.diff_x2                = 2 * self.diff
-        self.mean                   = self.get_diff()[0]
-        self.plus_1_diff            = self.mean * (1+self.diff)
-        self.plus_2_diff            = self.mean * (1+2*self.diff)
-        self.minus_1_diff           = self.mean * (1-self.diff)
-        self.minus_2_diff           = self.mean * (1-2*self.diff)
+        self.mean                   = round(self.get_diff()[0], 4)
+        self.plus_1_diff            = round(self.mean * (100+self.diff)/100,4)
+        self.plus_2_diff            = round(self.mean * (100+2*self.diff)/100,4)
+        self.minus_1_diff           = round(self.mean * (100-self.diff)/100,4)
+        self.minus_2_diff           = round(self.mean * (100-2*self.diff)/100,4)
         self.counter_above_1_diff   = 0
         self.counter_above_2_diff   = 0
         self.release_note           = ""
-        self.uniformity_plot        = get_plot(self.minus_2_diff, self.minus_1_diff, self.mean, self.plus_1_diff, self.plus_2_diff)
+        self.uniformity_plot        = self.get_plot()
 
     def get_diff(self):
         if self.gal_form == "caps":
@@ -54,30 +54,41 @@ class UniformityCalculator:
             self.release_note = "Uniformity of mass not passed"
         return self
 
-def get_graph():
-    #create bytes buffer for image to be saved
-    buffer = BytesIO()
-    #create figure with BytesIO object as file
-    plt.savefig(buffer, format='png')
-    #set cursor to the beginning of the stream
-    buffer.seek(0)
-    #retrieve the entire content of the file
-    image_png = buffer.getvalue()
-    #use encoder that takes in a bytes-like object
-    graph = base64.b64encode(image_png)
-    #convert base64 to utf-8
-    graph = graph.decode('utf-8')
-    #free memory of buffer
-    buffer.close()
-    return graph
+    def get_graph(self):
+        #create bytes buffer for image to be saved
+        buffer = BytesIO()
+        #create figure with BytesIO object as file
+        plt.savefig(buffer, format='png')
+        #set cursor to the beginning of the stream
+        buffer.seek(0)
+        #retrieve the entire content of the file
+        image_png = buffer.getvalue()
+        #use encoder that takes in a bytes-like object
+        graph = base64.b64encode(image_png)
+        #convert base64 to utf-8
+        graph = graph.decode('utf-8')
+        #free memory of buffer
+        buffer.close()
+        return graph
 
-def get_plot(*args):
-    plt.switch_backend('AGG')
-    plt.figure(figsize = (10,5))
-    plt.title('Miautitel')
-    plt.scatter([*args],[0,0,0,0,0])
-    plt.xlabel('date')
-    plt.ylabel('mean')
-    plt.tight_layout()
-    graph = get_graph()
-    return graph
+    def get_plot(self):
+        # annotations=["-{}%".format(100*self.diff_x2), "-{}%".format(100*self.diff), "+{}%".format(self.mean),"+{}%".format(100*self.diff),"+{}%".format(100*self.diff_x2)]
+        plt.switch_backend('AGG')
+        plt.figure(figsize = (10,2))
+        plt.title('Distribution of weights')
+        X = self.masses
+        Y = [0,0,0,0,0,0]
+        plt.scatter(X,Y, marker='.')
+        plt.vlines(self.minus_2_diff, -0.5, 0.5, linestyles ="solid", colors ="red")
+        plt.vlines(self.minus_1_diff, -0.5, 0.5, linestyles ="dotted", colors ="orange")
+        plt.vlines(self.mean, -0.5, 0.5, linestyles="solid", colors = "green")
+        plt.vlines(self.plus_1_diff, -0.5, 0.5, linestyles ="dotted", colors ="orange")
+        plt.vlines(self.plus_2_diff, -0.5, 0.5, linestyles ="solid", colors ="red")
+        plt.xlabel('weight [g]')
+        plt.xlim([self.mean * (1-4*self.diff/100), self.mean * (1+4*self.diff/100)])
+        plt.yticks([])
+        # for i, label in enumerate(annotations):
+        #     plt.annotate(label, (X[i], Y[i]))
+        plt.tight_layout()
+        graph = self.get_graph()
+        return graph
