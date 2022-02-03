@@ -38,9 +38,3 @@ class Uniformity(models.Model):
         results = calc.calculate()
         print(results)
         return results
-        # mean = self.mass_20_caps_full/20 - self.mass_1_caps_empty
-        # plus_1_thresholds = mean * (1+1*thresh)
-        # results = {
-        #     'mean' : mean,
-        # }
-        # return results

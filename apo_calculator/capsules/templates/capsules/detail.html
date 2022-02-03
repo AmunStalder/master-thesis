@@ -93,6 +93,9 @@
         </table>
       </div>
     </div>
+    {% if caps_detail.results.uniformity_plot %}
+      <img src="data:image/png;base64, {{caps_detail.results.uniformity_plot|safe}}">
+    {% endif %}
   <p>
     <a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk%}">Edit</a>
     <a class="btn btn-danger" href="{% url 'capsules:delete' pk=caps_detail.pk%}">Delete</a>

@@ -1,6 +1,6 @@
-# import matplotlib.pyplot as plt
-# import base64
-# from io import BytesIO
+import matplotlib.pyplot as plt
+import base64
+from io import BytesIO
 
 class UniformityCalculator:
     CAPS_THRESHOLD_UNIFORMITY   = 300
@@ -27,7 +27,7 @@ class UniformityCalculator:
         self.counter_above_1_diff   = 0
         self.counter_above_2_diff   = 0
         self.release_note           = ""
-
+        self.uniformity_plot        = get_plot(self.minus_2_diff, self.minus_1_diff, self.mean, self.plus_1_diff, self.plus_2_diff)
 
     def get_diff(self):
         if self.gal_form == "caps":
@@ -53,31 +53,31 @@ class UniformityCalculator:
         else:
             self.release_note = "Uniformity of mass not passed"
         return self
-#
-# def get_graph():
-#     #create bytes buffer for image to be saved
-#     buffer = BytesIO()
-#     #create figure with BytesIO object as file
-#     plt.savefig(buffer, format='png')
-#     #set cursor to the beginning of the stream
-#     buffer.seek(0)
-#     #retrieve the entire content of the file
-#     image_png = buffer.getvalue()
-#     #use encoder that takes in a bytes-like object
-#     graph = base64.b64encode(image_png)
-#     #convert base64 to utf-8
-#     graph = graph.decode('utf-8')
-#     #free memory of buffer
-#     buffer.close()
-#     return graph
-#
-# def get_plot(x,y):
-#     plt.switch_backend('AGG')
-#     plt.figure(figsize = (10,5))
-#     plt.title('Miautitel')
-#     plt.plot(x,y)
-#     plt.xlabel('date')
-#     plt.ylabel('mean')
-#     plt.tight_layout()
-#     graph = get_graph()
-#     return graph
+
+def get_graph():
+    #create bytes buffer for image to be saved
+    buffer = BytesIO()
+    #create figure with BytesIO object as file
+    plt.savefig(buffer, format='png')
+    #set cursor to the beginning of the stream
+    buffer.seek(0)
+    #retrieve the entire content of the file
+    image_png = buffer.getvalue()
+    #use encoder that takes in a bytes-like object
+    graph = base64.b64encode(image_png)
+    #convert base64 to utf-8
+    graph = graph.decode('utf-8')
+    #free memory of buffer
+    buffer.close()
+    return graph
+
+def get_plot(*args):
+    plt.switch_backend('AGG')
+    plt.figure(figsize = (10,5))
+    plt.title('Miautitel')
+    plt.scatter([*args],[0,0,0,0,0])
+    plt.xlabel('date')
+    plt.ylabel('mean')
+    plt.tight_layout()
+    graph = get_graph()
+    return graph
