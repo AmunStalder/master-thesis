@@ -12,4 +12,5 @@ urlpatterns = [
     path('uniformity/detail/<int:pk>/', views.CapsUnifDetailView.as_view(), name='detail'),
     path('uniformity/update/<int:pk>/', views.CapsUnifUpdateView.as_view(), name='update'),
     path('uniformity/delete/<int:pk>/', views.CapsUnifDeleteView.as_view(), name='delete'),
+    path('uniformity/pdf/<int:pk>/', views.pdf_view, name='pdf')
 ]

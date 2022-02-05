@@ -97,7 +97,8 @@
       <img src="data:image/png;base64, {{caps_detail.results.uniformity_plot|safe}}">
     {% endif %}
   <p>
-    <a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk%}">Edit</a>
-    <a class="btn btn-danger" href="{% url 'capsules:delete' pk=caps_detail.pk%}">Delete</a>
+    <a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'capsules:delete' pk=caps_detail.pk %}">Delete</a>
+    <a class="btn btn-primary" href="{% url 'capsules:pdf' pk=caps_detail.pk %}">Generate PDF</a>
   </p>
 {% endblock %}

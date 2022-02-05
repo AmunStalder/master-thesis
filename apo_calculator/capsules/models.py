@@ -14,6 +14,7 @@ class Uniformity(models.Model):
     mass_min1           = models.FloatField()
     mass_min2           = models.FloatField()
     mass_min3           = models.FloatField()
+    #ForeignKey here
 
     def get_absolute_url(self):
         '''
