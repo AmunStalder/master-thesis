@@ -4,10 +4,8 @@ from django.views.generic import FormView, ListView, DetailView, CreateView, Upd
 from django.http import HttpResponse, FileResponse
 from . import models
 from django.urls import reverse_lazy
-import io
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import inch
-from reportlab.lib.pagesizes import letter
+from .utils import render_to_pdf
+#Import the easy_pdf rendering
 
 # Create your views here.
 
@@ -26,28 +24,21 @@ class CapsUnifDetailView(DetailView):
     model = models.Uniformity
     template_name = 'capsules/detail.html'
 
-def pdf_view(request, pk):
-    # Create a file-like buffer to receive PDF data.
-    buffer = io.BytesIO()
-    # Create the PDF object, using the buffer as its "file."
-    c = canvas.Canvas(buffer, pagesize=letter, bottomup=0)
-    textobject = c.beginText()
-    textobject.setTextOrigin(inch, inch)
-    textobject.setFont('Helvetica', 14)
-    prod = models.Uniformity.objects.get(id = pk)
+class CapsUnifPdfView(DetailView):
+    context_object_name = 'caps_detail'
+    model = models.Uniformity
+    template_name = 'capsules/pdf.html'
 
-    textobject.textLine(prod.caps_name)
-    # Draw things on the PDF. Here's where the PDF generation happens.
-    # See the ReportLab documentation for the full list of functionality.
-    c.drawText(textobject)
-    # Close the PDF object cleanly, and we're done.
-    c.showPage()
-    c.save()
+    def get_context_data(self, **kwargs):
+        context = super(CapsUnifPdfView, self).get_context_data(**kwargs)
+        # add extra context if needed
+        return context
 
-    # FileResponse sets the Content-Disposition header so that browsers
-    # present the option to save the file.
-    buffer.seek(0)
-    return FileResponse(buffer, as_attachment=True, filename='hello.pdf')
+    def render_to_response(self, context, **kwargs):
+        pdf = render_to_pdf(self.template_name, context)
+        return HttpResponse(pdf, content_type='application/pdf')
+
+
 
 class CapsUnifCreateView(CreateView):
     template_name = 'capsules/uniformity_form.html'
