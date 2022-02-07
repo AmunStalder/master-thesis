@@ -2,12 +2,32 @@
 {% load django_bootstrap5 %}
 {% block body_block %}
 
-      <h1>Hello</h1>
 
-      <ol>
-      {% for caps in caps_list %}
-        <h2><li><a href="{% url 'capsules:detail' pk=caps.pk%}"> {{ caps.caps_name }} </a></li></h2>
-      {% endfor %}
-      </ol>
+  {% if not caps_list %}
+    <h1>No calculations to show</h1>
+  {% else %}
+    <h1>List of calculations</h1>
+  {% endif %}
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Lot nr</th>
+        <th scope="col">Name of production</th>
+        <th scope="col">Date of production</th>
+        <th scope="col">Test result</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for caps in caps_list %}
+      <tr>
+        <td>10991</td>
+        <td>{{ caps.caps_name }}</td>
+        <td>{{ caps.calc_date }}</td>
+        <td>{{ caps.results.release_note }}</td>
+        <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=caps.pk %}">Show</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 
 {% endblock %}

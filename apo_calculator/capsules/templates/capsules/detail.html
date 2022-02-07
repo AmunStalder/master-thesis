@@ -94,7 +94,7 @@
       </div>
     </div>
     {% if caps_detail.results.uniformity_plot %}
-      <img src="data:image/png;base64, {{caps_detail.results.uniformity_plot|safe}}">
+      <img class="img-fluid" src="data:image/png;base64, {{caps_detail.results.uniformity_plot|safe}}">
     {% endif %}
   <p>
     <a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk %}">Edit</a>

@@ -38,8 +38,8 @@ class UniformityCalculator:
                 diff = self.CAPS_DIFF_ABOVE_THRESHOLD
 
         if self.gal_form  == "suppos":
-            mean = self.total_mass/SUPPOS_AMOUNT_WEIGHED
-            diff = SUPPOS_DIFF
+            mean = self.total_mass/self.SUPPOS_AMOUNT_WEIGHED
+            diff = self.SUPPOS_DIFF
         return [mean, diff]
 
     def calculate(self):
@@ -78,12 +78,17 @@ class UniformityCalculator:
         plt.title('Distribution of weights')
         X = self.masses
         Y = [0,0,0,0,0,0]
-        plt.scatter(X,Y, marker='.')
         plt.vlines(self.minus_2_diff, -0.5, 0.5, linestyles ="solid", colors ="red")
         plt.vlines(self.minus_1_diff, -0.5, 0.5, linestyles ="dotted", colors ="orange")
         plt.vlines(self.mean, -0.5, 0.5, linestyles="solid", colors = "green")
         plt.vlines(self.plus_1_diff, -0.5, 0.5, linestyles ="dotted", colors ="orange")
         plt.vlines(self.plus_2_diff, -0.5, 0.5, linestyles ="solid", colors ="red")
+        plt.fill_between([self.mean * (1-4*self.diff/100), self.minus_2_diff] , -0.5, 0.5, color = "#ffe8e8")
+        plt.fill_between([self.minus_2_diff, self.minus_1_diff] , -0.5, 0.5, color = "#ffdabf")
+        plt.fill_between([self.minus_1_diff, self.plus_1_diff] , -0.5, 0.5, color = "#e7fae6")
+        plt.fill_between([self.plus_1_diff, self.plus_2_diff] , -0.5, 0.5, color = "#ffdabf")
+        plt.fill_between([self.plus_2_diff, self.mean * (1+4*self.diff/100)] , -0.5, 0.5, color = "#ffe8e8")
+        plt.scatter(X,Y, marker='.')
         plt.xlabel('weight [g]')
         plt.xlim([self.mean * (1-4*self.diff/100), self.mean * (1+4*self.diff/100)])
         plt.yticks([])
