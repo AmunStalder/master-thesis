@@ -5,7 +5,7 @@ from .calculator import UniformityCalculator
 # Create your models here.
 class Uniformity(models.Model):
     calc_date           = models.DateTimeField(default=datetime.now, blank=True, )
-    caps_name           = models.CharField(max_length= 256)
+    caps_name           = models.CharField(max_length= 256, )
     mass_1_caps_empty   = models.FloatField()
     mass_20_caps_full   = models.FloatField()
     mass_max1           = models.FloatField()
@@ -14,7 +14,7 @@ class Uniformity(models.Model):
     mass_min1           = models.FloatField()
     mass_min2           = models.FloatField()
     mass_min3           = models.FloatField()
-    #ForeignKey here
+    calc                = None #UniformityCalculator()
 
     def get_absolute_url(self):
         '''
@@ -25,7 +25,7 @@ class Uniformity(models.Model):
 
     @property
     def results(self):
-        calc = UniformityCalculator(
+        self.calc = UniformityCalculator(
             gal_form="caps",
             total_mass=self.mass_20_caps_full,
             mass_1_caps_empty=self.mass_1_caps_empty,
@@ -36,6 +36,10 @@ class Uniformity(models.Model):
             mass_min1=self.mass_min1,
             mass_min3=self.mass_min3,
         )
-        results = calc.calculate()
-        print(results)
-        return results
+        self.calc.calculate()
+        print(self.calc)
+        return self.calc
+
+    @property
+    def resul(self):
+        return self.calc

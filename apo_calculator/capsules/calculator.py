@@ -46,13 +46,13 @@ class UniformityCalculator:
         for mass in self.masses:
             if mass < self.minus_2_diff or mass > self.plus_2_diff:
                 self.counter_above_2_diff += 1
-            elif (mass > self.plus_1_diff and mass < self.plus_2_diff) or (mass < self.minus_1_diff and mass > self.minus_2_diff):
+            elif (mass > self.plus_1_diff and mass <= self.plus_2_diff) or (mass < self.minus_1_diff and mass >= self.minus_2_diff):
                 self.counter_above_1_diff += 1
         if self.counter_above_2_diff == 0 and self.counter_above_1_diff <= 2:
             self.release_note = "Uniformity of mass passed"
         else:
             self.release_note = "Uniformity of mass not passed"
-        return self
+        # return self
 
     def get_graph(self):
         #create bytes buffer for image to be saved
