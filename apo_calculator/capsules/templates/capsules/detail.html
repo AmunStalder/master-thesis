@@ -58,43 +58,43 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row"> + {{ caps_detail.results.diff_x2 }} % </th>
-              <td> {{ caps_detail.resul.plus_2_diff }} </td>
+              <th scope="row"> + {{ caps_detail.diff_x2 }} % </th>
+              <td> {{ caps_detail.plus_2_diff }} </td>
             </tr>
             <tr>
-              <th scope="row"> + {{ caps_detail.resul.diff }} % </th>
-              <td> {{ caps_detail.resul.plus_1_diff }} </td>
+              <th scope="row"> + {{ caps_detail.diff }} % </th>
+              <td> {{ caps_detail.plus_1_diff }} </td>
             </tr>
             <tr>
               <th scope="row">Mean content</th>
-              <td> {{ caps_detail.resul.mean }} </td>
+              <td> {{ caps_detail.mean }} </td>
             </tr>
             <tr>
-              <th scope="row"> - {{ caps_detail.resul.diff }} % </th>
-              <td> {{ caps_detail.resul.minus_1_diff }} </td>
+              <th scope="row"> - {{ caps_detail.diff }} % </th>
+              <td> {{ caps_detail.minus_1_diff }} </td>
             </tr>
             <tr>
-              <th scope="row"> - {{ caps_detail.resul.diff_x2 }} % </th>
-              <td> {{ caps_detail.resul.minus_2_diff }} </td>
+              <th scope="row"> - {{ caps_detail.diff_x2 }} % </th>
+              <td> {{ caps_detail.minus_2_diff }} </td>
             </tr>
             <tr>
-              <th scope="row"> # of caps over +/- {{ caps_detail.resul.diff_x2 }} %:</th>
-              <td> {{ caps_detail.resul.counter_above_2_diff }} </td>
+              <th scope="row"> # of caps over +/- {{ caps_detail.diff_x2 }} %:</th>
+              <td> {{ caps_detail.counter_above_2_diff }} </td>
             </tr>
             <tr>
-              <th scope="row"> # of caps over +/- {{ caps_detail.resul.diff }} %:</th>
-              <td> {{ caps_detail.resul.counter_above_1_diff }} </td>
+              <th scope="row"> # of caps over +/- {{ caps_detail.diff }} %:</th>
+              <td> {{ caps_detail.counter_above_1_diff }} </td>
             </tr>
             <tr>
               <th scope="row">Uniformity ok?</th>
-              <td> {{ caps_detail.resul.release_note }} </td>
+              <td> {{ caps_detail.release_note }} </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    {% if caps_detail.resul.uniformity_plot %}
-      <img class="img-fluid" src="data:image/png;base64, {{caps_detail.resul.uniformity_plot|safe}}">
+    {% if caps_detail.results.uniformity_plot %}
+      <img class="img-fluid" src="data:image/png;base64, {{caps_detail.uniformity_plot|safe}}">
     {% endif %}
   <p>
     <a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk %}">Edit</a>

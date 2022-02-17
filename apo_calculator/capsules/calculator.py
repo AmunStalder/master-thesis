@@ -18,7 +18,7 @@ class UniformityCalculator:
         self.mass_1_caps_empty      = mass_1_caps_empty
         self.masses                 = [mass_max1-self.mass_1_caps_empty, mass_max2-self.mass_1_caps_empty, mass_max3-self.mass_1_caps_empty, mass_min1-self.mass_1_caps_empty, mass_min2-self.mass_1_caps_empty, mass_min3-self.mass_1_caps_empty]
         self.diff                   = self.get_diff()[1]
-        self.diff_x2                = 2 * self.diff
+        self.diff_x2                = 2 * self.get_diff()[1]
         self.mean                   = round(self.get_diff()[0], 4)
         self.plus_1_diff            = round(self.mean * (100+self.diff)/100,4)
         self.plus_2_diff            = round(self.mean * (100+2*self.diff)/100,4)
@@ -26,7 +26,7 @@ class UniformityCalculator:
         self.minus_2_diff           = round(self.mean * (100-2*self.diff)/100,4)
         self.counter_above_1_diff   = 0
         self.counter_above_2_diff   = 0
-        self.release_note           = ""
+        self.release_note           = self.calculate()
         self.uniformity_plot        = self.get_plot()
 
     def get_diff(self):
@@ -49,9 +49,10 @@ class UniformityCalculator:
             elif (mass > self.plus_1_diff and mass <= self.plus_2_diff) or (mass < self.minus_1_diff and mass >= self.minus_2_diff):
                 self.counter_above_1_diff += 1
         if self.counter_above_2_diff == 0 and self.counter_above_1_diff <= 2:
-            self.release_note = "Uniformity of mass passed"
+            self.text = "Uniformity of mass passed"
         else:
-            self.release_note = "Uniformity of mass not passed"
+            self.text = "Uniformity of mass not passed"
+        return self.text
         # return self
 
     def get_graph(self):
