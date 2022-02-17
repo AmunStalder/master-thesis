@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+<head>
+  <style>
+    th {text-align: left;}
+  </style>
+</head>
+  <body>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Input data</th>
+          <th scope="col">Value</th>
+          <th scope="col">Calculated data</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Mass one caps empty</th>
+          <td>{{ caps_detail.mass_1_caps_empty }}</td>
+          <th scope="row"> + {{ caps_detail.diff_x2 }} % </th>
+          <td> {{ caps_detail.plus_2_diff }} </td>
+        </tr>
+        <tr>
+          <th scope="row">Mass 20 caps full</th>
+          <td>{{ caps_detail.mass_20_caps_full }}</td>
+          <th scope="row"> + {{ caps_detail.diff }} % </th>
+          <td> {{ caps_detail.plus_1_diff }} </td>
+        </tr>
+        <tr>
+          <th scope="row">Mass max1</th>
+          <td>{{ caps_detail.mass_max1 }}</td>
+          <th scope="row">Mean content</th>
+          <td> {{ caps_detail.mean }} </td>
+        </tr>
+        <tr>
+          <th scope="row">Mass max2</th>
+          <td>{{ caps_detail.mass_max2 }}</td>
+          <th scope="row"> - {{ caps_detail.diff }} % </th>
+          <td> {{ caps_detail.minus_1_diff }} </td>
+        </tr>
+        <tr>
+          <th scope="row">Mass max3</th>
+          <td>{{ caps_detail.mass_max3 }}</td>
+          <th scope="row"> - {{ caps_detail.diff_x2 }} % </th>
+          <td> {{ caps_detail.minus_2_diff }} </td>
+        </tr>
+        <tr>
+          <th scope="row">Mass min1</th>
+          <td>{{ caps_detail.mass_min1 }}</td>
+          <th scope="row"> # of caps over +/- {{ caps_detail.diff_x2 }} %:</th>
+          <td> {{ caps_detail.counter_above_2_diff }} </td>
+        </tr>
+        <tr>
+          <th scope="row">Mass min2</th>
+          <td>{{ caps_detail.mass_min2 }}</td>
+          <th scope="row"> # of caps over +/- {{ caps_detail.diff }} %:</th>
+          <td> {{ caps_detail.counter_above_1_diff }} </td>
+        </tr>
+        <tr>
+          <th scope="row">Mass min3</th>
+          <td>{{ caps_detail.mass_min3 }}</td>
+          <th scope="row">Uniformity ok?</th>
+          <td> {{ caps_detail.release_note }} </td>
+        </tr>
+      </tbody>
+    </table>
+      {% if caps_detail.uniformity_plot %}
+        <img src="data:image/png;base64, {{caps_detail.uniformity_plot|safe}}">
+      {% endif %}
+  </body> -->

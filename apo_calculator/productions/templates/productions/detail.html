@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block body_block %}
-  <h1>{{ caps_detail.production.name }} (LotNr: {{ caps_detail.production.lot_nr }})</h1>
+<!--
+  <h1>{{ caps_detail.caps_name }}</h1>
   <p>{{ caps_detail.calc_date }}</p>
   <div class="container">
     <div class="row">
@@ -93,13 +94,13 @@
         </table>
       </div>
     </div>
-    {% if caps_detail.uniformity_plot %}
+    {% if caps_detail.results.uniformity_plot %}
       <img class="img-fluid" src="data:image/png;base64, {{caps_detail.uniformity_plot|safe}}">
     {% endif %}
   <p>
     <a class="btn btn-warning" href="{% url 'capsules:update' pk=caps_detail.pk %}">Edit</a>
     <a class="btn btn-danger" href="{% url 'capsules:delete' pk=caps_detail.pk %}">Delete</a>
     <a class="btn btn-primary" href="{% url 'capsules:pdf' pk=caps_detail.pk %}">Generate PDF</a>
-    <!-- <a class="btn btn-primary" href="{% url 'capsules:pdf' pk=caps_detail.pk %}">Generate PDF</a> -->
   </p>
+  -->
 {% endblock %}

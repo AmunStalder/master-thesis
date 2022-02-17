@@ -2,7 +2,7 @@
 {% load django_bootstrap5 %}
 {% block body_block %}
 
-
+<!-- 
   {% if not caps_list %}
     <h1>No calculations to show</h1>
   {% else %}
@@ -20,14 +20,14 @@
     <tbody>
     {% for caps in caps_list %}
       <tr>
-        <td>{{ caps.production.lot_nr }} </td>
-        <td>{{ caps.production.name }}</td>
+        <td> 10991 </td>
+        <td>{{ caps.caps_name }}</td>
         <td>{{ caps.calc_date }}</td>
         <td>{{ caps.release_note }}</td>
         <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=caps.pk %}">Show</a></td>
       </tr>
     {% endfor %}
     </tbody>
-  </table>
+  </table> -->
 
 {% endblock %}
