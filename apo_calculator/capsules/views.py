@@ -56,6 +56,7 @@ class CapsUnifCreateView(CreateView):
     )
 
 class CapsUnifUpdateView(UpdateView):
+    model = models.Uniformity
     fields = (
         'production',
         'mass_1_caps_empty',
@@ -67,7 +68,7 @@ class CapsUnifUpdateView(UpdateView):
         'mass_min2',
         'mass_min3',
     )
-    model = models.Uniformity
+
 
 class CapsUnifDeleteView(DeleteView):
     context_object_name = 'uniformity'

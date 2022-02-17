@@ -2,11 +2,10 @@
 {% load django_bootstrap5 %}
 {% block body_block %}
 
-<!-- 
-  {% if not caps_list %}
-    <h1>No calculations to show</h1>
+  {% if not productions_list %}
+    <h1>No productions to show</h1>
   {% else %}
-    <h1>List of calculations</h1>
+    <h1>List of productions</h1>
   {% endif %}
   <table class="table">
     <thead class="thead-dark">
@@ -18,16 +17,16 @@
       </tr>
     </thead>
     <tbody>
-    {% for caps in caps_list %}
+    {% for production in productions_list %}
       <tr>
-        <td> 10991 </td>
-        <td>{{ caps.caps_name }}</td>
-        <td>{{ caps.calc_date }}</td>
-        <td>{{ caps.release_note }}</td>
-        <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=caps.pk %}">Show</a></td>
+        <td> {{ production.lot_nr }} </td>
+        <td>{{ production.name }}</td>
+        <td>{{ production.calc_date }}</td>
+        <td>to be implemented soon</td>
+        <td><a class="btn btn-primary" href="{% url 'productions:detail' pk=production.pk %}">Show</a></td>
       </tr>
     {% endfor %}
     </tbody>
-  </table> -->
+  </table>
 
 {% endblock %}

@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% load django_bootstrap5 %}
 {% block body_block %}
-<!--
+
   <h1>
     {% if not form.instance.pk %}
-      Enter capsules data
+      Add a new production
     {% else %}
-      Update input data for calculation
+      Update data for production
     {% endif %}
   </h1>
   <form class="custom-form" method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% if not form.instance.pk %}
-      <input type="submit" class="btn btn-primary" value="Check">
+      <input type="submit" class="btn btn-primary" value="Add">
     {% else %}
       <input type="submit" class="btn btn-primary" value="Update">
     {% endif %}
 
   </form>
--->
+
 {% endblock %}

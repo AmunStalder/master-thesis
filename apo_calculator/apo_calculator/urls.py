@@ -30,6 +30,8 @@ urlpatterns = [
     path('authenticate/',include('authenticate.urls', namespace ='authenticate')),
     #for default stuff
     path('authenticate/', include('django.contrib.auth.urls')),
+
+    path('productions/', include('productions.urls', namespace = 'productions')),
     #for capsules
     path('capsules/', include('capsules.urls', namespace = 'capsules')),
     #for Suppositories

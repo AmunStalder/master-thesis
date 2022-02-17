@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body_block %}
-<!--
+
 <div class="container text-center">
 
   <div class="row">
 
     <div class="col-lg-4">
           <img class="rounded-circle border border-3" src="{% static 'img/Capsules_List.png' %}" height="150" width="150">
-      <h2>List of calculations</h2>
+      <h2>List of productions</h2>
       <p>Check out previous calculations and update or delete them, if needed.</p>
-      <p><a class="btn btn-primary" href="{% url 'capsules:list' %}" role="button">Show</a></p>
+      <p><a class="btn btn-primary" href="{% url 'productions:list' %}" role="button">Show</a></p>
     </div>
 
     <div class="col-lg-4">
           <img class="rounded-circle border border-3" src="{% static 'img/Capsules_Gaussian.png' %}" height="150" width="150">
       <h2>Uniformity of Mass</h2>
       <p>According to Chapter XX of the European Pharmacopoeia, the uniformity of mass must be given for medicines that have been produced in small scale. The specifications depend on how much the contents of one capsule weighs. For capsules that weigh below 300 mg, only 2 out of 20 randomly chosen capsules may differ by more than 10%, but none may differ by more than 20% of the average content.</p>
-      <p><a class="btn btn-primary" href="{% url 'capsules:uniformity' %}" role="button">Check uniformity</a></p>
+      <p><a class="btn btn-primary" href="{% url 'productions:create' %}" role="button">Check uniformity</a></p>
     </div>
     <div class="col-lg-4">
           <img class="rounded-circle border border-3" src="{% static 'img/Capsules_Prod.png' %}" height="150" width="150">
@@ -67,5 +67,5 @@
   </div>
 
   <hr class="featurette-divider">
-</div> -->
+</div>
 {% endblock %}

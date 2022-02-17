@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 from datetime import datetime
-#from .calculator import UniformityCalculator
 # Create your models here.
 
 class Productions(models.Model):
@@ -20,6 +19,13 @@ class Productions(models.Model):
 
     def __str__(self):
         return '{}, {}'.format(self.lot_nr, self.name)
+
+    def get_absolute_url(self):
+        '''
+            Needs to be defined in order to redirect to a page
+            upon successful filling in the form
+        '''
+        return reverse("productions:detail", kwargs={'pk':self.pk})
     # def save(self, *args, **kwarg):
     #     self.calc = UniformityCalculator(
     #         gal_form="caps",
