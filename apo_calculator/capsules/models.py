@@ -6,7 +6,7 @@ from productions.models import Productions
 # Create your models here.
 
 class Uniformity(models.Model):
-    production            = models.ForeignKey(Productions, on_delete=models.CASCADE)
+    production            = models.OneToOneField(Productions, on_delete=models.CASCADE, primary_key=True)
     calc_date             = models.DateTimeField(default=datetime.now, blank=True, )
     mass_1_caps_empty     = models.FloatField()
     mass_20_caps_full     = models.FloatField()
