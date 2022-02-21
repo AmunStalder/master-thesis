@@ -3,6 +3,24 @@
 
   <h1>{{ production.name }} (LotNr: {{ production.lot_nr }} )</h1>
   <p>{{ production.calc_date }}</p>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Calculation</th>
+        <th scope="col">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% if production.uniformity %}
+      <tr>
+        <th scope="row"> Uniformity of mass</th>
+        <td>{{ production.uniformity.release_note }}</td>
+        <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=production.pk %}">Show</a></td>
+      </tr>
+    {% endif %}
+    </tbody>
+  </table>
+  <p></p>
   <p>
     <a class="btn btn-warning" href="{% url 'productions:update' pk=production.pk %}">Edit</a>
     <a class="btn btn-danger" href="{% url 'productions:delete' pk=production.pk %}">Delete</a>
