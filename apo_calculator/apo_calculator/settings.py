@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'authenticate',
     'capsules',
     'suppositories',
+    'caps_prod',
 ]
 
 MIDDLEWARE = [
