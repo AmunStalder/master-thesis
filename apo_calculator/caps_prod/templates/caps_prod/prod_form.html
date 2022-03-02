@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% block body_block %}
+  <h1>
+      Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
+  </h1>
+
+  <form class="custom-form" method="post">
+    {% csrf_token %}
+      <!-- {% bootstrap_form form %} -->
+      {{ wizard.management_form }}
+      {% if wizard.form.forms %}
+        {{wizard.form.management_form }}
+        {% for form in wizard.form.forms %}
+          {% bootstrap_form form %}
+        {% endfor %}
+      {% else %}
+        {% bootstrap_form wizard.form %}
+      {% endif %}
+      {% if wizard.steps.prev %}
+      <button type="submit" class="btn btn-primary" value="{{ wizard.steps.first }}">First step</button>
+      <button type="submit" class="btn btn-primary" value="{{ wizard.steps.prev }}">Previous step</button>
+      {% endif %}
+      <input type="submit" value="Submit">
+    <!-- {% if not form.instance.pk %}
+      <input type="submit" class="btn btn-primary" value="Check">
+    {% else %}
+      <input type="submit" class="btn btn-primary" value="Update">
+    {% endif %} -->
+
+  </form>
+{% endblock %}
