@@ -4,7 +4,12 @@
   <h1>
       Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
   </h1>
-
+  {% if wizard.steps.step1 == 2 %}
+    <p>For {{ amount_of_caps }} capsules à {{ conc_per_cap }}mg, a total of {{ total_amount }}mg is needen. Using tablets à {{ conc_per_tab }}mg, {{ needed_amount_of_tabs }} tablets are needed. With an excess of 10%, the suggested amount of tablets is <b>{{ suggested_amount_of_tabs }}</b>. </p>
+  {% endif %}
+  {% if wizard.steps.step1 == 3 %}
+    <p> {{ amount_of_weighed_tabs }} weighed tabs have a mass of {{ mass_all_tabs }}. For the required {{ needed_amount_of_tabs }} tabs, <b>{{ required_mass_powder }} g </b>  are needed.</p>
+  {% endif %}
   <form class="custom-form" method="post">
     {% csrf_token %}
       <!-- {% bootstrap_form form %} -->
@@ -22,11 +27,5 @@
       <button type="submit" class="btn btn-primary" value="{{ wizard.steps.prev }}">Previous step</button>
       {% endif %}
       <input type="submit" value="Submit">
-    <!-- {% if not form.instance.pk %}
-      <input type="submit" class="btn btn-primary" value="Check">
-    {% else %}
-      <input type="submit" class="btn btn-primary" value="Update">
-    {% endif %} -->
-
   </form>
 {% endblock %}

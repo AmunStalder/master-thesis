@@ -53,7 +53,7 @@ class Uniformity(models.Model):
         self.counter_above_2_diff  = self.calc.counter_above_2_diff
         self.release_note          = self.calc.release_note
         self.uniformity_plot       = self.calc.uniformity_plot
-        print("mean worked")
+
         super(Uniformity, self).save(*args, **kwarg)
 
     def get_absolute_url(self):
