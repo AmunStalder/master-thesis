@@ -11,11 +11,18 @@
       </tr>
     </thead>
     <tbody>
+    {% if production.capsprod %}
+    <tr>
+      <th scope="row"> Production calculation</th>
+      <td>{{ production.capsprod.caps_size }}</td>
+      <td><a class="btn btn-primary" href="{% url 'caps_prod:edit' pk=production.capsprod.pk %}">Edit</a></td>
+    </tr>
+    {% endif %}
     {% if production.uniformity %}
       <tr>
         <th scope="row"> Uniformity of mass</th>
         <td>{{ production.uniformity.release_note }}</td>
-        <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=production.pk %}">Show</a></td>
+        <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=production.uniformity.pk %}">Show</a></td>
       </tr>
     {% endif %}
     </tbody>
@@ -24,6 +31,10 @@
   <p>
     <a class="btn btn-warning" href="{% url 'productions:update' pk=production.pk %}">Edit</a>
     <a class="btn btn-danger" href="{% url 'productions:delete' pk=production.pk %}">Delete</a>
+    {% if production.capsprod and production.uniformity %}
+    <a class="btn btn-danger" href="{% url 'productions:delete' pk=production.pk %}">Add Mass balance</a>
+    {% endif %}
+
   </p>
 
 {% endblock %}

@@ -33,3 +33,17 @@ class CapsProdForm3(forms.ModelForm):
             'weighed_mass_powder',
             'caps_size',
         ]
+        
+class CapsProdForm4(forms.ModelForm):
+    class Meta:
+        model = CapsProd
+        fields = [
+            'tara_meas_cylinder',
+            'required_volume',
+            'mass_required_volume',
+        ]
+
+    def __init__(self, *args, **kwargs):
+        super(CapsProdForm4, self).__init__(*args, **kwargs)
+        instance = getattr(self, 'instance', None)
+        self.fields['required_volume'].disabled = True

@@ -58,4 +58,4 @@ class ProductionUpdateView(UpdateView):
 class ProductionDeleteView(DeleteView):
     context_object_name = 'production'
     model = models.Productions
-    success_url = reverse_lazy("productions:create")
+    success_url = reverse_lazy("productions:list")

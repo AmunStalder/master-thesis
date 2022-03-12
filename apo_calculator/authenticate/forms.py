@@ -13,4 +13,4 @@ class UserCreateForm(UserCreationForm):
         #Make a new Label for the username
         self.fields['username'].label = 'Username'
         #Make a new Label for the mail address
-        self.fields['email'].label = 'Email address'
+        self.fields['email'].label = 'E-mail address'
