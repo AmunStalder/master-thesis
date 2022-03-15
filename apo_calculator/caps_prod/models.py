@@ -37,7 +37,6 @@ class CapsProd(models.Model):
     required_volume         = models.FloatField()
     mass_required_volume    = models.FloatField()
 
-
     def save(self, *args, **kwarg):
         self.required_mass_powder  = self.amount_of_caps * self.conc_per_cap / self.conc_per_tab * self.mass_all_tabs / self.amount_of_weighed_tabs
         super(CapsProd, self).save(*args, **kwarg)

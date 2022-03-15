@@ -2,10 +2,16 @@
 <head>
   <style>
     th {text-align: left;}
+    .abstand {padding-left: 20px;}
+    .center {text-align: center;}
   </style>
 </head>
   <body>
-    <table class="table">
+
+
+  <h1 class="center">Uniformity of mass for {{caps_detail.production.name}}, LotNr: {{ caps_detail.production.lot_nr }}</h1>
+    <div class="border">
+      <table class="abstand">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Input data</th>
@@ -68,4 +74,5 @@
       {% if caps_detail.uniformity_plot %}
         <img src="data:image/png;base64, {{caps_detail.uniformity_plot|safe}}">
       {% endif %}
+    </div>
   </body>

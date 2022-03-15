@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body_block %}
+  <h1>{{ production.name }} (LotNr: {{ production.lot_nr }})</h1>
+  <p>Mass of powder mix: {{ production.capsprod.mass_required_volume }}</p>
+  <p>Mean content of {{ production.uniformity.mean }} multiplied by {{ production.capsprod.amount_of_caps }} caps = {{ calculated_mass_powder_mix }}</p>
+  <p>Absolute mass balance: {{ absolute_mass_balance }}g </p>
+  <p>Relative mass balance: {{ relative_mass_balance }}</p>
+  <p>Result: {{ mass_balance_release_note }}</p>
+{% endblock %}

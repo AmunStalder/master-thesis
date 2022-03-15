@@ -1,8 +1,9 @@
 from formtools.wizard.views import SessionWizardView
 from .models import CapsProd
+from django.views.generic import DetailView, DeleteView
 from django.forms.models import construct_instance
 from django.shortcuts import redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 import math
 
 class CapsProdWizardView(SessionWizardView):
@@ -11,11 +12,10 @@ class CapsProdWizardView(SessionWizardView):
 
 
     def get_form_initial(self, step):
-        # if self.kwargs:
-        #     print(5)
-        #     return self.initial_dict.get(step, {})
         print(6)
         initial = self.initial_dict.get(step, {})
+        # if step == '0':
+        #     initial.update({'production': self.kwargs['pk']})
         if step == '1':
             data = self.get_cleaned_data_for_step('0')
             required_amount_of_tabs = data['amount_of_caps']*data['conc_per_cap'] / data['conc_per_tab']
@@ -43,6 +43,7 @@ class CapsProdWizardView(SessionWizardView):
 
     def get_context_data(self, form, **kwargs):
         context = super().get_context_data(form=form, **kwargs)
+        print(context)
         print(1)
         if self.steps.current == '1':
             data = self.get_cleaned_data_for_step('0')
@@ -76,7 +77,18 @@ class CapsProdWizardView(SessionWizardView):
         for form in form_list:
             self.instance = construct_instance(form, self.instance, form._meta.fields, form._meta.exclude)
         self.instance.save()
-        return redirect("productions:list")
+        return redirect("productions:detail", pk=self.instance.pk)
+
+class CapsProdDetailView(DetailView):
+    model = CapsProd
+    template_name = 'caps_prod/detail.html'
+
+class CapsProdDeleteView(DeleteView):
+    model = CapsProd
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        print(pk)
+        return reverse_lazy("productions:detail", kwargs={'pk':pk})
     #
     # def get_template_names(self):
     #     """

@@ -13,7 +13,6 @@
         <th scope="col">Lot nr</th>
         <th scope="col">Name of production</th>
         <th scope="col">Date of production</th>
-        <th scope="col">Test result</th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +21,6 @@
         <td> {{ production.lot_nr }} </td>
         <td>{{ production.name }}</td>
         <td>{{ production.calc_date }}</td>
-        <td>to be implemented soon</td>
         <td><a class="btn btn-primary" href="{% url 'productions:detail' pk=production.pk %}">Show</a></td>
       </tr>
     {% endfor %}

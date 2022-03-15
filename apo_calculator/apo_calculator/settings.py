@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'capsules',
     'suppositories',
     'caps_prod',
+    'caps_mass_balance',
 ]
 
 MIDDLEWARE = [

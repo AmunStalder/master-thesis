@@ -8,3 +8,7 @@
     background-color: #eee;
     padding: 10%;
 }
+
+.myborder{
+  border: solid 4px black; 
+}

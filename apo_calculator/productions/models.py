@@ -26,3 +26,6 @@ class Productions(models.Model):
             upon successful filling in the form
         '''
         return reverse("productions:detail", kwargs={'pk':self.pk})
+
+    class Meta:
+        ordering = ['-calc_date']
