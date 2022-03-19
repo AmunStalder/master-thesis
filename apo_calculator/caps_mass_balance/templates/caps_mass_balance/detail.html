@@ -1,9 +1,36 @@
 {% extends "base.html" %}
 {% block body_block %}
-  <h1>{{ production.name }} (LotNr: {{ production.lot_nr }})</h1>
-  <p>Mass of powder mix: {{ production.capsprod.mass_required_volume }}</p>
-  <p>Mean content of {{ production.uniformity.mean }} multiplied by {{ production.capsprod.amount_of_caps }} caps = {{ calculated_mass_powder_mix }}</p>
-  <p>Absolute mass balance: {{ absolute_mass_balance }}g </p>
-  <p>Relative mass balance: {{ relative_mass_balance }}</p>
-  <p>Result: {{ mass_balance_release_note }}</p>
+<h1> Mass balance for {{ production.name }} (LotNr: {{ production.lot_nr }})</h1>
+<p>{{ production.capsprodcalc_date }}</p>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Input data</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Mass of powder mix:</th>
+        <td>{{ production.capsprod.mass_required_volume }}g</td>
+      </tr>
+      <tr>
+        <th scope="row">Difference in grams</th>
+        <td>{{ absolute_mass_balance|floatformat:4 }}g</td>
+      </tr>
+      <tr>
+        <th scope="row">Difference in %</th>
+        <td> {% widthratio relative_mass_balance 1 100 %}%</td>
+      </tr>
+      <tr>
+        <th scope="row">RESULT:</th>
+        {% if mass_balance_release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <a class="btn btn-primary" href="{% url 'productions:detail' pk=production.pk %}">Go back</a>
+</p>
 {% endblock %}

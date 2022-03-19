@@ -20,9 +20,9 @@ class CapsMassBalanceView(DetailView):
         relative_mass_balance = absolute_mass_balance / obj.capsprod.mass_required_volume
         mass_balance_release_note = ""
         if relative_mass_balance <= 0.1 and relative_mass_balance >= -0.1:
-            mass_balance_release_note = "passed"
+            mass_balance_release_note = True
         else:
-            mass_balance_release_note = "not passed"
+            mass_balance_release_note = False
         context["calculated_mass_powder_mix"] = calculated_mass_powder_mix
         context["absolute_mass_balance"] = absolute_mass_balance
         context["relative_mass_balance"] = relative_mass_balance

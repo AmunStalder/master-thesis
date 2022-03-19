@@ -49,10 +49,10 @@ class UniformityCalculator:
             elif (mass > self.plus_1_diff and mass <= self.plus_2_diff) or (mass < self.minus_1_diff and mass >= self.minus_2_diff):
                 self.counter_above_1_diff += 1
         if self.counter_above_2_diff == 0 and self.counter_above_1_diff <= 2:
-            self.text = "Uniformity of mass passed"
+            self.result = True
         else:
-            self.text = "Uniformity of mass not passed"
-        return self.text
+            self.result = False
+        return self.result
         # return self
 
     def get_graph(self):

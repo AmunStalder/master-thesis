@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<!--
 <head>
   <style>
     th {text-align: left;}
+    .abstand {padding-left: 20px;}
+    .center {text-align: center;}
   </style>
 </head>
-  <body>
-    <table class="table">
+<body>
+{% if production.capsprod %}
+<h1 class="center">Production calculation for {{production.name}}, LotNr: {{ production.lot_nr }}</h1>
+<div class="container">
+  <div class="row">
+    <table class="abstand">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Input data</th>
@@ -17,56 +22,145 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Mass one caps empty</th>
-          <td>{{ caps_detail.mass_1_caps_empty }}</td>
-          <th scope="row"> + {{ caps_detail.diff_x2 }} % </th>
-          <td> {{ caps_detail.plus_2_diff }} </td>
+          <th scope="row">Amount of caps</th>
+          <td>{{ production.capsprod.amount_of_caps }}</td>
+          <th scope="row"> Required amount of tablets</th>
+          <td> {{ production.capsprod.required_amount_of_tabs }} </td>
         </tr>
         <tr>
-          <th scope="row">Mass 20 caps full</th>
-          <td>{{ caps_detail.mass_20_caps_full }}</td>
-          <th scope="row"> + {{ caps_detail.diff }} % </th>
-          <td> {{ caps_detail.plus_1_diff }} </td>
+          <th scope="row">Concentration per cap</th>
+          <td>{{ production.capsprod.conc_per_cap }}</td>
+          <th scope="row"> Required mass of tablet powder</th>
+          <td> {{ production.capsprod.required_mass_powder }} </td>
         </tr>
         <tr>
-          <th scope="row">Mass max1</th>
-          <td>{{ caps_detail.mass_max1 }}</td>
-          <th scope="row">Mean content</th>
-          <td> {{ caps_detail.mean }} </td>
+          <th scope="row">Concentration per tablet</th>
+          <td>{{ production.capsprod.conc_per_tab }}</td>
+          <th scope="row">Required volume</th>
+          <td> {{ production.capsprod.required_volume }} </td>
         </tr>
         <tr>
-          <th scope="row">Mass max2</th>
-          <td>{{ caps_detail.mass_max2 }}</td>
-          <th scope="row"> - {{ caps_detail.diff }} % </th>
-          <td> {{ caps_detail.minus_1_diff }} </td>
+          <th scope="row">Amount of weighed tabs</th>
+          <td>{{ production.capsprod.amount_of_weighed_tabs }}</td>
         </tr>
         <tr>
-          <th scope="row">Mass max3</th>
-          <td>{{ caps_detail.mass_max3 }}</td>
-          <th scope="row"> - {{ caps_detail.diff_x2 }} % </th>
-          <td> {{ caps_detail.minus_2_diff }} </td>
+          <th scope="row">Mass of weighed tabs</th>
+          <td>{{ production.capsprod.mass_all_tabs }}</td>
         </tr>
         <tr>
-          <th scope="row">Mass min1</th>
-          <td>{{ caps_detail.mass_min1 }}</td>
-          <th scope="row"> # of caps over +/- {{ caps_detail.diff_x2 }} %:</th>
-          <td> {{ caps_detail.counter_above_2_diff }} </td>
+          <th scope="row">Weighed mass powder</th>
+          <td>{{ production.capsprod.weighed_mass_powder }}</td>
         </tr>
         <tr>
-          <th scope="row">Mass min2</th>
-          <td>{{ caps_detail.mass_min2 }}</td>
-          <th scope="row"> # of caps over +/- {{ caps_detail.diff }} %:</th>
-          <td> {{ caps_detail.counter_above_1_diff }} </td>
+          <th scope="row">Caps size</th>
+          <td>{{ production.capsprod.get_caps_size_display }}</td>
         </tr>
         <tr>
-          <th scope="row">Mass min3</th>
-          <td>{{ caps_detail.mass_min3 }}</td>
-          <th scope="row">Uniformity ok?</th>
-          <td> {{ caps_detail.release_note }} </td>
+          <th scope="row">Mass for required volume</th>
+          <td>{{ production.capsprod.mass_required_volume }}</td>
         </tr>
       </tbody>
     </table>
-      {% if caps_detail.uniformity_plot %}
-        <img src="data:image/png;base64, {{caps_detail.uniformity_plot|safe}}">
-      {% endif %}
-  </body> -->
+  </div>
+</div>
+{% endif %}
+{% if production.uniformity %}
+<h1 class="center">Uniformity of mass for {{production.name}}, LotNr: {{ production.lot_nr }}</h1>
+<div class="border">
+  <table class="abstand">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Input data</th>
+      <th scope="col">Value</th>
+      <th scope="col">Calculated data</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mass one caps empty</th>
+      <td>{{ production.uniformity.mass_1_caps_empty }}</td>
+      <th scope="row"> + {{ production.uniformity.diff_x2 }} % </th>
+      <td> {{ production.uniformity.plus_2_diff }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Mass 20 caps full</th>
+      <td>{{ production.uniformity.mass_20_caps_full }}</td>
+      <th scope="row"> + {{ production.uniformity.diff }} % </th>
+      <td> {{ production.uniformity.plus_1_diff }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Mass max1</th>
+      <td>{{ production.uniformity.mass_max1 }}</td>
+      <th scope="row">Mean content</th>
+      <td> {{ production.uniformity.mean }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Mass max2</th>
+      <td>{{ production.uniformity.mass_max2 }}</td>
+      <th scope="row"> - {{ production.uniformity.diff }} % </th>
+      <td> {{ production.uniformity.minus_1_diff }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Mass max3</th>
+      <td>{{ production.uniformity.mass_max3 }}</td>
+      <th scope="row"> - {{ production.uniformity.diff_x2 }} % </th>
+      <td> {{ production.uniformity.minus_2_diff }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Mass min1</th>
+      <td>{{ production.uniformity.mass_min1 }}</td>
+      <th scope="row"> # of caps over +/- {{ production.uniformity.diff_x2 }} %:</th>
+      <td> {{ production.uniformity.counter_above_2_diff }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Mass min2</th>
+      <td>{{ production.uniformity.mass_min2 }}</td>
+      <th scope="row"> # of caps over +/- {{ production.uniformity.diff }} %:</th>
+      <td> {{ production.uniformity.counter_above_1_diff }} </td>
+    </tr>
+    <tr>
+      <th scope="row">Mass min3</th>
+      <td>{{ production.uniformity.mass_min3 }}</td>
+      <th scope="row">TEST RESULT:</th>
+      {% if production.uniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+    </tr>
+  </tbody>
+</table>
+{% if production.uniformity.uniformity_plot %}
+  <img src="data:image/png;base64, {{production.uniformity.uniformity_plot|safe}}">
+{% endif %}
+</div>
+    {% endif %}
+    {% if production.capsprod and production.uniformity %}
+    <h1 class="center">Production calculation for {{production.name}}, LotNr: {{ production.lot_nr }}</h1>
+    <div class="container, border">
+      <table class="">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Input data</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Mass of powder mix:</th>
+            <td>{{ production.capsprod.mass_required_volume }}g</td>
+          </tr>
+          <tr>
+            <th scope="row">Difference in grams</th>
+            <td>{{ absolute_mass_balance }}g</td>
+          </tr>
+          <tr>
+            <th scope="row">Difference in %</th>
+            <td>{{ relative_mass_balance }}</td>
+          </tr>
+          <tr>
+            <th scope="row">RESULT:</th>
+            {% if mass_balance_release_note %} <td style='color:green;'>PASSED</td> {% else %}<td style='color:red;'>FAILED</td>{% endif %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+</body>

@@ -1,6 +1,5 @@
-from django.views.generic import TemplateView
 from .forms import UniformityForm
-from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from django.http import HttpResponse, FileResponse
 from . import models
 from django.urls import reverse_lazy

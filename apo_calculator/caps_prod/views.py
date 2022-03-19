@@ -70,6 +70,9 @@ class CapsProdWizardView(SessionWizardView):
             data['required_volume'] = required_volume
             context.update(data)
             print(4)
+
+        if self.steps.current == -1:
+            assert()
         return context
 
     def done(self, form_list, **kwargs):

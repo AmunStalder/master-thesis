@@ -30,7 +30,7 @@
     {% if production.uniformity and production.capsprod %}
       <tr>
         <th scope="row"> Mass balance</th>
-        <td>{{ mass_balance_release_note }}</td>
+        {% if mass_balance_release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
         <td><a class="btn btn-primary" href="{% url 'caps_mass_balance:detail' pk=production.pk %}">Show</a></td>
       </tr>
     {% endif %}
@@ -80,5 +80,6 @@
     <p>
       <a class="btn btn-warning" href="{% url 'productions:update' pk=production.pk %}">Edit Name/LotNr<a>
       <a class="btn btn-danger" href="{% url 'productions:delete' pk=production.pk %}">Delete production</a>
+      <a class="btn btn-primary" href="{% url 'productions:pdf' pk=production.pk %}">Generate PDF</a>
     </p>
 {% endblock %}

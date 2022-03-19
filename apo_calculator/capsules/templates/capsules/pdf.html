@@ -66,8 +66,8 @@
         <tr>
           <th scope="row">Mass min3</th>
           <td>{{ caps_detail.mass_min3 }}</td>
-          <th scope="row">Uniformity ok?</th>
-          <td> {{ caps_detail.release_note }} </td>
+          <th scope="row">TEST RESULT:</th>
+          {% if caps_detail.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
         </tr>
       </tbody>
     </table>

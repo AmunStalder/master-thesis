@@ -3,6 +3,7 @@ from django.views.generic import TemplateView, FormView, ListView, DetailView, C
 from django.http import HttpResponse, FileResponse
 from . import models
 from django.urls import reverse_lazy
+from .utils import render_to_pdf
 # from .utils import render_to_pdf
 #Import the easy_pdf rendering
 
@@ -34,29 +35,28 @@ class ProductionDetailView(DetailView):
             relative_mass_balance = absolute_mass_balance / obj.capsprod.mass_required_volume
             mass_balance_release_note = ""
             if relative_mass_balance <= 0.1 and relative_mass_balance >= -0.1:
-                mass_balance_release_note = "passed"
+                mass_balance_release_note = True
             else:
-                mass_balance_release_note = "not passed"
+                mass_balance_release_note = False
             context["calculated_mass_powder_mix"] = calculated_mass_powder_mix
             context["absolute_mass_balance"] = absolute_mass_balance
             context["relative_mass_balance"] = relative_mass_balance
             context["mass_balance_release_note"] = mass_balance_release_note
         return context
 
-# class CapsUnifPdfView(DetailView):
-#     context_object_name = 'caps_detail'
-#     model = models.Uniformity
-#     template_name = 'capsules/pdf.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(CapsUnifPdfView, self).get_context_data(**kwargs)
-#         # add extra context if needed
-#         return context
-#
-#     def render_to_response(self, context, **kwargs):
-#         pdf = render_to_pdf(self.template_name, context)
-#         return HttpResponse(pdf, content_type='application/pdf')
-#
+class CapsPdfView(DetailView):
+    context_object_name = 'production'
+    model = models.Productions
+    template_name = 'productions/pdf.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CapsPdfView, self).get_context_data(**kwargs)
+        # add extra context if needed
+        return context
+
+    def render_to_response(self, context, **kwargs):
+        pdf = render_to_pdf(self.template_name, context)
+        return HttpResponse(pdf, content_type='application/pdf')
 
 
 class ProductionCreateView(CreateView):
