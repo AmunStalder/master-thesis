@@ -18,7 +18,7 @@ class CapsProdWizardView(SessionWizardView):
         #     initial.update({'production': self.kwargs['pk']})
         if step == '1':
             data = self.get_cleaned_data_for_step('0')
-            required_amount_of_tabs = data['amount_of_caps']*data['conc_per_cap'] / data['conc_per_tab']
+            required_amount_of_tabs = round(data['amount_of_caps']*data['conc_per_cap'] / data['conc_per_tab'],4)
             initial.update({'required_amount_of_tabs': required_amount_of_tabs})
             print(7)
         if step == '3':
@@ -48,7 +48,7 @@ class CapsProdWizardView(SessionWizardView):
         if self.steps.current == '1':
             data = self.get_cleaned_data_for_step('0')
             total_amount = data['amount_of_caps']*data['conc_per_cap']
-            needed_amount_of_tabs = round(total_amount / data['conc_per_tab'],2)
+            needed_amount_of_tabs = round(total_amount / data['conc_per_tab'],4)
             suggested_amount_of_tabs = math.ceil(needed_amount_of_tabs * 1.1)
             data['total_amount'] = total_amount
             data['needed_amount_of_tabs'] = needed_amount_of_tabs
@@ -59,7 +59,7 @@ class CapsProdWizardView(SessionWizardView):
             data1 = self.get_cleaned_data_for_step('0')
             data2 = self.get_cleaned_data_for_step('1')
             needed_amount_of_tabs = data1['amount_of_caps']*data1['conc_per_cap'] / data1['conc_per_tab']
-            required_mass_powder = needed_amount_of_tabs * data2['mass_all_tabs'] / data2['amount_of_weighed_tabs']
+            required_mass_powder = round( needed_amount_of_tabs * data2['mass_all_tabs'] / data2['amount_of_weighed_tabs'],4)
             data2['required_mass_powder'] = required_mass_powder
             context.update(data1)
             context.update(data2)
@@ -70,9 +70,6 @@ class CapsProdWizardView(SessionWizardView):
             data['required_volume'] = required_volume
             context.update(data)
             print(4)
-
-        if self.steps.current == -1:
-            assert()
         return context
 
     def done(self, form_list, **kwargs):

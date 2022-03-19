@@ -6,17 +6,19 @@
       Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
   </h1>
   {% if wizard.steps.step1 == 2 %}
-    <p>For {{ amount_of_caps }} capsules à {{ conc_per_cap }}mg, a total of {{ total_amount }}mg is needen. Using tablets à {{ conc_per_tab }}mg, {{ needed_amount_of_tabs }} tablets are needed. With an excess of 10%, the suggested amount of tablets is <b>{{ suggested_amount_of_tabs }}</b>. </p>
+    <p>For {{ amount_of_caps }} capsules à {{ conc_per_cap }}mg, a total of {{ total_amount }}mg is needen. Using tablets à {{ conc_per_tab }}mg, {{ needed_amount_of_tabs }} tablets are needed. With an excess of 10%, the suggested amount of tablets for mortaring is about <b>{{ suggested_amount_of_tabs }}</b>pc. * </p>
   {% endif %}
   {% if wizard.steps.step1 == 3 %}
-    <p> {{ amount_of_weighed_tabs }} weighed tabs have a mass of {{ mass_all_tabs }}. For the required {{ needed_amount_of_tabs }} tabs, <b>{{ required_mass_powder }} g </b>  are needed.</p>
+    <p> {{ amount_of_weighed_tabs }} weighed tablets have a mass of {{ mass_all_tabs }} mg. These tablets are now mortared to generate the tabletpowder. For the required {{ needed_amount_of_tabs }} tabs, <b>{{ required_mass_powder }} mg </b> * are needed for the production of the powdermix.</p>
+  {% endif %}
+  {% if wizard.steps.step1 == 4 %}
+    <p> Dilute the weighed amount of tablet powder ana partes aquales up to about 50% of final mass. Then, use the sandwich method to fill the measuring cylinder up to the required volume for the powdermix.</p>
   {% endif %}
   <form class="custom-form" method="post">
     {% csrf_token %}
-      <!-- {% bootstrap_form form %} -->
       {{ wizard.management_form }}
       {% if wizard.form.forms %}
-        {{wizard.form.management_form }}
+        {{ wizard.form.management_form }}
         {% for form in wizard.form.forms %}
           {% bootstrap_form form %}
         {% endfor %}
