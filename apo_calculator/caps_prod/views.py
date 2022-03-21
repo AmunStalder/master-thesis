@@ -10,7 +10,6 @@ class CapsProdWizardView(SessionWizardView):
     template_name = "caps_prod/prod_form.html"
     instance = None
 
-
     def get_form_initial(self, step):
         print(6)
         initial = self.initial_dict.get(step, {})

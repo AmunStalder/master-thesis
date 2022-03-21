@@ -4,6 +4,7 @@ from django.http import HttpResponse, FileResponse
 from . import models
 from django.urls import reverse_lazy
 from .utils import render_to_pdf
+from .forms import UniformityForm
 #Import the easy_pdf rendering
 
 # Create your views here.
@@ -37,39 +38,17 @@ class CapsUnifPdfView(DetailView):
         pdf = render_to_pdf(self.template_name, context)
         return HttpResponse(pdf, content_type='application/pdf')
 
-
-
 class CapsUnifCreateView(CreateView):
     template_name = 'capsules/uniformity_form.html'
     model = models.Uniformity
-    fields = (
-        'production',
-        'mass_1_caps_empty',
-        'mass_20_caps_full',
-        'mass_max1',
-        'mass_max2',
-        'mass_max3',
-        'mass_min1',
-        'mass_min2',
-        'mass_min3',
-    )
+    form_class = UniformityForm
 
 class CapsUnifUpdateView(UpdateView):
     model = models.Uniformity
-    fields = (
-        'production',
-        'mass_1_caps_empty',
-        'mass_20_caps_full',
-        'mass_max1',
-        'mass_max2',
-        'mass_max3',
-        'mass_min1',
-        'mass_min2',
-        'mass_min3',
-    )
-
+    form_class = UniformityForm
 
 class CapsUnifDeleteView(DeleteView):
     context_object_name = 'uniformity'
     model = models.Uniformity
-    success_url = reverse_lazy("capsules:list")
+
+    success_url = reverse_lazy("productions:list" )
