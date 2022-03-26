@@ -1,5 +1,6 @@
 from django import forms
 from .models import Uniformity
+from productions.models import Productions
 
 class UniformityForm(forms.ModelForm):
     class Meta:
@@ -17,6 +18,9 @@ class UniformityForm(forms.ModelForm):
         ]
     def __init__(self, *args, **kwargs):
         super(UniformityForm, self).__init__(*args, **kwargs)
+        # Select only capsules
+        self.fields['production'].queryset = Productions.objects.filter(galenical_form='capsules')
+        # Change labels and placeholders
         self.fields['mass_1_caps_empty'].label = 'Mass of 1 empty capsule [mg]'
         self.fields['mass_1_caps_empty'].widget.attrs['placeholder'] = 'Enter mass'
         self.fields['mass_20_caps_full'].label = 'Mass of 20 filled capsules [mg]'
@@ -31,5 +35,5 @@ class UniformityForm(forms.ModelForm):
         self.fields['mass_min1'].widget.attrs['placeholder'] = 'Enter mass'
         self.fields['mass_min2'].label = 'Mass of second lightest capsule [mg]'
         self.fields['mass_min2'].widget.attrs['placeholder'] = 'Enter mass'
-        self.fields['mass_min3'].label = 'Mass of third lightest capsule [m]'
+        self.fields['mass_min3'].label = 'Mass of third lightest capsule [mg]'
         self.fields['mass_min3'].widget.attrs['placeholder'] = 'Enter mass'

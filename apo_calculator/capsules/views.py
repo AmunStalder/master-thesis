@@ -3,7 +3,7 @@ from django.views.generic import FormView, ListView, DetailView, CreateView, Upd
 from django.http import HttpResponse, FileResponse
 from . import models
 from django.urls import reverse_lazy
-from .utils import render_to_pdf
+from apo_calculator.utils import render_to_pdf
 from .forms import UniformityForm
 #Import the easy_pdf rendering
 

@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block body_block %}
+  <h1>{{ suppos_uniformity.production.name }} (LotNr: {{ suppos_uniformity.production.lot_nr }})</h1>
+  <p>{{ suppos_uniformity.calc_date }}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Input data</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Mass of 10 suppositories [g]</th>
+              <td>{{ suppos_uniformity.mass_10_suppos }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass of heaviest suppository [g]</th>
+              <td>{{ suppos_uniformity.mass_max1 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass of second heaviest suppository [g]</th>
+              <td>{{ suppos_uniformity.mass_max2 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass of third heaviest suppository [g]</th>
+              <td>{{ suppos_uniformity.mass_max3 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass of lightest suppository [g]</th>
+              <td>{{ suppos_uniformity.mass_min1 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass of second lightest suppository [g]</th>
+              <td>{{ suppos_uniformity.mass_min2 }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Mass of third lightest suppository [g]</th>
+              <td>{{ suppos_uniformity.mass_min3 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Calculated data</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"> + {{ suppos_uniformity.diff_x2 }} % </th>
+              <td> {{ suppos_uniformity.plus_2_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> + {{ suppos_uniformity.diff }} % </th>
+              <td> {{ suppos_uniformity.plus_1_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row">Mean content</th>
+              <td> {{ suppos_uniformity.mean }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> - {{ suppos_uniformity.diff }} % </th>
+              <td> {{ suppos_uniformity.minus_1_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> - {{ suppos_uniformity.diff_x2 }} % </th>
+              <td> {{ suppos_uniformity.minus_2_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> # of caps over +/- {{ suppos_uniformity.diff_x2 }} %:</th>
+              <td> {{ suppos_uniformity.counter_above_2_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> # of caps over +/- {{ suppos_uniformity.diff }} %:</th>
+              <td> {{ suppos_uniformity.counter_above_1_diff }} </td>
+            </tr>
+            <tr>
+              <th scope="row">TEST RESULT:</th>
+              {% if suppos_uniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% if suppos_uniformity.uniformity_plot %}
+      <img class="img-fluid" src="data:image/png;base64, {{suppos_uniformity.uniformity_plot|safe}}">
+    {% endif %}
+  <p>
+    <a class="btn btn-warning" href="{% url 'suppositories:update' pk=suppos_uniformity.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'suppositories:delete' pk=suppos_uniformity.pk %}">Delete</a>
+    <a class="btn btn-primary" href="{% url 'suppositories:pdf' pk=suppos_uniformity.pk %}">Generate PDF</a>
+  </p>
+{% endblock %}

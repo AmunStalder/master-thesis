@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import datetime
-from .calculator import UniformityCalculator
+from apo_calculator.utils import UniformityCalculator
 from productions.models import Productions
 # Create your models here.
 
@@ -9,13 +9,13 @@ class Uniformity(models.Model):
     production            = models.OneToOneField(Productions, on_delete=models.CASCADE, primary_key=True)
     calc_date             = models.DateTimeField(default=datetime.now, blank=True, )
     mass_1_caps_empty     = models.FloatField()
-    mass_20_caps_full     = models.FloatField(verbose_name= ('Mass of 20 filled capsules [mg]')) #verbose_name= ('Mass of 20 filled capsules [mg]')
-    mass_max1             = models.FloatField() #verbose_name= ('Mass of heaviest capsule [mg]')
-    mass_max2             = models.FloatField() #verbose_name= ('Mass of second heaviest capsule [mg]')
-    mass_max3             = models.FloatField() #erbose_name= ('Mass of third heaviest capsule [mg]')
-    mass_min1             = models.FloatField() #verbose_name= ('Mass of lightest capsule [mg]')
-    mass_min2             = models.FloatField() #verbose_name= ('Mass of second lightest capsule [mg]')
-    mass_min3             = models.FloatField() #verbose_name= ('Mass of third lightest capsule [mg]')
+    mass_20_caps_full     = models.FloatField()
+    mass_max1             = models.FloatField()
+    mass_max2             = models.FloatField()
+    mass_max3             = models.FloatField()
+    mass_min1             = models.FloatField()
+    mass_min2             = models.FloatField()
+    mass_min3             = models.FloatField()
     diff                  = models.FloatField()
     diff_x2               = models.FloatField()
     mean                  = models.FloatField()
@@ -65,19 +65,3 @@ class Uniformity(models.Model):
 
     def __str__(self):
         return '{}'.format(self.production.name)
-    # @property
-    # def results(self):
-    #     self.calc = UniformityCalculator(
-    #         gal_form="caps",
-    #         total_mass=self.mass_20_caps_full,
-    #         mass_1_caps_empty=self.mass_1_caps_empty,
-    #         mass_max1=self.mass_max1,
-    #         mass_max2=self.mass_max2,
-    #         mass_max3=self.mass_max3,
-    #         mass_min2=self.mass_min2,
-    #         mass_min1=self.mass_min1,
-    #         mass_min3=self.mass_min3,
-    #     )
-    #     print(self.calc)
-    #     print("object created")
-    #     return self.calc
