@@ -1,5 +1,6 @@
 from django import forms
 from .models import CapsProd
+from productions.models import Productions
 
 class CapsProdForm1(forms.ModelForm):
     class Meta:
@@ -13,6 +14,8 @@ class CapsProdForm1(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(CapsProdForm1, self).__init__(*args, **kwargs)
         self.fields['production'].label = 'Production'
+        self.fields['production'].queryset = Productions.objects.filter(galenical_form='capsules')
+        self.fields['production'].disabled = True
         self.fields['amount_of_caps'].label = 'Amount of capsules [pc.]'
         self.fields['amount_of_caps'].widget.attrs['placeholder'] = 'Enter amount of capsules to produce'
         self.fields['conc_per_cap'].label = 'Concentration per capsule [mg]'

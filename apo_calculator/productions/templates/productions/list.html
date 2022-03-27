@@ -12,6 +12,7 @@
       <tr>
         <th scope="col">Lot nr</th>
         <th scope="col">Name of production</th>
+        <th scope="col"> Galenical form</th>
         <th scope="col">Date of production</th>
       </tr>
     </thead>
@@ -20,6 +21,7 @@
       <tr>
         <td> {{ production.lot_nr }} </td>
         <td>{{ production.name }}</td>
+        <td> {{ production.get_galenical_form_display }}</td>
         <td>{{ production.calc_date }}</td>
         <td><a class="btn btn-primary" href="{% url 'productions:detail' pk=production.pk %}">Show</a></td>
       </tr>

@@ -46,7 +46,7 @@
           <div class="card-body">
             <h5 class="card-title">Add Production calculation</h5>
               <p class="card-text">Create capsules from tablets, with and without coating. You also have the option to produce from pure active ingredient.</p>
-              <a class="btn btn-primary" href="{% url 'caps_prod:add_new'%}" role="button">Add</a>
+              <a class="btn btn-primary" href="{% url 'caps_prod:add_new' pk=production.pk%}" role="button">Add</a>
           </div>
         </div>
       {% endif %}

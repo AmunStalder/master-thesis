@@ -31,7 +31,7 @@ from productions.models import Productions
 #         return '{}'.format(self.production.name)
 
 class SupposDisplacementValue(models.Model):
-    substance        = models.CharField(max_length=64, unique=True,)
+    substance       = models.CharField(max_length=64, unique=True,)
     value           = models.FloatField()
 
     def __str__(self):

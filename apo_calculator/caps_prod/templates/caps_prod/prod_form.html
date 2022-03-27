@@ -2,6 +2,7 @@
 {% load django_bootstrap5 %}
 {% load i18n %}
 {% block body_block %}
+
   <h1>
       Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
   </h1>
@@ -31,6 +32,11 @@
       <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Previous step" %}</button>
       <!-- <button type="submit" class="btn btn-primary" value="{{ wizard.steps.prev }}">Previous step</button> -->
       {% endif %}
-      <input type="submit" value="Submit">
+      {% if wizard.steps.step1 == 4 %}
+        <input type="submit"  value="Submit">
+      {% else %}
+        <input type="submit" value="Next">
+      {% endif %}
+
   </form>
 {% endblock %}
