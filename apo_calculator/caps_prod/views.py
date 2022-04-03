@@ -28,8 +28,11 @@ class CapsProdWizardView(SessionWizardView):
         return initial
 
     def get_form_instance(self, step):
+        #if instance already exists (for update)
         try:
             self.instance = CapsProd.objects.get(pk=self.kwargs['pk'])
+        #for new calculation make new instance and prefill with production
+        #that was given by kwargs (pk=production.pk)
         except:
             self.instance = CapsProd()
             self.instance.production = Productions.objects.get(pk=self.kwargs['pk'])
@@ -66,7 +69,6 @@ class CapsProdWizardView(SessionWizardView):
         return context
 
     def done(self, form_list, **kwargs):
-
         for form in form_list:
             self.instance = construct_instance(form, self.instance, form._meta.fields, form._meta.exclude)
         self.instance.save()

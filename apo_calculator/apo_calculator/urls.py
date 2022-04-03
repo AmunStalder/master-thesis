@@ -38,4 +38,5 @@ urlpatterns = [
     path('caps_mass_balance/', include('caps_mass_balance.urls', namespace = 'caps_mass_balance')),
     #for Suppositories
     path('suppositories/', include('suppositories.urls', namespace = 'suppositories')),
+    path('suppos_prod/', include('suppos_prod.urls', namespace = 'suppos_prod')),
 ]

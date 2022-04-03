@@ -14,7 +14,7 @@
     <tr>
       <th scope="row"> Production calculation</th>
       <td>Add Result of production calculation</td>
-      <td><a class="btn btn-primary" href="#">Show</a></td>
+      <td><a class="btn btn-primary" href="{% url 'suppos_prod:detail' pk=production.supposprod.pk %}">Show</a></td>
       <!--  add url template tag to supposprod add new-->
     </tr>
     {% endif %}
@@ -46,7 +46,7 @@
           <div class="card-body">
             <h5 class="card-title">Add Production calculation</h5>
               <p class="card-text">Create suppositories using the "Verdrängungsfaktormethode".</p>
-              <a class="btn btn-primary" href="#" role="button">Add</a>
+              <a class="btn btn-primary" href="{% url 'suppos_prod:add_new' pk=production.pk%}" role="button">Add</a>
               <!-- add url template toag to supposprod add new -->
           </div>
         </div>

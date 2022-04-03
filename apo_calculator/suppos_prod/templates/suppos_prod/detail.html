@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block body_block %}
+  <h1>{{ supposprod.production.name }} (LotNr: {{ supposprod.production.lot_nr }})</h1>
+  <p>{{ supposprod.calc_date }}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Input data</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Active substance / displacement value</th>
+              <td>{{ supposprod.active_substance_1 }} / {{ supposprod.active_substance_1.value }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Amount of suppositories</th>
+              <td>{{ supposprod.amount_of_suppos }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Concentration per suppository</th>
+              <td>{{ supposprod.conc_per_suppo }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Calibration value of suppository mould</th>
+              <td>{{ supposprod.calibration_value }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Required mass of active substance</th>
+              <td>{{ supposprod.required_mass_active_substance }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Required mass of witepsol</th>
+              <td>{{ supposprod.required_mass_witepsol }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Weighed mass powder</th>
+              <td>{{ supposprod.weighed_mass_powder }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Calculated data</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"> Required amount of tablets</th>
+              <td> {{ supposprod.required_amount_of_tabs }} </td>
+            </tr>
+            <tr>
+              <th scope="row"> Required mass of tablet powder</th>
+              <td> {{ supposprod.required_mass_powder }} </td>
+            </tr>
+            <tr>
+              <th scope="row">Required volume</th>
+              <td> {{ supposprod.required_volume }} </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <p>
+    <a class="btn btn-warning" href="{% url 'suppos_prod:edit' pk=supposprod.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'suppos_prod:delete' pk=supposprod.pk %}">Delete</a>
+  </p>
+{% endblock %}
