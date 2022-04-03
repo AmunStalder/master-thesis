@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block body_block %}
-<h1> Mass balance for {{ production.name }} (LotNr: {{ production.lot_nr }})</h1>
-<p>{{ production.capsprodcalc_date }}</p>
-<div class="container">
-  <table class="table">
+<h1 class="center"> Mass balance for {{ productions.name }} (LotNr: {{ productions.lot_nr }})</h1>
+<p>{{ productions.capsprodcalc_date }}</p>
+<div class="container border">
+  <table class="table abstand">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Input data</th>
@@ -13,7 +13,7 @@
     <tbody>
       <tr>
         <th scope="row">Mass of powder mix:</th>
-        <td>{{ production.capsprod.mass_required_volume }}g</td>
+        <td>{{ productions.capsprod.mass_required_volume }}g</td>
       </tr>
       <tr>
         <th scope="row">Difference in grams</th>
@@ -31,6 +31,6 @@
   </table>
 </div>
 <p>
-  <a class="btn btn-primary" href="{% url 'productions:detail' pk=production.pk %}">Go back</a>
+  <a class="btn btn-primary" href="{% url 'productions:detail' pk=productions.pk %}">Go back</a>
 </p>
 {% endblock %}

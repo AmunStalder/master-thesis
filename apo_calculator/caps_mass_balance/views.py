@@ -6,7 +6,6 @@ from django.shortcuts import get_object_or_404
 # from .utils import render_to_pdf
 
 class CapsMassBalanceView(DetailView):
-    context_object_name = 'production'
     model = models.Productions
     template_name = 'caps_mass_balance/detail.html'
 

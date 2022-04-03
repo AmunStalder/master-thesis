@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-{% if production.supposuniformity or production.supposprod%}
+{% if productions.supposuniformity or productions.supposprod%}
 <table class="table ">
   <thead class="thead-dark">
     <tr>
@@ -10,26 +10,26 @@
   </thead>
 
   <tbody>
-    {% if production.supposprod %}
+    {% if productions.supposprod %}
     <tr>
       <th scope="row"> Production calculation</th>
-      <td>Add Result of production calculation</td>
-      <td><a class="btn btn-primary" href="{% url 'suppos_prod:detail' pk=production.supposprod.pk %}">Show</a></td>
+      <td>{{ productions.supposprod.required_mass_active_substance }} mg of active substance used for {{ productions.supposprod.amount_of_suppos }} suppositories. </td>
+      <td><a class="btn btn-primary" href="{% url 'suppos_prod:detail' pk=productions.supposprod.pk %}">Show</a></td>
       <!--  add url template tag to supposprod add new-->
     </tr>
     {% endif %}
-    {% if production.supposuniformity %}
+    {% if productions.supposuniformity %}
       <tr>
         <th scope="row"> Uniformity of mass</th>
-        {% if production.uniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'suppositories:detail' pk=production.supposuniformity.pk %}">Show</a></td>
+        {% if productions.supposuniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+        <td><a class="btn btn-primary" href="{% url 'suppositories:detail' pk=productions.supposuniformity.pk %}">Show</a></td>
       </tr>
     {% endif %}
-    {% if production.supposuniformity and production.supposprod %}
+    {% if productions.supposuniformity and productions.supposprod %}
       <tr>
         <th scope="row"> Mass balance</th>
         {% if mass_balance_release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'suppos_mass_balance:detail' pk=production.pk %}">Show</a></td>
+        <td><a class="btn btn-primary" href="{% url 'suppos_mass_balance:detail' pk=productions.supposmass_balance.pk %}">Show</a></td>
       </tr>
     {% endif %}
   </tbody>
@@ -40,28 +40,28 @@
 <hr class="featurette-divider">
 <div class="container text-center">
   <div class="row">
-      {% if not production.supposprod %}
+      {% if not productions.supposprod %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Prod.png' %}" height="150" width="150">
           <div class="card-body">
             <h5 class="card-title">Add Production calculation</h5>
               <p class="card-text">Create suppositories using the "Verdrängungsfaktormethode".</p>
-              <a class="btn btn-primary" href="{% url 'suppos_prod:add_new' pk=production.pk%}" role="button">Add</a>
+              <a class="btn btn-primary" href="{% url 'suppos_prod:add_new' pk=productions.pk%}" role="button">Add</a>
               <!-- add url template toag to supposprod add new -->
           </div>
         </div>
       {% endif %}
-      {% if not production.supposuniformity %}
+      {% if not productions.supposuniformity %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Gaussian.png' %}" height="150" width="150">
           <div class="card-body">
             <h5 class="card-title">Check uniformity of mass</h5>
               <p class="card-text">Check uniformity of mass according to the European Pharmacopoeia.</p>
-              <a class="btn btn-primary" href="{% url 'suppositories:uniformity' %}" role="button">Check</a>
+              <a class="btn btn-primary" href="{% url 'suppositories:uniformity' pk=productions.pk %}" role="button">Check</a>
           </div>
         </div>
       {% endif %}
-      {% if not production.supposprod or not production.supposuniformity %}
+      {% if not productions.supposprod or not productions.supposuniformity %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Mass_Balance.png' %}" height="150" width="150">
           <div class="card-body">
@@ -73,8 +73,3 @@
       {% endif %}
   </div>
 </div>
-<p>
-  <a class="btn btn-warning" href="{% url 'productions:update' pk=production.pk %}">Edit Name/LotNr<a>
-  <a class="btn btn-danger" href="{% url 'productions:delete' pk=production.pk %}">Delete production</a>
-  <a class="btn btn-primary" href="{% url 'productions:pdf' pk=production.pk %}">Generate PDF</a>
-</p>

@@ -1,80 +1,9 @@
 {% extends "base.html" %}
 {% block body_block %}
-  <h1>{{ capsprod.production.name }} (LotNr: {{ capsprod.production.lot_nr }})</h1>
-  <p>{{ capsprod.calc_date }}</p>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Input data</th>
-              <th scope="col">Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Amount of caps</th>
-              <td>{{ capsprod.amount_of_caps }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Concentration per cap</th>
-              <td>{{ capsprod.conc_per_cap }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Concentration per tablet</th>
-              <td>{{ capsprod.conc_per_tab }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Amount of weighed tabs</th>
-              <td>{{ capsprod.amount_of_weighed_tabs }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Mass of weighed tabs</th>
-              <td>{{ capsprod.mass_all_tabs }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Weighed mass powder</th>
-              <td>{{ capsprod.weighed_mass_powder }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Caps size</th>
-              <td>{{ capsprod.get_caps_size_display }}</td>
-            </tr>
-            <tr>
-              <th scope="row">Mass for required volume</th>
-              <td>{{ capsprod.mass_required_volume }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Calculated data</th>
-              <th scope="col">Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row"> Required amount of tablets</th>
-              <td> {{ capsprod.required_amount_of_tabs }} </td>
-            </tr>
-            <tr>
-              <th scope="row"> Required mass of tablet powder</th>
-              <td> {{ capsprod.required_mass_powder }} </td>
-            </tr>
-            <tr>
-              <th scope="row">Required volume</th>
-              <td> {{ capsprod.required_volume }} </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+
+{% include "caps_prod/_partials/detail.html" %}
   <p>
-    <a class="btn btn-warning" href="{% url 'caps_prod:edit' pk=capsprod.pk %}">Edit</a>
-    <a class="btn btn-danger" href="{% url 'caps_prod:delete' pk=capsprod.pk %}">Delete</a>
+    <a class="btn btn-warning" href="{% url 'caps_prod:edit' pk=productions.capsprod.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'caps_prod:delete' pk=productions.capsprod.pk %}">Delete</a>
   </p>
 {% endblock %}

@@ -21,27 +21,25 @@ class CapsUnifListView(ListView):
     template_name = 'capsules/list.html'
 
 class CapsUnifDetailView(DetailView):
-    context_object_name = 'caps_detail'
-    model = models.Uniformity
+    model = Productions
     template_name = 'capsules/detail.html'
 
-class CapsUnifPdfView(DetailView):
-    context_object_name = 'caps_detail'
-    model = models.Uniformity
-    template_name = 'capsules/pdf.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(CapsUnifPdfView, self).get_context_data(**kwargs)
-        # add extra context if needed
-        return context
-
-    def render_to_response(self, context, **kwargs):
-        pdf = render_to_pdf(self.template_name, context)
-        return HttpResponse(pdf, content_type='application/pdf')
+# class CapsUnifPdfView(DetailView):
+#     model = models.Uniformity
+#     template_name = 'capsules/pdf.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(CapsUnifPdfView, self).get_context_data(**kwargs)
+#         # add extra context if needed
+#         return context
+#
+#     def render_to_response(self, context, **kwargs):
+#         pdf = render_to_pdf(self.template_name, context)
+#         return HttpResponse(pdf, content_type='application/pdf')
 
 class CapsUnifCreateView(CreateView):
     template_name = 'capsules/uniformity_form.html'
-    model = models.Uniformity
+    model = Productions
     form_class = UniformityForm
     def get_initial(self):
         return { 'production': Productions.objects.get(pk=self.kwargs['pk']) }

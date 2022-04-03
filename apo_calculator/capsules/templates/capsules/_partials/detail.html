@@ -1,7 +1,7 @@
 
 
-<h1 class="center">Uniformity of mass for {{ caps_detail.production.name }} (LotNr: {{ caps_detail.production.lot_nr }})</h1>
-<p>{{ caps_detail.calc_date }}</p>
+<h1 class="center">Uniformity of mass for {{ productions.name }} (LotNr: {{ productions.lot_nr }})</h1>
+<p class="center">{{ productions.uniformity.calc_date }}</p>
 <div class="container border">
   <div class="row">
     <div class="col">
@@ -17,57 +17,58 @@
         <tbody>
           <tr>
             <th scope="row">Mass of 1 empty capsule [mg]</th>
-            <td>{{ caps_detail.mass_1_caps_empty }}</td>
-            <th scope="row"> + {{ caps_detail.diff_x2 }} % </th>
-            <td> {{ caps_detail.plus_2_diff }} </td>
+            <td>{{ productions.uniformity.mass_1_caps_empty }}</td>
+            <th scope="row"> + {{ productions.uniformity.diff_x2 }} % </th>
+            <td> {{ productions.uniformity.plus_2_diff }} </td>
           </tr>
           <tr>
             <th scope="row">Mass of 20 filled capsules [mg]</th>
-            <td>{{ caps_detail.mass_20_caps_full }}</td>
-            <th scope="row"> + {{ caps_detail.diff }} % </th>
-            <td> {{ caps_detail.plus_1_diff }} </td>
+            <td>{{ productions.uniformity.mass_20_caps_full }}</td>
+            <th scope="row"> + {{ productions.uniformity.diff }} % </th>
+            <td> {{ productions.uniformity.plus_1_diff }} </td>
           </tr>
           <tr>
             <th scope="row">Mass of heaviest capsule [mg]</th>
-            <td>{{ caps_detail.mass_max1 }}</td>
+            <td>{{ productions.uniformity.mass_max1 }}</td>
             <th scope="row">Mean content</th>
-            <td> {{ caps_detail.mean }} </td>
+            <td> {{ productions.uniformity.mean }} </td>
           </tr>
           <tr>
             <th scope="row">Mass of second heaviest capsule [mg]</th>
-            <td>{{ caps_detail.mass_max2 }}</td>
-            <th scope="row"> - {{ caps_detail.diff }} % </th>
-            <td> {{ caps_detail.minus_1_diff }} </td>
+            <td>{{ productions.uniformity.mass_max2 }}</td>
+            <th scope="row"> - {{ productions.uniformity.diff }} % </th>
+            <td> {{ productions.uniformity.minus_1_diff }} </td>
           </tr>
           <tr>
             <th scope="row">Mass of third heaviest capsule [mg]</th>
-            <td>{{ caps_detail.mass_max3 }}</td>
-            <th scope="row"> - {{ caps_detail.diff_x2 }} % </th>
-            <td> {{ caps_detail.minus_2_diff }} </td>
+            <td>{{ productions.uniformity.mass_max3 }}</td>
+            <th scope="row"> - {{ productions.uniformity.diff_x2 }} % </th>
+            <td> {{ productions.uniformity.minus_2_diff }} </td>
           </tr>
           <tr>
             <th scope="row">Mass of lightest capsule [mg]</th>
-            <td>{{ caps_detail.mass_min1 }}</td>
-            <th scope="row"> # of caps over +/- {{ caps_detail.diff_x2 }} %:</th>
-            <td> {{ caps_detail.counter_above_2_diff }} </td>
+            <td>{{ productions.uniformity.mass_min1 }}</td>
+            <th scope="row"> # of caps over +/- {{ productions.uniformity.diff_x2 }} %:</th>
+            <td> {{ productions.uniformity.counter_above_2_diff }} </td>
           </tr>
           <tr>
             <th scope="row">Mass of second lightest capsule [mg]</th>
-            <td>{{ caps_detail.mass_min2 }}</td>
-            <th scope="row"> # of caps over +/- {{ caps_detail.diff }} %:</th>
-            <td> {{ caps_detail.counter_above_1_diff }} </td>
+            <td>{{ productions.uniformity.mass_min2 }}</td>
+            <th scope="row"> # of caps over +/- {{ productions.uniformity.diff }} %:</th>
+            <td> {{ productions.uniformity.counter_above_1_diff }} </td>
           </tr>
           <tr>
             <th scope="row">Mass of third lightest capsule [mg]</th>
-            <td>{{ caps_detail.mass_min3 }}</td>
+            <td>{{ productions.uniformity.mass_min3 }}</td>
             <th scope="row">TEST RESULT:</th>
-            {% if caps_detail.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+            {% if productions.uniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-</div>
-  {% if caps_detail.uniformity_plot %}
-    <img class="img-fluid" src="data:image/png;base64, {{caps_detail.uniformity_plot|safe}}">
+
+  {% if productions.uniformity.uniformity_plot %}
+    <img class="img-fluid" src="data:image/png;base64, {{productions.uniformity.uniformity_plot|safe}}">
   {% endif %}
+</div>

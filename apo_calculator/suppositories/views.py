@@ -7,6 +7,7 @@ from django.http import HttpResponse, FileResponse
 from . import models
 from django.urls import reverse_lazy
 from apo_calculator.utils import render_to_pdf
+from productions.models import Productions
 # Create your views here.
 
 #View for Suppositories
@@ -14,14 +15,15 @@ class SuppositoriesFunctionsView(TemplateView):
     template_name = 'suppositories/functions.html'
 # Create your views here.
 class SupposUnifCreateView(CreateView):
-    context_object_name = 'suppos_uniformity'
     template_name = 'suppositories/supposuniformity_form.html'
-    model = models.SupposUniformity
+    model = Productions
     form_class = SupposUniformityForm
+    def get_initial(self):
+        return { 'production': Productions.objects.get(pk=self.kwargs['pk']) }
 
 class SupposUnifPdfView(DetailView):
     context_object_name = 'suppos_uniformity'
-    model = models.SupposUniformity
+    model = Productions
     template_name = 'suppositories/pdf.html'
 
     def get_context_data(self, **kwargs):

@@ -1,5 +1,5 @@
 {% load static %}
-{% if production.capsprod or production.uniformity %}
+{% if productions.capsprod or productions.uniformity %}
 <table class="table ">
   <thead class="thead-dark">
     <tr>
@@ -7,27 +7,26 @@
       <th scope="col">Result</th>
     </tr>
   </thead>
-
   <tbody>
-    {% if production.capsprod %}
+    {% if productions.capsprod %}
     <tr>
       <th scope="row"> Production calculation</th>
-      <td>{{ production.capsprod.mass_required_volume }}g of powder produced for {{ production.capsprod.amount_of_caps }} caps. </td>
-      <td><a class="btn btn-primary" href="{% url 'caps_prod:detail' pk=production.capsprod.pk %}">Show</a></td>
+      <td>{{ productions.capsprod.mass_required_volume }}g of powder produced for {{ productions.capsprod.amount_of_caps }} caps. </td>
+      <td><a class="btn btn-primary" href="{% url 'caps_prod:detail' pk=productions.capsprod.pk %}">Show</a></td>
     </tr>
     {% endif %}
-    {% if production.uniformity %}
+    {% if productions.uniformity %}
       <tr>
         <th scope="row"> Uniformity of mass</th>
-        {% if production.uniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=production.uniformity.pk %}">Show</a></td>
+        {% if productions.uniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+        <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=productions.uniformity.pk %}">Show</a></td>
       </tr>
     {% endif %}
-    {% if production.uniformity and production.capsprod %}
+    {% if productions.uniformity and productions.capsprod %}
       <tr>
         <th scope="row"> Mass balance</th>
         {% if mass_balance_release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'caps_mass_balance:detail' pk=production.pk %}">Show</a></td>
+        <td><a class="btn btn-primary" href="{% url 'caps_mass_balance:detail' pk=productions.pk %}">Show</a></td>
       </tr>
     {% endif %}
   </tbody>
@@ -38,27 +37,27 @@
 <hr class="featurette-divider">
 <div class="container text-center">
   <div class="row">
-      {% if not production.capsprod %}
+      {% if not productions.capsprod %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Prod.png' %}" height="150" width="150">
           <div class="card-body">
             <h5 class="card-title">Add Production calculation</h5>
               <p class="card-text">Create capsules from tablets, with and without coating. You also have the option to produce from pure active ingredient.</p>
-              <a class="btn btn-primary" href="{% url 'caps_prod:add_new' pk=production.pk%}" role="button">Add</a>
+              <a class="btn btn-primary" href="{% url 'caps_prod:add_new' pk=productions.pk%}" role="button">Add</a>
           </div>
         </div>
       {% endif %}
-      {% if not production.uniformity %}
+      {% if not productions.uniformity %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Gaussian.png' %}" height="150" width="150">
           <div class="card-body">
             <h5 class="card-title">Check uniformity of mass</h5>
               <p class="card-text">Check uniformity of mass according to the European Pharmacopoeia.</p>
-              <a class="btn btn-primary" href="{% url 'capsules:uniformity' pk=production.pk %}" role="button">Check</a>
+              <a class="btn btn-primary" href="{% url 'capsules:uniformity' pk=productions.pk %}" role="button">Check</a>
           </div>
         </div>
       {% endif %}
-      {% if not production.capsprod or not production.uniformity %}
+      {% if not productions.capsprod or not productions.uniformity %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Mass_Balance.png' %}" height="150" width="150">
           <div class="card-body">
@@ -70,8 +69,3 @@
       {% endif %}
   </div>
 </div>
-<p>
-  <a class="btn btn-warning" href="{% url 'productions:update' pk=production.pk %}">Edit Name/LotNr<a>
-  <a class="btn btn-danger" href="{% url 'productions:delete' pk=production.pk %}">Delete production</a>
-  <a class="btn btn-primary" href="{% url 'productions:pdf' pk=production.pk %}">Generate PDF</a>
-</p>

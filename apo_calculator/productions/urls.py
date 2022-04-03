@@ -9,5 +9,5 @@ urlpatterns = [
     path('detail/<int:pk>/', views.ProductionDetailView.as_view(), name='detail'),
     path('update/<int:pk>/', views.ProductionUpdateView.as_view(), name='update'),
     path('delete/<int:pk>/', views.ProductionDeleteView.as_view(), name='delete'),
-    path('pdf/<int:pk>/', views.CapsPdfView.as_view(), name='pdf'),
+    path('pdf/<int:pk>/', views.ProductionPdfView.as_view(), name='pdf'),
 ]

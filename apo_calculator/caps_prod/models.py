@@ -23,6 +23,7 @@ class CapsProd(models.Model):
         (four, '4'),
         (five, '5'),
     ]
+    calc_date               = models.DateTimeField(default=datetime.now, blank=True, )
     production              = models.OneToOneField(Productions, on_delete=models.CASCADE, primary_key=True)
     amount_of_caps          = models.IntegerField()
     conc_per_cap            = models.FloatField()

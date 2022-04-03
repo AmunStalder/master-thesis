@@ -74,7 +74,7 @@ class CapsProdWizardView(SessionWizardView):
         return redirect("productions:detail", pk=self.instance.pk)
 
 class CapsProdDetailView(DetailView):
-    model = CapsProd
+    model = Productions
     template_name = 'caps_prod/detail.html'
 
 class CapsProdDeleteView(DeleteView):

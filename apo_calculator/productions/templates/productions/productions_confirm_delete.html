@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block body_block %}
-  <h1>Delete {{ production.name }}?</h1>
+  <h1>Delete {{ productions.name }}?</h1>
   <form method="post">
     {% csrf_token %}
     <input type="submit" class="btn btn-danger" value="Delete">
-    <a href="{% url 'productions:detail' pk=production.pk %}" class="btn btn-primary">Cancel</a>
+    <a href="{% url 'productions:detail' pk=productions.pk %}" class="btn btn-primary">Cancel</a>
   </form>
 
 {% endblock %}

@@ -20,7 +20,6 @@ class ProductionListView(ListView):
     template_name = 'productions/list.html'
 
 class ProductionDetailView(DetailView):
-    context_object_name = 'production'
     model = models.Productions
     template_name = 'productions/detail.html'
 
@@ -44,13 +43,12 @@ class ProductionDetailView(DetailView):
             context["mass_balance_release_note"] = mass_balance_release_note
         return context
 
-class CapsPdfView(DetailView):
-    context_object_name = 'production'
+class ProductionPdfView(DetailView):
     model = models.Productions
     template_name = 'productions/pdf.html'
 
     def get_context_data(self, **kwargs):
-        context = super(CapsPdfView, self).get_context_data(**kwargs)
+        context = super(ProductionPdfView, self).get_context_data(**kwargs)
         # add extra context if needed
         return context
 
@@ -76,6 +74,5 @@ class ProductionUpdateView(UpdateView):
         'name',
     )
 class ProductionDeleteView(DeleteView):
-    context_object_name = 'production'
     model = models.Productions
     success_url = reverse_lazy("productions:list")
