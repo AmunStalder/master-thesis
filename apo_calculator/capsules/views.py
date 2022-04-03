@@ -5,6 +5,7 @@ from . import models
 from django.urls import reverse_lazy
 from apo_calculator.utils import render_to_pdf
 from .forms import UniformityForm
+from productions.models import Productions
 #Import the easy_pdf rendering
 
 # Create your views here.
@@ -42,6 +43,9 @@ class CapsUnifCreateView(CreateView):
     template_name = 'capsules/uniformity_form.html'
     model = models.Uniformity
     form_class = UniformityForm
+    def get_initial(self):
+        return { 'production': Productions.objects.get(pk=self.kwargs['pk']) }
+
 
 class CapsUnifUpdateView(UpdateView):
     model = models.Uniformity

@@ -20,6 +20,7 @@ class UniformityForm(forms.ModelForm):
         super(UniformityForm, self).__init__(*args, **kwargs)
         # Select only capsules
         self.fields['production'].queryset = Productions.objects.filter(galenical_form='capsules')
+        self.fields['production'].disabled = True
         # Change labels and placeholders
         self.fields['mass_1_caps_empty'].label = 'Mass of 1 empty capsule [mg]'
         self.fields['mass_1_caps_empty'].widget.attrs['placeholder'] = 'Enter mass'

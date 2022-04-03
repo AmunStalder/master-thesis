@@ -54,7 +54,7 @@
           <div class="card-body">
             <h5 class="card-title">Check uniformity of mass</h5>
               <p class="card-text">Check uniformity of mass according to the European Pharmacopoeia.</p>
-              <a class="btn btn-primary" href="{% url 'capsules:uniformity' %}" role="button">Check</a>
+              <a class="btn btn-primary" href="{% url 'capsules:uniformity' pk=production.pk %}" role="button">Check</a>
           </div>
         </div>
       {% endif %}
