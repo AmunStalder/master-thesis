@@ -1,35 +1,6 @@
 {% extends "base.html" %}
 {% block body_block %}
-<h1 class="center"> Mass balance for {{ productions.name }} (LotNr: {{ productions.lot_nr }})</h1>
-<p>{{ productions.capsprodcalc_date }}</p>
-<div class="container border">
-  <table class="table abstand">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Input data</th>
-        <th scope="col">Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Mass of powder mix:</th>
-        <td>{{ productions.capsprod.mass_required_volume }}g</td>
-      </tr>
-      <tr>
-        <th scope="row">Difference in grams</th>
-        <td>{{ absolute_mass_balance|floatformat:4 }}g</td>
-      </tr>
-      <tr>
-        <th scope="row">Difference in %</th>
-        <td> {% widthratio relative_mass_balance 1 100 %}%</td>
-      </tr>
-      <tr>
-        <th scope="row">RESULT:</th>
-        {% if mass_balance_release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-      </tr>
-    </tbody>
-  </table>
-</div>
+{% include "caps_mass_balance/_partials/detail.html" %}
 <p>
   <a class="btn btn-primary" href="{% url 'productions:detail' pk=productions.pk %}">Go back</a>
 </p>

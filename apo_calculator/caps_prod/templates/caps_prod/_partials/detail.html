@@ -15,42 +15,59 @@
         <tbody>
           <tr>
             <th scope="row">Amount of caps</th>
-            <td scope="row">{{ productions.capsprod.amount_of_caps }}</td>
+            <td scope="row">{{ productions.capsprod.amount_of_caps }} pc.</td>
             <th scope="row"> Required amount of tablets</th>
-            <td scope="row"> {{ productions.capsprod.required_amount_of_tabs }} </td>
+            <td scope="row"> {{ productions.capsprod.required_amount_of_tabs|floatformat:1 }} pc.</td>
           </tr>
           <tr>
             <th scope="row">Concentration per cap</th>
-            <td scope="row">{{ productions.capsprod.conc_per_cap }}</td>
+            <td scope="row">{{ productions.capsprod.conc_per_cap }} mg</td>
             <th scope="row"> Required mass of tablet powder</th>
-            <td scope="row"> {{ productions.capsprod.required_mass_powder }} </td>
+            <td scope="row"> {{ productions.capsprod.required_mass_powder|floatformat:1 }} mg </td>
           </tr>
           <tr>
             <th scope="row">Concentration per tablet</th>
-            <td scope="row">{{ productions.capsprod.conc_per_tab }}</td>
+            <td scope="row">{{ productions.capsprod.conc_per_tab }} g</td>
             <th scope="row">Required volume</th>
-            <td scope="row"> {{ productions.capsprod.required_volume }} </td>
+            <td scope="row"> {{ productions.capsprod.required_volume }} ml</td>
           </tr>
           <tr>
-            <th scope="row">Amount of weighed tabs</th>
-            <td scope="row">{{ productions.capsprod.amount_of_weighed_tabs }}</td>
+            <th scope="row">Amount of weighed tablets</th>
+            <td scope="row">{{ productions.capsprod.amount_of_weighed_tabs }} pc.</td>
+            <th scope="row">Mass of produced powdermix</th>
+            <td scope="row">{{ productions.capsprod.mass_required_volume|floatformat:4 }} g</td>
           </tr>
           <tr>
-            <th scope="row">Mass of weighed tabs</th>
-            <td scope="row">{{ productions.capsprod.mass_all_tabs }}</td>
+            <th scope="row">Mass of weighed tablets</th>
+            <td scope="row">{{ productions.capsprod.mass_all_tabs }} mg</td>
+            <th scope="row">Concentration powdermix <br> (target / actual)</th>
+            <td scope="row">{{ productions.capsprod.conc_powdermix_per_g_target|floatformat:1 }} mg/g /
+              {{ productions.capsprod.conc_powdermix_per_g_actual|floatformat:1 }} mg/g
+            </td>
           </tr>
           <tr>
-            <th scope="row">Weighed mass powder</th>
-            <td scope="row">{{ productions.capsprod.weighed_mass_powder }}</td>
+            <th scope="row">Mass of used tablet powder</th>
+            <td scope="row">{{ productions.capsprod.weighed_mass_powder|floatformat:1 }} mg</td>
+            <th scope="row">Relative difference</th>
+            <td>
+              {% if -10 <= productions.capsprod.conc_powdermix_per_g_diff <= 10 %} <span style="color:green;">{% else %}<span style="color:red;">{% endif %}
+              {% if productions.capsprod.conc_powdermix_per_g_diff > 0 %}+ {% endif %}
+              {{ productions.capsprod.conc_powdermix_per_g_diff|floatformat:3 }} % </span>
+            </td>
           </tr>
           <tr>
             <th scope="row">Caps size</th>
             <td scope="row">{{ productions.capsprod.get_caps_size_display }}</td>
           </tr>
           <tr>
-            <th scope="row">Mass for required volume</th>
-            <td scope="row">{{ productions.capsprod.mass_required_volume }}</td>
+            <th scope ="row">Tara of precoated measuring cylinder</th>
+            <td scope="row">{{ productions.capsprod.tara_meas_cylinder }} g</td>
           </tr>
+          <tr>
+            <th scope ="row">Total mass of measuring cylinder <br> filled with {{ productions.capsprod.required_volume }} ml of powdermix</th>
+            <td scope="row">{{ productions.capsprod.mass_required_volume_incl_tara }} g</td>
+          </tr>
+
         </tbody>
       </table>
     </div>

@@ -62,14 +62,14 @@ class CapsProdForm4(forms.ModelForm):
         fields = [
             'required_volume',
             'tara_meas_cylinder',
-            'mass_required_volume',
+            'mass_required_volume_incl_tara',
         ]
     def __init__(self, *args, **kwargs):
         super(CapsProdForm4, self).__init__(*args, **kwargs)
         instance = getattr(self, 'instance', None)
         self.fields['required_volume'].disabled = True
-        # self.fields['required_volume'].label = 'Required volume of powdermix [mg] *'
-        # self.fields['tara_meas_cylinder'].widget.attrs['placeholder'] = 'Enter mass (tara) of coated measuring cylinder'
-        # self.fields['tara_meas_cylinder'].label = 'Tara of measuring cylinder'
-        # self.fields['mass_required_volume'].widget.attrs['placeholder'] = 'Enter mass of weighed powdermix'
-        # self.fields['mass_required_volume'].label = 'Tara of measuring cylinder'
+        self.fields['required_volume'].label = 'Required volume of powdermix [ml] *'
+        self.fields['tara_meas_cylinder'].widget.attrs['placeholder'] = 'Enter mass (tara) of measuring cylinder precoated with filling excipient'
+        self.fields['tara_meas_cylinder'].label = 'Tara of precoated measuring cylinder'
+        self.fields['mass_required_volume_incl_tara'].widget.attrs['placeholder'] = 'Enter mass of weighed powdermix incl tara of measuring cylinder'
+        self.fields['mass_required_volume_incl_tara'].label = 'Mass of weighed powdermix incl tara'

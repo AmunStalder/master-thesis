@@ -1,0 +1,42 @@
+<h1 class="center"> Mass balance for {{ productions.name }} (LotNr: {{ productions.lot_nr }})</h1>
+<p class="center">{{ productions.capsmassbalance.calc_date }}</p>
+<div class="container border">
+  <div class="row">
+    <div class="col">
+      <table class="table abstand">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Input data</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Mass of produced powdermix</th>
+            <td scope="row">{{ productions.capsprod.mass_required_volume|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Calculated mass powdermix (average mean * amount of caps)</th>
+            <td>{{ productions.capsmassbalance.calculated_mass_powder_mix|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row"> Absolute difference</th>
+            <td>{{ productions.capsmassbalance.absolute_mass_balance|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Relative difference</th>
+            <td>{{ productions.capsmassbalance.diff_mass_balance|floatformat:1 }} %</td>
+          </tr>
+          <tr>
+            <th scope="row">Actual concentration per capsule</th>
+            <td>{{ productions.capsmassbalance.conc_per_cap_actual|floatformat:3 }} mg/cap</td>
+          </tr>
+          <tr>
+            <th scope="row">RESULT:</th>
+            {% if productions.capsmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

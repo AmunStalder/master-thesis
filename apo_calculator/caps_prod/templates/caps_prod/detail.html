@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block body_block %}
-
 {% include "caps_prod/_partials/detail.html" %}
   <p>
+    <a class="btn btn-primary" href="{% url 'productions:detail' pk=productions.pk %}">Go back</a>
     <a class="btn btn-warning" href="{% url 'caps_prod:edit' pk=productions.capsprod.pk %}">Edit</a>
     <a class="btn btn-danger" href="{% url 'caps_prod:delete' pk=productions.capsprod.pk %}">Delete</a>
   </p>

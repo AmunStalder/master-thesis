@@ -7,7 +7,7 @@ import base64
 from io import BytesIO
 
 class UniformityCalculator:
-    CAPS_THRESHOLD_UNIFORMITY   = 0.3
+    CAPS_THRESHOLD_UNIFORMITY   = 300
     CAPS_DIFF_BELOW_THRESHOLD   = 10
     CAPS_DIFF_ABOVE_THRESHOLD   = 7.5
     CAPS_THRESHOLD_BALANCE      = 10
@@ -23,11 +23,11 @@ class UniformityCalculator:
         self.masses                 = [mass_max1-self.mass_1_caps_empty, mass_max2-self.mass_1_caps_empty, mass_max3-self.mass_1_caps_empty, mass_min1-self.mass_1_caps_empty, mass_min2-self.mass_1_caps_empty, mass_min3-self.mass_1_caps_empty]
         self.diff                   = self.get_diff()[1]
         self.diff_x2                = 2 * self.get_diff()[1]
-        self.mean                   = round(self.get_diff()[0], 4)
-        self.plus_1_diff            = round(self.mean * (100+self.diff)/100,4)
-        self.plus_2_diff            = round(self.mean * (100+2*self.diff)/100,4)
-        self.minus_1_diff           = round(self.mean * (100-self.diff)/100,4)
-        self.minus_2_diff           = round(self.mean * (100-2*self.diff)/100,4)
+        self.mean                   = self.get_diff()[0]
+        self.plus_1_diff            = self.mean * (100+self.diff)/100
+        self.plus_2_diff            = self.mean * (100+2*self.diff)/100
+        self.minus_1_diff           = self.mean * (100-self.diff)/100
+        self.minus_2_diff           = self.mean * (100-2*self.diff)/100
         self.counter_above_1_diff   = 0
         self.counter_above_2_diff   = 0
         self.release_note           = self.calculate()
@@ -94,7 +94,7 @@ class UniformityCalculator:
         plt.fill_between([self.plus_1_diff, self.plus_2_diff] , -0.5, 0.5, color = "#ffdabf")
         plt.fill_between([self.plus_2_diff, self.mean * (1+4*self.diff/100)] , -0.5, 0.5, color = "#ffe8e8")
         plt.scatter(X,Y, marker='.')
-        plt.xlabel('weight [g]')
+        plt.xlabel('weight [mg]')
         plt.xlim([self.mean * (1-4*self.diff/100), self.mean * (1+4*self.diff/100)])
         plt.yticks([])
         # for i, label in enumerate(annotations):

@@ -8,40 +8,12 @@
 </head>
 <body>
 {% if productions.capsprod %}
-{% include "caps_prod/_partials/detail.html" %}
+  {% include "caps_prod/_partials/detail.html" %}
 {% endif %}
 {% if productions.uniformity %}
-{% include "capsules/_partials/detail.html" %}
+  {% include "capsules/_partials/detail.html" %}
 {% endif %}
-    {% if productions.capsprod and productions.uniformity %}
-    <h1 class="center">Production calculation for {{productions.name}}, LotNr: {{ productions.lot_nr }}</h1>
-    <div class="container, border">
-      <table class="">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Input data</th>
-            <th scope="col">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Mass of powder mix:</th>
-            <td>{{ productions.capsprod.mass_required_volume }}g</td>
-          </tr>
-          <tr>
-            <th scope="row">Difference in grams</th>
-            <td>{{ absolute_mass_balance }}g</td>
-          </tr>
-          <tr>
-            <th scope="row">Difference in %</th>
-            <td>{{ relative_mass_balance }}</td>
-          </tr>
-          <tr>
-            <th scope="row">RESULT:</th>
-            {% if mass_balance_release_note %} <td style='color:green;'>PASSED</td> {% else %}<td style='color:red;'>FAILED</td>{% endif %}
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    {% endif %}
+{% if productions.capsmassbalance %}
+  {% include "caps_mass_balance/_partials/detail.html" %}
+{% endif %}
 </body>

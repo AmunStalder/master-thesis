@@ -3,8 +3,9 @@
 
 {% include "capsules/_partials/detail.html" %}
   <p>
+    <a class="btn btn-primary" href="{% url 'productions:detail' pk=productions.pk %}">Go back</a>
     <a class="btn btn-warning" href="{% url 'capsules:update' pk=productions.pk %}">Edit</a>
     <a class="btn btn-danger" href="{% url 'capsules:delete' pk=productions.pk %}">Delete</a>
-    
+
   </p>
 {% endblock %}
