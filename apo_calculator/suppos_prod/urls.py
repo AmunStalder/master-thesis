@@ -1,7 +1,7 @@
 #we rename the views from auth to not confuse it with views.py
 from django.urls import path
 from . import views
-from .forms import SupposProdForm1, SupposProdForm2 #, SupposProdForm3, SupposProdForm4
+from .forms import SupposProdForm1, SupposProdForm2
 
 app_name = 'suppos_prod'
 urlpatterns = [

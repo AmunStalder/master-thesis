@@ -1,0 +1,38 @@
+<h1 class="center"> Mass balance for {{ productions.name }} (LotNr: {{ productions.lot_nr }})</h1>
+<p class="center">{{ productions.supposmassbalance.calc_date }}</p>
+<div class="container border">
+  <div class="row">
+    <div class="col">
+      <table class="table abstand">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Input data</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Mass of produced suppository base</th>
+            <td scope="row">{{ productions.supposprod.mass_suppomass_actual|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Mean mass of a suppository</th>
+            <td>{{ productions.supposuniformity.mean|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row"> Concentration per suppository (target / actual)</th>
+            <td>{{ productions.supposprod.conc_per_suppo|floatformat:1 }} / {{ productions.supposmassbalance.conc_per_suppo_actual|floatformat:1 }} mg/suppo</td>
+          </tr>
+          <tr>
+            <th scope="row">Relative difference</th>
+            <td>{{ productions.supposmassbalance.conc_per_suppo_diff|floatformat:2 }} %</td>
+          </tr>
+          <tr>
+            <th scope="row">RESULT:</th>
+            {% if productions.supposmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

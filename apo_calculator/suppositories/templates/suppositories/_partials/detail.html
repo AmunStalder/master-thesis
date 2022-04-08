@@ -1,0 +1,71 @@
+<h1 class="center">Uniformity of mass for {{ productions.name }} (LotNr: {{ productions.lot_nr }})</h1>
+<p class="center">{{ productions.supposuniformity.calc_date }}</p>
+<div class="container border">
+  <div class="row">
+    <div class="col">
+      <table class="table abstand">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Input data</th>
+            <th scope="col">Value</th>
+            <th scope="col">Calculated data</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Mass of 10 suppositories</th>
+            <td>{{ productions.supposuniformity.mass_10_suppos }} g</td>
+            <th scope="row"> + {{ productions.supposuniformity.diff_x2 }} % </th>
+            <td> {{ productions.supposuniformity.plus_2_diff|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Mass of heaviest suppository </th>
+            <td>{{ productions.supposuniformity.mass_max1 }} g</td>
+            <th scope="row"> + {{ productions.supposuniformity.diff }} % </th>
+            <td> {{ productions.supposuniformity.plus_1_diff|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Mass of second heaviest suppository </th>
+            <td>{{ productions.supposuniformity.mass_max2 }} g</td>
+            <th scope="row">Mean weight of suppository</th>
+            <td> {{ productions.supposuniformity.mean|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Mass of third heaviest suppository</th>
+            <td>{{ productions.supposuniformity.mass_max3 }} g</td>
+            <th scope="row"> - {{ productions.supposuniformity.diff }} % </th>
+            <td> {{ productions.supposuniformity.minus_1_diff|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Mass of lightest suppository </th>
+            <td>{{ productions.supposuniformity.mass_min1 }} g</td>
+            <th scope="row"> - {{ productions.supposuniformity.diff_x2 }} % </th>
+            <td> {{ productions.supposuniformity.minus_2_diff|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Mass of second lightest suppository</th>
+            <td>{{ productions.supposuniformity.mass_min2 }} g</td>
+            <th scope="row"> # of caps over +/- {{ productions.supposuniformity.diff_x2 }} %:</th>
+            <td> {{ productions.supposuniformity.counter_above_2_diff }} pc.</td>
+          </tr>
+          <tr>
+            <th scope="row">Mass of third lightest suppository </th>
+            <td>{{ productions.supposuniformity.mass_min3 }} g</td>
+            <th scope="row"> # of caps over +/- {{ productions.supposuniformity.diff }} %:</th>
+            <td> {{ productions.supposuniformity.counter_above_1_diff }} pc.</td>
+          </tr>
+          <tr>
+            <th scope="row"> </th>
+            <td> </td>
+            <th scope="row">TEST RESULT:</th>
+            {% if productions.supposuniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% if productions.supposuniformity.uniformity_plot %}
+    <img class="img-fluid" src="data:image/png;base64, {{productions.supposuniformity.uniformity_plot|safe}}">
+  {% endif %}
+</div>

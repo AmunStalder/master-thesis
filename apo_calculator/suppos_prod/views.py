@@ -1,11 +1,12 @@
-from formtools.wizard.views import SessionWizardView
-from .models import SupposProd, SupposDisplacementValue
 from django.views.generic import DetailView, DeleteView
+from formtools.wizard.views import SessionWizardView
 from django.forms.models import construct_instance
 from django.shortcuts import redirect
-from productions.models import Productions
 from django.urls import reverse, reverse_lazy
 import math
+
+from productions.models import Productions
+from .models import SupposProd, SupposDisplacementValue
 
 class SupposProdWizardView(SessionWizardView):
     template_name = "suppos_prod/prod_form.html"
@@ -25,12 +26,6 @@ class SupposProdWizardView(SessionWizardView):
             required_mass_witepsol = N*(E - f*A)
             initial.update({'required_mass_active_substance': round(required_mass_active_substance,4)})
             initial.update({'required_mass_witepsol': round(required_mass_witepsol,4)})
-        # if step == '3':
-        #     pass
-            # data = self.get_cleaned_data_for_step('0')
-            # data1 = self.get_cleaned_data_for_step('2')
-            # required_volume = data['amount_of_caps']*data1['caps_size']
-            # initial.update({'required_volume': required_volume})
         return initial
 
     def get_form_instance(self, step):
@@ -72,15 +67,14 @@ class SupposProdWizardView(SessionWizardView):
         for form in form_list:
             self.instance = construct_instance(form, self.instance, form._meta.fields, form._meta.exclude)
         self.instance.save()
-        return redirect("productions:detail", pk=self.instance.pk)
+        return redirect("suppos_prod:detail", pk=self.instance.pk)
 
 class SupposProdDetailView(DetailView):
-    model = SupposProd
+    model = Productions
     template_name = 'suppos_prod/detail.html'
 
 class SupposProdDeleteView(DeleteView):
     model = SupposProd
     def get_success_url(self):
         pk = self.kwargs['pk']
-        print(pk)
         return reverse_lazy("productions:detail", kwargs={'pk':pk})

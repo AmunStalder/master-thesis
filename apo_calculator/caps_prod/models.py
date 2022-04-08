@@ -56,7 +56,7 @@ class CapsProd(models.Model):
 
         if hasattr(self.production, 'uniformity'):
             try:
-                instance = production.uniformity.objects.get(pk=self.production.pk)
+                instance = production.capsmassbalance.objects.get(pk=self.production.pk)
             #for new calculation make new instance and prefill with production
             #that was given by kwargs (pk=production.pk)
             except:

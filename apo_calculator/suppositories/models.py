@@ -3,6 +3,7 @@ from django.urls import reverse
 from datetime import datetime
 from apo_calculator.utils import UniformityCalculator
 from productions.models import Productions
+from suppos_mass_balance.models import SupposMassBalance
 # Create your models here.
 
 class SupposUniformity(models.Model):
@@ -53,6 +54,17 @@ class SupposUniformity(models.Model):
         self.uniformity_plot       = self.calc.uniformity_plot
 
         super(SupposUniformity, self).save(*args, **kwarg)
+
+        if hasattr(self.production, 'supposprod'):
+            try:
+                instance = production.supposmassbalance.objects.get(pk=self.production.pk)
+            #for new calculation make new instance and prefill with production
+            #that was given by kwargs (pk=production.pk)
+            except:
+                instance = SupposMassBalance()
+                instance.production = Productions.objects.get(pk=self.production.pk)
+
+            instance.save()
 
     def get_absolute_url(self):
         '''

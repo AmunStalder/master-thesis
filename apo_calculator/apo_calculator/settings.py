@@ -43,10 +43,13 @@ INSTALLED_APPS = [
     'productions',
     'authenticate',
     'capsules',
-    'suppositories',
     'caps_prod',
     'caps_mass_balance',
+    'suppositories',
     'suppos_prod',
+    'suppos_mass_balance',
+
+
 ]
 
 MIDDLEWARE = [

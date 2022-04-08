@@ -10,10 +10,19 @@
 {% if productions.capsprod %}
   {% include "caps_prod/_partials/detail.html" %}
 {% endif %}
+{% if productions.supposprod %}
+  {% include "suppos_prod/_partials/detail.html" %}
+{% endif %}
 {% if productions.uniformity %}
   {% include "capsules/_partials/detail.html" %}
 {% endif %}
+{% if productions.supposuniformity %}
+  {% include "suppositories/_partials/detail.html" %}
+{% endif %}
 {% if productions.capsmassbalance %}
   {% include "caps_mass_balance/_partials/detail.html" %}
+{% endif %}
+{% if productions.supposmassbalance %}
+  {% include "suppos_mass_balance/_partials/detail.html" %}
 {% endif %}
 </body>

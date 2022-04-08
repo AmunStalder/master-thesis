@@ -7,7 +7,7 @@
       Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
   </h1>
   {% if wizard.steps.step1 == 2 %}
-    <p>hello step 2</p>
+    <p>The following amounts of active substance and witepsol are needed. Please prepare the substances and enter the weighed amounts.</p>
   {% endif %}
   <form class="custom-form" method="post">
     {% csrf_token %}

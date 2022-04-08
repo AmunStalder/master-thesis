@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block body_block %}
+{% include "suppos_mass_balance/_partials/detail.html" %}
+<p>
+  <a class="btn btn-primary" href="{% url 'productions:detail' pk=productions.pk %}">Go back</a>
+</p>
+{% endblock %}

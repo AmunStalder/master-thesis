@@ -36,6 +36,7 @@ urlpatterns = [
     path('capsules/', include('capsules.urls', namespace = 'capsules')),
     path('caps_prod/', include('caps_prod.urls', namespace = 'caps_prod')),
     path('caps_mass_balance/', include('caps_mass_balance.urls', namespace = 'caps_mass_balance')),
+    path('suppos_mass_balance/', include('suppos_mass_balance.urls', namespace = 'suppos_mass_balance')),
     #for Suppositories
     path('suppositories/', include('suppositories.urls', namespace = 'suppositories')),
     path('suppos_prod/', include('suppos_prod.urls', namespace = 'suppos_prod')),

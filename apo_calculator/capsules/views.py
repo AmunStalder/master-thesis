@@ -1,9 +1,9 @@
-from .forms import UniformityForm
 from django.views.generic import FormView, ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
-from django.http import HttpResponse, FileResponse
-from . import models
-from django.urls import reverse_lazy
 from apo_calculator.utils import render_to_pdf
+from django.http import HttpResponse, FileResponse
+from django.urls import reverse_lazy
+
+from . import models
 from .forms import UniformityForm
 from productions.models import Productions
 #Import the easy_pdf rendering
@@ -11,14 +11,20 @@ from productions.models import Productions
 # Create your views here.
 
 #View for Capsules
-class CapsFuncView(TemplateView):
-    template_name = 'capsules/functions.html'
-# Create your views here.
-
-class CapsUnifListView(ListView):
-    context_object_name = 'caps_list'
-    model = models.Uniformity
-    template_name = 'capsules/list.html'
+# class CapsFuncView(TemplateView):
+#     template_name = 'capsules/functions.html'
+# # Create your views here.
+#
+# class CapsUnifListView(ListView):
+#     context_object_name = 'caps_list'
+#     model = models.Uniformity
+#     template_name = 'capsules/list.html'
+class CapsUnifCreateView(CreateView):
+    template_name = 'capsules/uniformity_form.html'
+    model = Productions
+    form_class = UniformityForm
+    def get_initial(self):
+        return { 'production': Productions.objects.get(pk=self.kwargs['pk']) }
 
 class CapsUnifDetailView(DetailView):
     model = Productions
@@ -37,20 +43,12 @@ class CapsUnifDetailView(DetailView):
 #         pdf = render_to_pdf(self.template_name, context)
 #         return HttpResponse(pdf, content_type='application/pdf')
 
-class CapsUnifCreateView(CreateView):
-    template_name = 'capsules/uniformity_form.html'
-    model = Productions
-    form_class = UniformityForm
-    def get_initial(self):
-        return { 'production': Productions.objects.get(pk=self.kwargs['pk']) }
-
-
 class CapsUnifUpdateView(UpdateView):
     model = models.Uniformity
     form_class = UniformityForm
 
 class CapsUnifDeleteView(DeleteView):
-    context_object_name = 'uniformity'
     model = models.Uniformity
-
-    success_url = reverse_lazy("productions:list" )
+    def get_success_url(self):
+        pk = self.kwargs['pk']
+        return reverse_lazy("productions:detail", kwargs={'pk':pk})

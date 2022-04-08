@@ -1,11 +1,12 @@
-from formtools.wizard.views import SessionWizardView
-from .models import CapsProd
 from django.views.generic import DetailView, DeleteView
+from formtools.wizard.views import SessionWizardView
 from django.forms.models import construct_instance
 from django.shortcuts import redirect
-from productions.models import Productions
 from django.urls import reverse, reverse_lazy
 import math
+
+from productions.models import Productions
+from .models import CapsProd
 
 class CapsProdWizardView(SessionWizardView):
     template_name = "caps_prod/prod_form.html"
@@ -13,7 +14,6 @@ class CapsProdWizardView(SessionWizardView):
 
     def get_form_initial(self, step):
         initial = self.initial_dict.get(step, {})
-
         #we define initial values for steps
         if step == '1':
             data = self.get_cleaned_data_for_step('0')
@@ -71,7 +71,7 @@ class CapsProdWizardView(SessionWizardView):
         for form in form_list:
             self.instance = construct_instance(form, self.instance, form._meta.fields, form._meta.exclude)
         self.instance.save()
-        return redirect("productions:detail", pk=self.instance.pk)
+        return redirect("caps_prod:detail", pk=self.instance.pk)
 
 class CapsProdDetailView(DetailView):
     model = Productions
@@ -81,7 +81,6 @@ class CapsProdDeleteView(DeleteView):
     model = CapsProd
     def get_success_url(self):
         pk = self.kwargs['pk']
-        print(pk)
         return reverse_lazy("productions:detail", kwargs={'pk':pk})
     #
     # def get_template_names(self):

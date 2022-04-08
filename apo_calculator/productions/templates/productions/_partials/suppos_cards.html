@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% load static %}
 {% if productions.supposuniformity or productions.supposprod%}
 <table class="table ">
@@ -6,16 +5,14 @@
     <tr>
       <th scope="col">Calculation</th>
       <th scope="col">Result</th>
-    </tr> 
+    </tr>
   </thead>
-
   <tbody>
     {% if productions.supposprod %}
     <tr>
       <th scope="row"> Production calculation</th>
-      <td>{{ productions.supposprod.required_mass_active_substance }} mg of active substance used for {{ productions.supposprod.amount_of_suppos }} suppositories. </td>
+      <td> Produced {{ productions.supposprod.mass_suppomass_actual|floatformat:1 }} g of suppository base for {{ productions.supposprod.amount_of_suppos }} suppositories. </td>
       <td><a class="btn btn-primary" href="{% url 'suppos_prod:detail' pk=productions.supposprod.pk %}">Show</a></td>
-      <!--  add url template tag to supposprod add new-->
     </tr>
     {% endif %}
     {% if productions.supposuniformity %}
@@ -28,8 +25,8 @@
     {% if productions.supposuniformity and productions.supposprod %}
       <tr>
         <th scope="row"> Mass balance</th>
-        {% if mass_balance_release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'suppos_mass_balance:detail' pk=productions.supposmass_balance.pk %}">Show</a></td>
+        {% if productions.supposmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+        <td><a class="btn btn-primary" href="{% url 'suppos_mass_balance:detail' pk=productions.pk %}">Show</a></td>
       </tr>
     {% endif %}
   </tbody>

@@ -1,0 +1,42 @@
+<h1 class="center">Production calculation for {{ productions.name }} (LotNr: {{ productions.lot_nr }})</h1>
+<p class="center">{{ productions.supposprod.calc_date }}</p>
+<div class="container border">
+  <div class="row">
+    <div class="col">
+      <table class="table abstand">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Input data</th>
+            <th scope="col">Value</th>
+            <th scope="col">Calculated data</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Active substance / displacement value</th>
+            <td>{{ productions.supposprod.active_substance_1 }} / {{ productions.supposprod.active_substance_1.value }}</td>
+            <th scope="row"> Used mass of active substance (target/actual)</th>
+            <td> {{ productions.supposprod.required_mass_active_substance|floatformat:1 }} / {{ productions.supposprod.weighed_mass_active_substance|floatformat:1 }} mg</td>
+          </tr>
+          <tr>
+            <th scope="row">Amount of suppositories</th>
+            <td>{{ productions.supposprod.amount_of_suppos }} pc.</td>
+            <th scope="row">Used mass of witepsol (target/actual)</th>
+            <td>{{ productions.supposprod.required_mass_witepsol|floatformat:4 }} / {{ productions.supposprod.weighed_mass_witepsol|floatformat:4 }} g</td>
+          </tr>
+          <tr>
+            <th scope="row">Target concentration per suppository</th>
+            <td>{{ productions.supposprod.conc_per_suppo }} mg/suppo</td>
+            <th scope="row">Concentration (target/actual))</th>
+            <td>{{ productions.supposprod.conc_suppomass_per_g_target|floatformat:1 }} / {{ productions.supposprod.conc_suppomass_per_g_actual|floatformat:1 }} mg/g</td>
+          </tr>
+          <tr>
+            <th scope="row">Calibration value of suppository mould</th>
+            <td>{{ productions.supposprod.calibration_value }} g/suppo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

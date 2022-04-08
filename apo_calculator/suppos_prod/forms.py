@@ -45,35 +45,3 @@ class SupposProdForm2(forms.ModelForm):
         self.fields['weighed_mass_active_substance'].widget.attrs['placeholder'] = 'Enter mass'
         self.fields['required_mass_witepsol'].label = 'Required mass of witepsol [g]'
         self.fields['required_mass_witepsol'].disabled = True
-
-
-# class SupposProdForm3(forms.ModelForm):
-#     class Meta:
-#         model = SupposProd
-#         fields = [
-#             'weighed_mass_powder',
-#             'Suppos_size',
-#         ]
-#     def __init__(self, *args, **kwargs):
-#         super(SupposProdForm3, self).__init__(*args, **kwargs)
-#         self.fields['weighed_mass_powder'].label = 'Mass of required tablet powder [mg] *'
-#         self.fields['weighed_mass_powder'].widget.attrs['placeholder'] = 'Enter the amount of weighed tablet powder'
-#         self.fields['Suppos_size'].label = 'Choose an appopriate Supposule size'
-#
-# class SupposProdForm4(forms.ModelForm):
-#     class Meta:
-#         model = SupposProd
-#         fields = [
-#             'required_volume',
-#             'tara_meas_cylinder',
-#             'mass_required_volume',
-#         ]
-#     def __init__(self, *args, **kwargs):
-#         super(SupposProdForm4, self).__init__(*args, **kwargs)
-#         instance = getattr(self, 'instance', None)
-#         self.fields['required_volume'].disabled = True
-        # self.fields['required_volume'].label = 'Required volume of powdermix [mg] *'
-        # self.fields['tara_meas_cylinder'].widget.attrs['placeholder'] = 'Enter mass (tara) of coated measuring cylinder'
-        # self.fields['tara_meas_cylinder'].label = 'Tara of measuring cylinder'
-        # self.fields['mass_required_volume'].widget.attrs['placeholder'] = 'Enter mass of weighed powdermix'
-        # self.fields['mass_required_volume'].label = 'Tara of measuring cylinder'
