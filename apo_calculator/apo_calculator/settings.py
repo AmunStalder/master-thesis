@@ -48,8 +48,7 @@ INSTALLED_APPS = [
     'suppositories',
     'suppos_prod',
     'suppos_mass_balance',
-
-
+    'eyedrops_prod',
 ]
 
 MIDDLEWARE = [
