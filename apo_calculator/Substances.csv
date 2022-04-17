@@ -1,0 +1,872 @@
+﻿infos;name;price_0_001_g_ml;price_0_01_g_ml;price_0_1_g_ml;price_1_g_ml;price_10_g_ml;price_100_g_ml;price_500_g_ml;price_1000_g_ml;freezing_point_depression;displacement_value
+;Absinthii herba Ph. VIII;;;;0.1;0.4;3.5;;;;
+;Absinthii tinctura Ph. VI (g);;;;0.2;1.5;11.8;;;;
+;Absinthii tinctura Ph. VI (ml);;;;0.2;1.3;10.4;;;;
+;Acaciae gummi mucilago;;;;0.1;0.9;7.5;;;;
+;Acaciae gummi Ph. Eur;;;;0.1;1.1;8.7;;;;
+;Acetonum Ph. Eur (g);;;;;0.3;2.8;11.8;22.2;;
+;Acetonum Ph. Eur (ml);;;;;0.3;2.4;10.2;;;
+;Acetylcholini chloridum Ph. VIII;;0.1;0.8;6.7;;;;;0.19;
+nALT;Acetylcysteinum Ph. Eur.;;;;;;;;;0.13;
+;Acidi borici solutio Ph. Eur;;;;;0.4;2.8;12.2;;;
+;Acidum aceticum 30% Ph. VIII;;;;;0.2;2;8.4;;;
+;Acidum aceticum glaciale (99%) Ph. Eur;;;;;0.3;2.6;11;;;
+;Acidum acetylsalicylicum Ph. Eur;;;;0.2;1.3;10.3;;;;0.67
+L;Acidum ascorbicum Ph. Eur (max. 20 g);;;;0.2;1.3;10.1;;;0.1;
+;Acidum benzoicum Ph. Eur;;;;0.1;1;8.3;;;;0.66
+;Acidum boricum Ph. Eur;;;;;0.4;2.8;12.2;;0.28;
+;Acidum citricum anhydricum Ph. Eur;;;;;0.2;1.9;8.1;;;
+;Acidum citricum monohydricum Ph. Eur;;;;;0.2;1.9;8.1;;;
+;Acidum folicum Ph. Eur;;;0.2;1.7;13.2;;;;;
+;Acidum hydrochloricum 25% Ph. VIII (g);;;;;0.3;2.1;8.9;;;
+;Acidum hydrochloricum 25% Ph. VIII (ml);;;;;0.3;2.3;10;;;
+;Acidum hydrochloricum concentratum Ph. Eur (37%) (g);;;;;0.2;1.8;7.7;;;
+;Acidum hydrochloricum concentratum Ph. Eur (37%) (ml);;;;;0.3;2.1;9.1;;;
+;Acidum hydrochloricum dilutum Ph. Eur (10%) (g);;;;;0.1;1.2;5;;;
+;Acidum hydrochloricum dilutum Ph. Eur (10%) (ml);;;;;0.2;1.3;5.8;;;
+;Acidum L-glutamicum Ph. Eur;;;;0.3;2.2;17.8;;;;
+;Acidum lacticum Ph. Eur (g);;;;0.1;0.5;4;;;;
+;Acidum lacticum Ph. Eur (ml);;;;0.1;0.5;3.9;16.6;;;
+;Acidum nicotinicum Ph. Eur;;;;0.2;1.5;12.1;;;;
+;Acidum nitricum 65% purissimum (g);;;;;0.4;3.1;13.5;;;
+;Acidum nitricum 65% purissimum (ml);;;;;0.3;2.5;10.8;;;
+;Acidum oleicum Ph. Eur (ml);;;;0.1;0.4;3.6;15.6;;;
+;Acidum paraminobenzoicum Ph. VIII;;;0.1;0.6;5;;;;;
+;Acidum phosphoricum concentratum Ph. Eur (85%) (g);;;;0.1;0.4;3.3;14.1;;;
+;Acidum phosphoricum concentratum Ph. Eur (85%) (ml);;;;;0.4;3;12.7;;;
+;Acidum phosphoricum dilutum Ph. Eur (10%);;;;;0.3;2.1;8.9;;;
+;Acidum salicylicum Ph. Eur;;;;0.1;1;8.3;;;;
+;Acidum silicicum praecipitatum purum pulvis;;;;0.2;1.2;9.8;;;;
+;Acidum silicicum purum voluminosum (Aerosil);;;;0.1;0.4;3.3;;;;
+;Acidum sorbicum Ph. Eur;;;;0.2;1.6;13.1;;;;
+;Acidum stearinicum Ph. Eur;;;;0.1;0.4;3.4;14.5;;;
+;Acidum sulfuricum 95% purissimum (g);;;;;0.2;1.8;7.7;;;
+;Acidum sulfuricum 95% purissimum (ml);;;;;0.3;2.3;9.9;;;
+;Acidum tartaricum Ph. Eur;;;;0.1;0.8;6.3;;;;
+;Acidum trichloraceticum Ph. VI;;;0.1;0.6;4.4;35.7;;;;
+;Acidum undecylenicum Ph. Eur;;;0.1;0.9;7.5;60.2;;;;
+;Adeps benzoinatus Ph. (g);;;;0.2;1.6;13;;;;
+;Adeps lanae Ph. Eur;;;;0.1;0.7;5.5;23.7;;;
+;Adeps solidus Ph. Eur;;;;0.1;1;8.2;35.3;;;
+;Adeps suillus Ph.;;;;0.1;0.5;4.4;18.9;;;
+nALT;Adipheninhydrochlorid;;;;;;;;;;0.75
+;Adrenalini tartras;0.1;0.7;5.8;47.1;;;;;;
+;Adrenalinum, L-;0.1;0.5;4.4;35.1;;;;;;
+;Aerosil (vide: Silica colloidalis anhydrica Ph.);;;;0.2;1.3;10.2;;;;
+;Aether anaestheticus Ph. Eur (ml);;;;0.1;1.2;9.4;40.6;76;;
+;Aether Ph. Eur (g);;;;0.1;0.8;6.7;28.6;53.6;;
+;Aether Ph. Eur (ml);;;;0.1;0.6;5.1;22;;;
+;Agar Ph. Eur;;;;0.3;2.6;20.6;;;;
+;Alcohol benzylicus Ph. Eur (ml);;;;0.1;1;7.7;33.1;61.9;0.1;
+;Alcohol cetylicus Ph. Eur;;;;0.1;0.6;4.9;;;;
+;Alcohol isopropylicus Ph. Eur (g);;;;;0.4;3.1;13.1;24.6;;
+;Alcohol isopropylicus Ph. Eur (ml);;;;;0.4;2.9;12.5;23.5;;
+nALT;Allantoin;;;;;;;;;;0.52
+;Aloe capensis Ph. Eur;;;;0.2;1.5;11.9;;;;
+;Aloes extractum siccum normatum Ph. Eur;;;0.1;0.6;4.5;;;;;0.65
+;Aloes tinctura (g);;;;0.2;1.3;10.8;;;;
+;Aloes tinctura (ml);;;;0.2;1.5;12.5;;;;
+;Althaeae radix Ph. Eur;;;;0.1;1;8;;;;
+;Althaeae sirupus (g);;;;;0.4;3;12.7;;;
+;Althaeae sirupus (ml);;;;0.1;0.5;3.8;;;;
+;Alumen Ph. Eur;;;;;0.3;2.5;10.8;;0.08;
+;Aluminii acetatis tartratis solutio 1,24% Al Ph. VIII;;;;;0.3;2.2;9.4;17.6;;
+;Aluminii chloridum hexahydr. Ph. Eur;;;;0.1;0.7;5.8;;;;0.53
+;Aluminii oxidum hydricum Ph. Eur;;;;0.2;1.7;14;;;;
+;Aluminii sulfas Ph. Eur;;;;0.1;0.8;6.3;;;;
+;Aluminium Ph. Eur;;;;0.3;2.5;20.2;;;;
+;Amaranth 85% (B.6/E 123);;;0.4;3.1;24.9;;;;;
+nALT;Ambroxolhydrochlorid;;;;;;;;;;0.51
+nALT;Amikacinsulfat Ph. Eur.;;;;;;;;;0.03;
+;Ammonii bituminosulfonas (vide: Ichthammolum Ph. Eur);;;;0.2;1.7;13.9;;;;
+;Ammonii bituminosulfonatis unguentum 10% MM;;;;0.1;0.8;6.6;;;;
+;Ammonii bromidum Ph. VIII;;;;0.1;0.6;5.1;;;;
+;Ammonii carbonas;;;;0.1;0.7;5.4;23.2;;;
+;Ammonii chloridum Ph. Eur;;;;0.1;0.5;3.7;16.1;;;
+;Ammonii hydroxidi solutio 10% Ph. VIII;;;;0.1;0.4;3.6;;;;
+nALT;Ammoniumbituminosulfonat/Glycerol 85 %-Mischung 1:1;;;;;;;;;;0.8
+;Amygdalae oleum Ph. Eur;;;;;0.4;3.2;13.8;25.8;;
+;Anetholum;;;;0.2;1.8;14.6;;;;
+;Anisi aetheroleum Ph. Eur (g);;;;0.3;2.3;18.6;;;;
+;Anisi aetheroleum Ph. Eur (ml);;;;0.3;2.1;17;;;;
+;Anisi fructus Ph. Eur;;;;0.1;0.5;3.9;16.7;;;
+nALT;Antazolinhydrochlorid Ph. Eur.;;;;;;;;;0.11;
+;Aqua ad iniectabilia Ph. Eur;;;;0.1;0.8;;;;;
+;Aqua purificata Ph.;;;;;0.1;0.6;2.5;4.7;;
+;Arachidis oleum hydrogenatum Ph. Eur;;;;0.1;0.5;4.2;;;;
+;Arachidis oleum Ph. Eur;;;;;0.4;3.1;;;;
+;Argenti nitras Ph. Eur;;0.1;0.4;3.6;;;;;0.19;
+;Argenti oleini emulsio 1% (ml);;;;0.1;0.9;7;29.8;42.15;;
+;Argentum foliatum Ph. VIII pro folie;;;;2.2;;;;;;
+;Arginin;;;;;;;;;;0.66
+;Arnicae flos Ph. VIII;;;;0.3;2.1;17;;;;
+;Arnicae tinctura Ph. VIII (g);;;;0.1;0.6;4.8;20.8;;;
+;Arnicae tinctura Ph. VIII (ml);;;;0.1;0.7;5.3;22.8;;;
+;Aspartamum Ph. Eur;;;0.1;1.1;9;;;;;
+;Atropini sulfas Ph. Eur;;0.1;0.7;5.7;45.6;;;;0.07;
+nALT;Atropinsulfat Monohydrat;;;;;;;;;;0.74
+;Aurantii amari extractum liquidum normatum Ph. VIII;;;;0.1;1;8.2;;;;
+;Aurantii amari flavedo Ph. VIII;;;;0.1;0.8;6.4;;;;
+;Aurantii dulcis tinctura Ph. VIII;;;;0.1;0.8;6.8;;;;
+;Aurantii flavedinis sirupus Ph. VIII (g);;;;;0.4;3;12.6;;;
+;Aurantii flavedinis sirupus Ph. VIII (ml);;;;0.1;0.5;3.8;16.4;;;
+;Aurantii floris aetheroleum syntheticum;;;0.1;0.7;5.9;;;;;
+;Aurantii flos Ph. VIII (geschlossene Blüten, fleurs en bouton);;;;0.3;2.2;17.4;;;;
+;Azorubin 85% (B.5/E 122) (vide: Allgemeine Bestimmungen);;;0.3;2.5;20.2;;;;;
+;Bacitracinum (x 1000 U.I) Ph. Eur;;;0.2;1.95;11.5;;;;0.03;
+;Balsami tolutani sirupus Ph. VIII A190;;;;0.1;0.4;3.4;14.5;;;
+;Balsamum peruvianum Ph. Eur (g);;;;0.3;2.1;17.2;;;;
+;Balsamum peruvianum Ph. Eur (ml);;;;0.3;2.4;19;;;;
+;Balsamum tolutanum Ph. VIII;;;0.1;0.5;4.2;;;;;
+;Barbitalum natrium Ph. VIII;;;0.2;1.6;12.7;102.7;;;;
+;Barbitalum Ph. Eur;;;;0.4;3.2;25.3;;;;
+;Barii sulfas Ph. Eur;;;;0.2;1.7;13.5;;;;
+nALT;Basisches Aluminiumacetat;;;;;;;;;;0.59
+nALT;Basisches Aluminiumacetat-tartrat;;;;;;;;;;0.68
+;Basiscreme DAC / Cremor basalis DAC;;;;0.1;0.7;5.4;23.3;;;
+;Belladonnae extractum siccum normatum Ph. VIII;;;0.2;1.5;11.8;;;;;0.63
+;Belladonnae tinctura normata Ph. VIII;;;;0.2;1.3;10.4;;;;
+;Bentonitum Ph. Eur;;;;0.1;0.8;6.4;;;;
+;Bentonitum Veegum;;;;0.4;2.9;23.7;;;;
+;Benzalkonii chloridi solutio 1%;;;;0.3;2.6;20.8;;;;
+;Benzalkonii chloridum Ph. Eur;;;;0.3;2.2;;;;;
+;Benzethonii chloridum Ph. Eur;;;0.3;2.1;16.7;;;;;
+;Benzinum medicinale Ph. IX (g);;;;0.1;0.4;3.3;14.1;26.5;;
+;Benzinum medicinale Ph. IX (ml);;;;;0.4;2.9;12.4;23.3;;
+;Benzocainum Ph. Eur;;;0.1;0.6;5;;;;;0.83
+;Benzoe tonkinensis Ph. VIII;;;0.1;0.7;5.2;;;;;
+;Benzoes tinctura composita Ph. V (g);;;;0.3;2.1;16.6;;;;
+;Benzoes tinctura composita Ph. V (ml);;;;0.3;2.1;16.6;;;;
+;Benzoes tinctura Ph. VIII (ml);;;;0.2;1.8;14.5;;;;
+;Benzylis benzoas Ph. Eur;;;;0.2;1.2;10.1;;;;
+;Benzylpenicillinum natricum Ph. Eur;0.1;0.5;4;32.4;;;;;0.1;
+;Betain mono hydrat crist. DAB;;;0.1;1;7.6;;;;;
+;Betamethasoni dipropionas Ph. Eur;0.2;1.5;11.7;;;;;;;
+;Betamethasoni valeras Ph. Eur;0.1;1.2;9.4;;;;;;;0.92
+;Betulae folium Ph. VIII;;;;;0.3;2.5;;;;
+nALT;Bisacodyl;;;;;;;;;;0.76
+nALT;Bismutchloridoxid;;;;;;;;;;0.13
+;Bismuthi subcarbonas Ph. Eur;;;0.1;0.5;4;32.2;;;;
+;Bismuthi subgallas;;;0.1;0.5;3.8;30.3;;;;0.37
+;Bismuthi subnitras;;;0.1;0.5;3.9;31.4;;;;0.2
+nALT;Bismuthoxid ;;;;;;;;;;0.18
+;Bleu patenté env. 50% (vide: Patentblau ca. 50%) (vide: Allgemeine;;;0.3;2.7;21.8;;;;;
+;Bestimmungen);;;;;;;;;;
+;Boldo extractum liquidum;;;;0.2;1.7;13.3;;;;
+;Boldo folium Ph. VIII;;;;0.1;0.6;4.5;;;;
+;Borax Ph. Eur;;;;0.1;0.4;3.4;;;;
+;Brillantgrün;;;0.3;2.4;19.7;;;;;
+;Brillantschwarz BN 75% (B.14/E 151) (vide: Allgemeine Bestimmungen);;;0.4;2.9;23.3;;;;;
+nALT;Bromhexinhydrochlorid;;;;;;;;;;0.59
+nALT;Budesonid;;;;;;;;;;0.71
+nALT;Butylscopolaminiumbromid;;;;;;;;;;0.7
+;Cacao oleum Ph. VI;;;;0.2;1.2;10;;;;
+;Calami rhizoma Ph. VIII;;;;0.1;0.5;4.2;;;;
+;Calcii carbonas Ph. Eur;;;;;0.3;2.7;11.6;;;
+;Calcii chloridum (dihydricum) Ph. Eur;;;;0.1;0.5;3.7;;;0.3;
+;Calcii chloridum hexahydricum Ph. Eur;;;;0.1;0.9;7.2;;;0.2;
+;Calcii dihydrogenophosphas Ph. VIII;;;;0.3;2.8;22.4;;;;
+;Calcii gluconas Ph. Eur;;;;0.1;1.1;8.5;;;;
+;Calcii glycerophosphas granulatus 10%;;;;0.3;2.6;21.2;;;;
+;Calcii glycerophosphas Ph. Eur;;;;0.4;2.9;23.1;;;;
+;Calcii glycerophosphas solutus 50% (g);;;;0.2;1.8;14.4;61.7;;;
+;Calcii hydrogenophosphas Ph. Eur;;;;0.1;0.5;3.9;16.6;;;
+;Calcii hydroxidi solutio Ph.;;;;;0.3;2.3;;;;
+;Calcii lactas pentahydricus Ph. Eur;;;;0.1;0.5;3.6;15.5;;;
+;Calcii pantothenas Ph. Eur;;;;0.2;1.4;11.2;;;;
+;Calcii phosphas Ph. Eur;;;;0.1;0.7;5.3;22.8;;;
+;Calcii sulfidi solutio Ph. VIII (= Vlemingkx);;;;0.1;1.2;9.7;41.5;;;
+;Calendulae flos Ph. VIII;;;;0.1;1;8.1;;;;
+;Camphora (vide: Dextrocamphora);;;;0.2;2;16.2;;;;
+;Camphora racemica Ph. Eur;;;;0.1;0.6;4.5;;;;
+;Camphorae solutio aquosa 0,1% Ph. VI;;;;;0.4;3;;;;
+;Camphorae solutio ethanolica Ph. VIII (g);;;;0.1;0.7;5.8;24.9;46.7;;
+;Camphorae solutio ethanolica Ph. VIII (ml);;;;0.1;0.6;5.2;22.4;42;;
+;Camphorae solutio oleosa Ph. VIII;;;;0.1;0.6;4.5;19.2;;;
+;Camphorae unguentum Ph. VIII;;;;0.1;0.7;5.8;24.9;;;
+;Capsaicinum;0.8;6.1;49.4;;;;;;;
+;Capsici extractum liquidum normatum Ph. VIII (g);;;0.2;1.5;12.1;;;;;
+;Capsici extractum liquidum normatum Ph. VIII (ml);;;0.2;1.6;13.1;;;;;
+;Capsici frutescentis fructus Ph. VIII;;;;0.1;0.8;6.1;;;;
+;Capsici tinctura normata Ph. VIII;;;;0.1;1.2;9.3;;;;
+;Carbacholum Ph. VIIII;;0.1;0.7;5.5;44.4;;;;0.2;
+nALT;Carbamazepin;;;;;;;;;;0.7
+;Carbamidum (vide: Ureum Ph.);;;;0.1;0.6;4.5;;;0.33;
+;Carbo activatus Ph. Eur;;;;0.3;2.6;20.6;;;;
+;Carbo activatus Ph. granulatus;;;0.1;0.6;4.5;36.4;;;;
+;Carbonis tinctura detergens Ph. VI (ml);;;;0.2;1.9;15.6;;;;
+;Carbopol 934;;;0.2;1.6;12.6;;;;;
+;Carbopol 940;;;0.1;0.5;4.1;;;;;
+;Carboxymethylcellulosum natricum Ph. Eur;;;;;0.4;3;;;;
+;Cardui benedicti herba Ph. VI concisa;;;;0.2;1.3;10.1;;;;
+;Caricae sirupus compositus Ph. VIII (g);;;;;0.4;3.1;13.3;24.9;;
+;Caricae sirupus compositus Ph. VIII (ml);;;;0.1;0.4;3.6;15.5;29.1;;
+;Carminum Ph. VIII;;;0.2;1.8;14.5;;;;;
+;Carvi fructus Ph. Eur;;;;0.1;0.5;3.6;;;;
+;Caryophylli flos aetheroleum Ph. Eur;;;;0.2;2;;;;;
+;Caryophylli flos Ph.;;;;0.1;1.2;9.3;;;;
+nALT;Cefazolin-Natrium Ph. Eur.;;;;;;;;;0.08;
+nALT;Cefotaxim-Natrium Ph. Eur.;;;;;;;;;0.08;
+;Cellulosi acetas phthalas Ph. Eur;;;;0.1;1.1;8.5;;;;
+;Centaurii herba Ph. VIII;;;;0.1;0.8;6.2;;;;
+;Cera alba Ph. Eur;;;;0.1;1;7.7;;;;
+;Cera flava Ph. Eur;;;;0.1;0.8;6.8;;;;
+;Cetaceum syntheticum;;;;0.1;0.7;5.4;;;;
+;Cetrimidum Ph. Eur;;;0.3;2.1;16.5;;;;;
+;Cetylanum (Lanette N PH) Ph. Eur;;;;0.1;1;8.3;;;;
+;Chamomillae romanae flos Ph. Eur;;;;0.2;1.9;15.5;;;;
+;Chinidini sulfas Ph. Eur;;;0.2;1.6;12.7;;;;;
+nALT;Chininhydrochlorid-Dihydrat;;;;;;;;;;0.76
+;Chinini dichloridum;;0.1;0.5;3.7;29.6;;;;;
+;Chinini hydrochloridum Ph. Eur;;0.1;0.4;3.3;26.5;;;;;
+;Chinini sulfas Ph. Eur;;;0.4;3.2;25.4;;;;;
+;Chinolingelb 66% (jaune de quinoléine 66%) (B.2/E 104) (vide: Allgemeine Bestimmungen);;0.1;0.7;5.6;45;;;;;
+;Chlorali hydras Ph. Eur;;;;0.2;1.7;13.8;;;;0.53
+;Chloraminum Ph. Eur;;;;0.2;1.5;12.1;;;;
+;Chloramphenicolum Ph. Eur;;;0.2;1.4;11.1;;;;;
+;Chlorhexidini diacetas Ph. Eur;;0.2;1.4;11.7;94;;;;;
+;Chlorhexidini digluconatis solutio Ph. Eur;;;;0.3;2.6;;;;;
+;Chlorobutanolum hemihydricum Ph. Eur;;;;0.2;1.8;14.6;;;;
+;Chlorocresolum Ph. Eur;;;0.1;0.5;3.9;31.7;;;;
+;Chloroformium (g);;;;;0.3;2.4;10.4;;;
+;Chloroformium (ml);;;;0.1;0.4;3.5;15.1;;;
+;Chlorophylli solutio aquosa 0,1% (B.11/E 141) (vide: Allgemeine Bestimmungen);;;;0.3;2.2;;;;;
+;Chlorophylli solutio oleosa 0,35% (g) (B.11/E141) (vide: Allgemeine Bestimmungen);;;;0.2;1.5;;;;;
+;Chlorophylli solutio oleosa 0,35% (ml) (B.11/E141) (vide: Allgemeine Bestimmungen);;;;0.3;2;;;;;
+;Chlorophyllinum cuprum natricum 50% (vide: Allgemeine Bestimmungen);;0.1;0.6;4.9;;;;;;
+;Chlorpromazini hydrochloridum Ph. Eur;;0.1;0.8;6.5;;;;;;
+nALT;Chlortetracyclinhydrochlorid Ph. Eur.;;;;;;;;;0.06;
+nALT;Chlortheophyllin;;;;;;;;;;0.6
+;Cholesterinum;;;0.2;1.9;;;;;;
+nALT;Cinchocainhydrochlorid;;;;;;;;;;0.79
+;Cinchonae cortex Ph. Eur;;;;0.1;0.8;6;;;;
+;Cinchonae extractum siccum normatum;;;0.2;1.9;15.3;;;;;
+;Cineolum Ph. VIII;;;;0.2;1.9;15.6;;;;
+;Cinnamomi cortex Ph. Eur;;;;0.1;1.2;9.5;;;;
+;Cinnamomi tinctura Ph. VIII;;;;0.2;1.4;11.4;;;;
+nALT;Ciprofloxacinhydrochlorid Ph. Eur.;;;;;;;;;0.05;
+;Citronellae aetheroleum Ph. Eur;;;;0.2;1.4;11.6;;;;
+;Citronellae spiritus compositus Ph. VIII;;;;0.2;1.7;13.5;;;;
+nALT;Clindamycinhydrochlorid;;;;;;;;;;0.65
+;Clioquinolum Ph. VIII;;;0.1;0.9;7.1;;;;;
+nALT;Clonidinhydrochlorid Ph. Eur.;;;;;;;;;0.13;
+nALT;Clotrimazol;;;;;;;;;;0.73
+St;Cocaini hydrochloridum Ph. Eur;0.1;0.6;4.6;36.9;;;;;0.09;
+;Coccionella pulvis;;;0.1;0.7;5.4;;;;;
+nALT;Codein-Monohydrat;;;;;;;;;;0.74
+;Codeini hydrochloridum Ph. VIII;;0.1;0.7;5.8;46.7;;;;;
+;Codeini phosphas hemihydricus Ph. Eur;;0.1;0.9;7.1;;;;;;0.69
+;Codeini phosphatis sirupus 0,25% Ph. VI;;;;0.1;0.7;5.9;25.4;47.5;;
+;Codeinum Ph. Eur;;0.2;1.4;10.9;;;;;;
+nALT;Coffein-Natriumbenzoat;;;;;;;;;;0.63
+;Coffeinum Ph. Eur;;;;0.2;1.8;14.7;;;;0.67
+;Colae extractum liquidum 1%;;;;0.2;1.3;10.1;43.6;;;
+;Colae semen contusus Ph Eur;;;;0.3;2.2;17.7;;;;
+;Colae semen Ph. VII pulvis;;;;0.1;0.4;3.5;15.1;28.3;;
+;Colchicinum Ph. Eur;0.2;1.7;13.3;107.1;;;;;;
+;Colistin Sulfat Ph. Eur (1 Mio);;;;11.7;;;;;;
+;Collodium 4%;;;;0.1;1;8;34.3;;;
+;Collodium 6%;;;;0.1;1;8;34.3;;;
+;Collodium elasticum (ml);;;;0.1;1.1;9;;;;
+;Colophonium Ph. VIII;;;;0.1;0.5;3.7;;;;
+;Condurango cortex Ph. VIII;;;;0.1;0.9;7.6;;;;
+;Condurango extractum liquidum Ph. VIII;;;;0.3;2.6;21.2;;;;
+;Condurango vinum Ph. VIII;;;;0.1;0.7;6;25.9;;;
+;Consolidae tinctura;;;;0.1;1;7.7;33.2;;;
+;Cortisoni acetas Ph. Eur;0.1;1;7.8;62.9;;;;;;
+;Crataegi extractum siccum normatum Ph. VIII;;;0.1;0.8;6.4;;;;;
+;Crataegi folium cum flore Ph. VIII;;;;0.1;0.5;4.2;;;;
+;Crataegi tinctura;;;;0.1;1;7.7;;;;
+;Cremor basalis DAC / Basiscreme DAC;;;;0.1;0.7;5.4;23.3;;;
+;Cresoli solutio saponata Ph. VI;;;;0.1;0.4;3.4;;;;
+;Cupri sulfas Ph. Eur;;;;0.1;1.1;8.8;;;;
+;Cyani flos Ph. VI;;;0.1;0.4;3.4;27.4;;;;
+;Cyanocobalaminum Ph. Eur;0.1;0.9;7.1;56.8;455.2;;;;;
+;Cynarae tinctura;;;;0.2;1.6;12.5;;;;
+;Cynosbati fructus Ph. VIII;;;;;0.3;2.1;9.1;;;
+;Cysteamin Hydrochlorid;;0.1;0.7;6;48.5;;;;;
+;D(+)-Galactosum Ph. Eur;;;0.3;2.1;16.7;134.3;;;;
+;D(+)-Mannitolum Ph. Eur;;;;0.1;0.8;6.4;27.3;;0.1;0.59
+;Dequalini hydrochloridum;;0.3;2.3;18.2;;;;;;0.8
+;Dermocetyl anhydricum;;;;0.1;1.1;8.9;;;;
+nALT;Dexamethasondihydrogenphosphat-Dinatrium Ph. Eur.;;;;;;;;;0.1;
+;Dexamethasoni acetas Ph. Eur;0.3;2.6;20.7;;;;;;;
+;Dexamethasonum Ph. Eur;0.3;2.5;20.1;;;;;;;0.71
+nALT;Dexpanthenol-Konzentrat 50 % (Trägermaterial: Propylenglycol);;;;;;;;;;0.83
+;Dexpanthenolum Ph. Eur;;;0.1;0.4;3.5;28.3;;;0.09;
+;Dextrocamphora Ph. VIII;;;;0.2;2;16.2;;;;
+;Dextromethorphani hydrobromidum Ph. Eur;;0.1;0.7;5.5;44.6;;;;;
+nALT;Diazepam;;;;;;;;;;0.70
+nALT;Diclofenac-Natrium;;;;;;;;;;0.64
+;Digitoxinum Ph. Eur;0.2;1.5;12.1;;;;;;;
+;Digoxinum Ph. Eur;0.5;4.3;34.7;;;;;;;
+;Dihydroergotamini tartras Ph. Eur;0.2;1.3;10.4;;;;;;;
+nALT;Dihydroergotaminmesilat;;;;;;;;;;0.74
+nALT;Dimenhydrinat;;;;;;;;;;0.75
+;Dimethylis sulfoxidum Ph. Eur;;;0.1;1.1;9.1;73.1;;;;
+;Dinatrii phosphas anhydricus Ph. VIII;;;;0.1;1;8.4;;;;
+;Dinatrii phosphas dihydricus Ph. Eur;;;;0.1;0.7;5.4;;;;
+;Dinatrii phosphas dodecahydricus Ph. Eur;;;;0.1;0.6;4.8;;;;
+;Diphenhydramini hydrochloridum Ph. Eur;;;;0.4;3.1;;;;0.09;0.82
+;Diprophyllinum Ph. Eur;;;0.1;0.6;4.9;39.4;;;;0.64
+;Dithranolum Ph. Eur;;0.1;0.9;7.1;56.6;;;;;
+nALT;Docusat-Natrium;;;;;;;;;;0.82
+nALT;Doxylaminhydrogensuccinat;;;;;;;;;;0.74
+nALT;Drofeninhydrochlorid;;;;;;;;;;0.85
+;Droserae tinctura;;;;0.3;2.1;17;;;;
+;Elixir ferri aromaticum Ph. VIII;;;;;0.3;2.1;9.1;;;
+;Elixir pectorale Ph. VI;;;;0.1;1;8.3;35.8;;;
+;Emulsio olei iecoris Ph. VI;;;;0.1;0.9;7;29.8;42.15;;
+;Eosin gelblich/éosine jaune;;;0.2;1.8;;;;;;
+;Ephedrini racemici hydrochloridum Ph. Eur;;0.1;0.8;6.4;;;;;;0.76
+nALT;Epinephrinhydrogentartrat Ph. Eur.;;;;;;;;;0.11;
+;Equiseti herba Ph. VIII;;;;;0.3;2.7;11.6;;;
+;Ergocalciferolum Ph. Eur;0.1;1.1;8.6;;;;;;;
+;Ergotamini tartras Ph. Eur;0.1;1.1;8.8;;;;;;;0.77
+;Erythromycinum Ph. Eur;;0.1;1.1;9.2;;;;;;0.79
+;Erythrosin 92% (B.8/E 127) (vide: Allgemeine Bestimmungen) +A323;;0.1;0.5;4;;;;;;
+;Estradiol hemihydrate Ph. Eur;0.2;1.4;11.4;91;;;;;;
+nALT;Estradiolbenzoat;;;;;;;;;;0.78
+nALT;Estriol;;;;;;;;;;0.75
+;Ethacridini lactas Ph. VIII;;0.1;1.1;8.8;70.8;;;;0.03;
+;Ethanolum 70% (sine camphora) (g) Ph. IX;;;;0.1;0.3;2.7;11.7;21.9;;
+;Ethanolum 70% (sine camphora) (ml ) Ph. IX;;;;0.1;0.4;3.1;13.3;25;;
+;Ethanolum 70% cum camphora 0,1% (g);;;;0.1;0.4;3.1;13.5;25.3;;
+;Ethanolum 70% cum camphora 0,1% (ml);;;;0.1;0.3;2.7;11.7;22;;
+;Ethanolum 96% (sine camphora) (g) Ph. Eur;;;;0.1;0.4;3.2;13.8;25.8;;
+;Ethanolum 96% (sine camphora) (ml) Ph. Eur;;;;0.1;0.4;3;12.7;23.9;;
+L;Ethanolum 96% potabile (Trinkfeinsprit/alcool de bouche) (g);;;;0.3;2;16.3;70.2;131.6;;
+L;Ethanolum 96% potabile (Trinkfeinsprit/alcool de bouche) (ml);;;;0.2;1.7;13.5;58.1;108.9;;
+;Ethanolum absolutum (ml) Ph. VIII;;;;0.1;0.4;3;12.8;24.1;;
+;Ethanolum anhydricum (ml) Ph. IX;;;;0.1;0.4;3;13.1;24.5;;
+;Ethanolum cum camphora 0,1% (96%) (g) Ph. Eur;;;;0.1;0.4;3.4;14.5;27.2;;
+;Ethanolum cum camphora 0,1% (96%) (ml) Ph. Eur;;;;0.1;0.4;3;12.8;24.1;;
+;Ethanolum ketonatum (g) Ph. IX;;;;;40;3.1;13.2;24.7;;
+;Ethanolum ketonatum (ml) Ph. IX;;;;;0.3;2.6;11;20.6;;
+St;Ethylmorphini hydrochloridum Ph. Eur;;0.3;2.7;;;;;;;
+;Eucalypti aetheroleum Ph. Eur (ml);;;;0.1;0.9;7.3;31.4;;;
+;Eugenolum Ph. Eur;;;;0.3;2.3;18.2;;;;
+;Fentanyli citras Ph. Eur;2.8;22;;;;;;;;
+;Ferri chloridi solutio Ph. VIII;;;;;0.4;3.1;13.5;25.3;;
+;Ferri oxidum saccharatum Ph. VIII;;;;0.1;1;7.9;33.9;;;
+;Ferri(III) glycerophosphas pulvis;;;0.1;0.7;5.6;;;;;
+;Ferrosi gluconas Ph. Eur;;;0.1;0.8;6.4;51.6;;;;
+;Ferrosi sulfas Ph. Eur;;;;0.1;0.5;3.9;;;;
+;Ferrosi sulfas sesquihydricus Ph. VIII;;;;0.1;1.1;8.9;;;;
+nALT;Flucloxacillin-Natrium Ph. Eur.;;;;;;;;;0.08;
+;Fluoresceinum natricum Ph. Eur;;;;0.3;2.5;20.5;;;0.18;
+nALT;Flupentixoldihydrochlorid;;;;;;;;;;0.68
+;Foeniculi aetheroleum Ph. VIII;;;;0.3;2.6;;;;;
+;Foeniculi fructus Ph. Eur;;;;0.1;0.5;3.6;15.5;;;
+;Formaldehydi solutio 35% Ph. Eur (aquosa);;;;;0.2;1.5;6.3;11.7;;
+;Formaldehydi solutio ethanolica Ph. VI (g);;;;0.1;0.7;5.8;24.9;;;
+;Formaldehydi solutio ethanolica Ph. VI (ml);;;;0.1;0.7;5.3;22.8;;;
+;Formaldehydi solutio saponata Ph. VIII (Formosapol) (g);;;;;0.2;1.7;7.2;13.6;;
+;Formaldehydi solutio saponata Ph. VIII (Formosapol) (ml);;;;;0.2;1.7;7.5;14;;
+;Frangulae cortex Ph. VIII;;;;0.1;1;8.3;;;;
+;Frangulae extractum liquidum;;;;0.2;1.7;13.5;58.1;;;
+;Frangulae extractum siccum normatum Ph. Eur;;;0.1;1.1;8.8;70.8;;;;
+;Fructosum Ph. Eur;;;;;0.3;2.7;11.5;;0.1;
+;Fuchsinum;;0.1;0.6;5.1;;;;;;
+;Galangae rhizoma Ph. VIII;;;;0.1;0.5;4.2;;;;
+;Gelatina Ph. Eur;;;;0.1;0.6;4.8;;;;
+;Gelborange S 85%/jaune orange S 85% (B.3/E 110);;;0.1;1;8.3;66.8;;;;
+nALT;Gentamycinsulfat Ph. Eur.;;;;;;;;;0.04;
+;Gentianae extractum siccum normatum Ph. VIII;;;0.1;0.8;6.6;;;;;
+;Gentianae radix Ph. Eur;;;;0.1;1.1;8.6;;;;
+;Gentianae tinctura normata Ph. VIII (g);;;;0.2;1.3;10.8;;;;
+;Gentianae tinctura normata Ph. VIII (ml);;;;0.2;1.4;11.4;;;;
+;Ginseng radix concisa;;;0.1;0.9;7.1;56.6;;;;
+;Glucosum anhydricum Ph. Eur;;;;0.1;0.6;5;21.6;;0.1;
+;Glucosum monohydricum Ph. Eur;;;;;0.2;1.2;5.3;9.9;0.09;
+;Glucosum spissum ca. 80%;;;;;0.3;2.1;9.2;;;
+nALT;Glutathion;;;;;;;;;;0.61
+;Glyceroli monostearas 40 - 50 Ph. Eur;;;;0.1;1;8.4;36.3;;;
+;Glyceroli unguentum Ph. Eur;;;;0.1;1.1;9.2;39.4;;;
+;Glycerolum (98%) Ph. Eur;;;;0.1;0.4;3.4;14.7;;;
+;Glycerolum 85% Ph. Eur;;;;;0.3;2.4;10.3;;0.18;0.73
+;Glycinum Ph. Eur;;;;0.1;0.9;7.1;;;;
+;Glycocollum (vide: Glycinum Ph.);;;;0.1;0.9;7.1;;;;
+;Graminis flos;;;;;0.2;1.9;8.3;;;
+;Graminis rhizoma Ph. Eur;;;;0.1;0.6;4.9;;;;
+;Guaiacolum Ph. VIII;;;;0.2;1.5;;;;;
+;Guaiazulenum purum;;0.2;1.3;10.5;84.5;;;;;
+;Guaifenesinum Ph. Eur;;;;0.3;2.3;18.6;;;;0.67
+;Hamamelidis aqua;;;;0.1;0.4;3.3;14.1;;;
+;Hamamelidis extractum liquidum normatum Ph. VIII;;;;0.3;2.1;16.9;72.6;;;
+;Hamamelidis folium Ph. Eur;;;;0.1;1.1;9;38.4;;;
+nALT;Hamamelisextrakt;;;;;;;;;;0.66
+;Harpagophyti extractum aquosum siccum;;;0.1;0.7;5.9;47.7;;;;
+;Harpagophyti radix Ph. Eur;;;;0.1;1;8;;;;
+;Hederae terrestris herba concisa;;;;0.1;0.6;4.9;;;;
+;Helianthi oleum Ph.;;;;0.1;0.4;3.6;;;;
+;Helichrysi flos Ph. VIII;;;;0.1;1;8.3;;;;
+nALT;Heparin-Natrium;;;;;;;;;;0.56
+;Hexylresorcinolum Ph. VIII;;0.1;0.9;7.4;;;;;;
+;Hippocastani tinctura (ml);;;;0.2;1.3;10.1;;;;
+;Histamini dihydrochloridum Ph. Eur;;0.2;1.4;11.6;;;;;0.25;
+nALT;Histidinhydrochlorid-Monohydrat Ph. Eur.;;;;;;;;;0.15;
+;Homatropini hydrobromidum Ph. Eur;0.1;0.9;7.3;58.7;;;;;0.1;
+;Hydrargyri dichloridum Ph. Eur;;;0.2;1.4;11.5;;;;;
+;Hydrargyri sulfidum;;;0.2;1.7;14;;;;;
+;Hydrochinonum purum;;;;0.2;1.3;10.6;;;;
+St;Hydrocodoni tartras Ph. IX;;0.2;1.9;15.1;;;;;;
+nALT;Hydrocortisonhydrogensuccinat Ph. Eur.;;;;;;;;;0.09;
+;Hydrocortisoni acetas Ph. Eur;;0.1;1.1;9.2;;;;;;0.73
+;Hydrocortisonum Ph. Eur;;0.2;1.7;13.5;;;;;;0.79
+;Hydrogenii peroxidum 3% Ph. Eur;;;;;0.2;1.5;6.6;12.5;;
+;Hydrogenii peroxidum 30% Ph. Eur;;;;;0.2;1.9;8;14.9;;
+;Hydroxyethylcellulosum Ph. Eur;;;0.1;0.5;4.1;;;;;
+;Hydroxypropylmethylcellulosum;;;;0.2;1.9;15.6;;;;
+;(vide: Methylhydroxypropylcellulosum);;;;;;;;;;
+;Hyoscyami folium Ph. Eur;;;;0.1;1;8;;;;
+;Hyoscyami oleum compositum Ph. VI (g);;;;0.1;0.7;5.8;;;;
+;Hyoscyami oleum compositum Ph. VI (ml);;;;0.2;1.4;11.4;;;;
+;Hyoscyami oleum Ph. VI;;;;0.2;1.3;10.4;;;;
+;Hyperici herba Ph. VIII;;;;0.1;0.5;4;;;;
+;Hyperici oleum Ph VIII (ml);;;;0.1;0.7;5.3;22.8;;;
+;Hyperici oleum Ph. VIII (g);;;;0.1;0.6;4.8;20.8;;;
+nALT;Ibuprofen;;;;;;;;;;0.90
+;Ichthammolum Ph. Eur (Ammonii bituminosulfonas);;;;0.2;1.7;13.6;;;;
+;Ilicis aquifolii folium concisum;;;;0.2;1.2;10;;;;
+;Indigotin indigocarmin 85% (B.10/E 132);;;0.3;2.7;21.6;;;;;
+nALT;Indometacin;;;;;;;;;;0.68
+;Iodi solutio aquosa 2% Ph. IX (kalkuliert auf der Basis von 500 ml);;;;0.1;0.9;7.3;;;;
+;Iodi solutio aquosa 5% Ph. IX (kalkuliert auf der Basis von 500 ml);;;;0.2;1.3;10.5;;;;
+;Iodi solutio ethanolica Ph. IX (6,5%) (ml) (kalkuliert auf der Basis von 500 ml);;;;0.2;1.6;12.5;;;;
+;Iodi solutio glycerolata 2% Ph. VI (kalkuliert auf der Basis von 500 ml);;;;0.2;1.3;10.7;;;;
+;Iodi solutio glycerolata 5% Ph. VI (kalkuliert auf der Basis von 500 ml);;;;0.3;1.8;14.3;;;;
+;Iodoform;;;0.2;1.6;12.7;;;;;
+;Iodpovidonum (Typ BASF 17/12) (PVP- Iod);;;;0.4;3.1;;;;0.01;0.78
+;Iodum Ph. Eur;;;0.1;0.7;5.8;46.7;;;;
+;Ipecacuanhae extractum siccum normatum Ph. VIII;;0.1;0.4;3.4;27.3;;;;;
+;Ipecacuanhae tinctura Ph. VI;;;;0.2;1.2;10;;;;
+;Isopropylis myristas Ph. Eur;;;;0.1;1;8.3;;;;
+;Iuglandis folium concisum;;;;0.2;1.3;10.1;;;;
+;Iuniperi aetheroleum Ph. VIII;;;;0.4;3;24.3;;;;
+;Iuniperi fructus Ph. VII contusus;;;;0.1;0.5;4;;;;
+;Iuniperi fructus Ph. VIII;;;;0.1;0.7;5.5;;;;
+;Iuniperi spiritus Ph. VIII (ml);;;;0.2;1.5;12.1;;;;
+;Iuniperi spiritus Ph. VIII ad usum externum (g);;;;0.1;0.4;3.3;14.4;;;
+;Iuniperi spiritus Ph. VIII ad usum externum (ml);;;;;0.4;3.2;13.8;;;
+;Kalii bromidum Ph. Eur;;;;0.2;1.3;10.4;;;;
+;Kalii carbonas Ph. VIII;;;;;0.3;2.3;;;;
+;Kalii chloras Ph. VIII;;;;0.2;1.6;13.3;;;;
+;Kalii chloridum Ph. Eur;;;;;0.4;3.2;;;0.43;
+;Kalii citras Ph. Eur;;;;0.1;0.8;6.8;;;;
+;Kalii hydrogenocarbonas Ph. Eur;;;;0.1;0.5;4.3;18.7;;;
+;Kalii hydrogenotartras purus;;;;0.1;0.6;4.7;;;;
+;Kalii hydroxidum Ph. Eur;;;;0.1;0.5;4;;;;
+;Kalii iodidum Ph. Eur;;;;0.3;2.1;16.8;;;0.2;
+;Kalii natrii tartras Ph. VIII;;;;0.1;1.2;9.4;;;;
+;Kalii nitras Ph. VIII;;;;0.2;1.4;11.6;;;0.32;
+;Kalii permanganas Ph. Eur;;;;0.1;0.6;4.7;;;;
+;Kalii sorbas Ph. Eur;;;;0.1;1.1;8.5;;;;
+;Kalii sulfas Ph. VIII;;;;0.2;1.2;9.9;;;;
+nALT;Kaliumdihydrogenphosphat Ph. Eur.;;;;;;;;;0.24;
+nALT;Kaliummonohydrogenphosphat Ph. Eur.;;;;;;;;;0.26;
+;Kaolinum ponderosum Ph. Eur;;;;;0.3;2.2;9.3;;;
+;Komplexon III (vide: Natrii edetas Ph. Eur);;;0.1;0.5;3.7;30.1;;;;
+;Kristallviolett/cristal violet;;;0.3;2.6;;;;;;
+;L-Ephedrini hydrochloridum Ph. Eur;;;0.2;1.3;10.1;;;;;
+;L-Ephedrinum hemihydricum Ph. Eur;;;0.1;1;8.1;64.7;;;;
+nALT;Lactose-Monohydrat;;;;;;;;;;0.55
+;Lactosum Ph. Eur;;;;;0.2;1.9;8.3;;;
+;Lanae alcoholes (vide: Alcoholes adipis lanae Ph. Eur);;;;0.2;2;16.2;;;;
+;Lanette SX;;;;0.2;1.3;10.4;;;;
+;Lanolinum Ph. VIII;;;;0.1;0.5;4.3;;;;
+;Lapis pumicis pulvis Typ 00000;;;;;0.2;1.3;;;;
+;Laurocerasi aqua normata Ph. VIII;;;;0.1;1;8;;;;
+;Lavandulae aetheroleum Ph. VIII (ml);;;;0.3;2.4;19.1;;;;
+;Lavandulae flos electissimus;;;;0.2;1.3;10.3;;;;
+;Lavandulae spiritus Ph. VI (ml);;;;0.1;0.5;4.3;;;;
+;Lecithinum Ph. VI;;;;0.2;1.4;11.1;;;;
+;Levistici radix Ph. Eur;;;;0.2;1.3;10.4;;;;
+;Levomentholum Ph. Eur;;;;0.4;3.1;24.8;;;;
+;Lichen islandicus Ph. VIII;;;;0.1;1.2;9.3;;;;
+nALT;Lidocainhydrochlorid-Monohydrat;;;;;;;;;;0.81
+;Lidocaini hydrochloridum Ph. Eur;;;;0.4;3.1;;;;0.12;
+;Limonis sirupus Ph. VIII;;;;;0.1;0.9;4;7.6;;
+;Limonis tinctura Ph. VIII;;;;0.1;1.2;9.3;;;;
+;Lini oleum Ph. VIII (ml);;;;0.1;0.4;3.3;14;;;
+;Lini semen Ph. Eur;;;;;0.2;1.4;6.1;11.3;;
+;Lini semen Ph. VII pulvis;;;;;0.3;2;8.7;;;
+;Linimentum gaultheriae compositum Ph. VIII;;;;0.1;0.9;7.6;32.5;;;
+;Linimentum salicylatum compositum Ph. VIII;;;;0.1;1;7.9;33.8;;;
+;Linimentum saponato-camphoratum liquidum Ph. VIII;;;;0.2;1.3;10.9;46.7;;;
+;Linimentum terebinthinae compositum Ph. VIII;;;;0.1;0.5;4;17.1;;;
+;Liquiritiae extractum liquidum Ph. VIII;;;;0.2;1.8;14.5;;;;
+;Liquiritiae radix Ph. VII concisa;;;;0.1;0.5;4;;;;
+;Liquiritiae radix Ph. VII pulvis;;;;0.1;0.7;5.8;;;;
+;Liquiritiae succus depuratus solutus;;;;0.1;1.1;9.2;;;;
+;Lithii carbonas Ph. Eur;;;;0.3;2.4;19.1;;;;
+;Lupuli concisus Ph.;;;;0.1;0.7;5.7;;;;
+;Lycopodium Ph. VII;;;;0.2;1.8;14.2;;;;
+;Macrogoli unguentum Ph. VIII;;;;0.1;0.7;5.4;23.3;;;
+;Macrogoli-400 monostearas Ph. VIII;;;;0.1;0.7;5.8;24.9;;;
+;Macrogolum 1540 Ph. Eur;;;;0.1;0.6;4.7;20.2;;;
+;Macrogolum 300 Ph. Eur;;;;0.1;0.8;6.8;29.1;;;
+;Macrogolum 400 Ph. Eur;;;;0.1;0.6;4.6;;;;
+;Macrogolum 4000 Ph. Eur;;;;0.1;0.5;4.3;18.7;;;
+;Macrogolum 6000 Ph.;;;;0.1;0.8;6.7;;;;
+;Magnesii chloridum Ph. Eur;;;;0.1;0.6;5.1;21.8;;;
+;Magnesii citratis granulatum effervescens Ph. VIII;;;;0.2;1.6;13.2;;;;
+;Magnesii glycerophosphas pulvis;;;;0.3;2.3;18.2;;;;
+;Magnesii glycerophosphas solutus 50%;;;;0.3;2.3;18.2;;;;
+;Magnesii hydroxidum Ph. Eur;;;;0.1;1;7.7;33.2;;;
+;Magnesii oxidum leve Ph. Eur;;;;0.1;0.4;3.6;;;;
+;Magnesii oxidum ponderosum Ph. Eur;;;;0.1;0.7;5.3;;;;
+;Magnesii peroxidum Ph. VIII;;;;0.2;1.4;11.1;;;;
+;Magnesii stearas Ph. Eur;;;;0.1;0.7;5.3;22.8;;;
+;Magnesii subcarbonas levis Ph. Eur;;;;0.1;0.4;3.3;14;;;
+;Magnesii subcarbonas ponderosus Ph. Eur;;;;0.1;0.6;4.9;21.3;;;
+;Magnesii sulfas Ph. Eur;;;;;0.3;2;8.7;;;
+;Magnesii trisilicas Ph. Eur;;;;0.1;0.6;4.6;19.7;;;
+nALT;Magnesiumsulfat-Heptahydrat Ph. Eur.;;;;;;;;;0.1;
+;Malvae flos Ph. VIII concisus;;;;0.2;1.6;12.6;;;;
+;Malvae flos Ph. VIII electus;;;;0.3;2.3;18.6;;;;
+;Malvae folium Ph. VIII concisum;;;;0.1;0.5;4.1;17.6;;;
+;Mannitolum-Carminum 99:1;;;;0.5;4.4;35.3;;;;
+;Mastix Ph. VIII;;;0.1;0.9;7.2;58.1;;;;
+;Matricariae extractum liquidum normatum Ph. VIII;;;;0.1;0.5;4.1;17.6;32.9;;
+;Matricariae flos Ph. Eur;;;;0.1;0.9;6.9;29.5;;;
+;Maydis amylum Ph. Eur;;;;;0.2;1.9;8.1;;;
+;Mel rosatum conservatum;;;;0.2;1.3;10.1;;;;
+nALT;Melatonin;;;;;;;;;;0.65
+;Melissae folium Ph. VIII;;;;0.1;0.9;7.5;;;;
+;Menthae piperitae aetheroleum Ph. Eur;;;;0.4;2.9;;;;;
+;Menthae piperitae folium Ph. Eur;;;;0.1;0.9;6.9;29.6;;;
+;Menthae piperitae spiritus Ph. VIII;;;;0.3;2.1;16.9;72.6;;;
+;Mentholum (vide: Levomentholum);;;;0.4;3.1;24.8;;;;
+;Menyanthidis folium Ph. VI;;;;0.2;1.3;10.6;45.5;;;
+;Meprobamatum Ph. Eur;;;0.1;0.6;5;;;;;
+;Mepyramini maleas Ph. Eur;;0.1;1.1;8.8;71.2;;;;;0.85
+;Merbrominum natricum Ph. VII;;;0.1;0.5;4.2;;;;;
+nALT;Mercaptaminhydrochlorid DAC;;;;;;;;;0.29;
+nALT;Mesalazin;;;;;;;;;;0.57
+nALT;Metamizol-Natrium-Monohydrat;;;;;;;;;;0.70
+;Metamizolum natricum Ph. Eur;;;;0.2;1.5;11.7;;;;
+nALT;Methacholiniumchlorid DAC;;;;;;;;;0.18;
+St;Methadoni hydrochloridum Ph. Eur;;0.1;0.9;7.1;;;;;;0.74
+;Methenaminum Ph. VIII;;;;0.2;1.3;10.1;;;;
+;Methioninum, DL- Ph. Eur;;;0.1;0.4;3.5;27.7;;;;
+;Methylcellulosum Ph. Eur (Methocel MC);;;0.2;1.3;10.1;81.5;;;;
+;Methylhydroxypropylcellulosum Ph. Eur (Methocel 90 HG);;;0.1;1.1;9.2;73.9;;;;
+;Methylis parahydroxybenzoas Ph. Eur;;;;0.1;1.1;9.1;;;;
+;Methylis salicylas Ph. Eur;;;;0.1;0.7;6;;;;
+;Methylrosanilini chloridum Ph. VI;;;0.4;3.2;26;;;;;
+;Methyltestosteronum Ph. Eur;;0.3;2.8;22.4;;;;;;
+;Methylthionini chloridum Ph. Eur;;0.1;0.5;4.1;33.2;;;;;
+nALT;Metoclopramid;;;;;;;;;;0.73
+nALT;Metoclopramidhydrochlorid;;;;;;;;;;0.74
+;Metronidazolum Ph. Eur;;;0.1;0.6;4.9;;;;;0.67
+;Millefolii flos Ph. VIII;;;;0.1;0.5;4;;;;
+;Mixtura solvens Ph. VIII;;;;0.1;0.6;5.1;21.8;;;
+;Monardae flos;;;0.2;1.4;11.3;;;;;
+nALT;Morphinhydrochlorid-Trihydrat;;;;;;;;;;0.80
+St;Morphini hydrochloridum Ph. Eur;;0.2;1.7;13.9;;;;;0.08;
+;Morrhuae oleum Ph. VIII (ml);;;;0.1;0.5;4.2;17.8;33.4;;
+;Myristicae aetheroleum Ph. VIII (g);;;0.1;0.7;5.9;;;;;
+;Myristicae aetheroleum Ph. VIII (ml);;;0.1;0.6;5.1;;;;;
+;Myrrha Ph. Eur;;;;0.2;1.3;10.4;;;;
+;Myrrhae tinctura Ph. VIII (ml);;;;0.1;0.9;7.2;;;;
+;Myrtilli fructus Ph. VIII;;;;0.2;1.8;14.6;;;;
+;Myrtilli tinctura (ml);;;;0.1;0.9;7.2;;;;
+nALT;Naphazolinhydrochlorid Ph. Eur.;;;;;;;;;0.14;
+;Naphazolini nitratis solutio 0,1%;;;;0.3;2.3;18.7;;;0.12;
+;Naphtholum-beta Ph. VIII;;;0.1;0.7;6;;;;;
+nALT;Naproxen;;;;;;;;;;0.70
+;Natrii acetas Ph. Eur;;;;0.1;0.7;6;;;0.26;
+;Natrii alginas Ph. Eur;;;;0.3;2.2;18;;;;
+;Natrii benzoas Ph. Eur;;;;;0.4;2.9;;;;0.59
+;Natrii bromidum Ph. Eur;;;;0.1;1.1;9;;;;
+;Natrii carbonas decahydricus Ph. Eur;;;;0.1;0.6;5;;;;
+;Natrii carbonas monohydricus Ph. Eur;;;;0.1;0.5;4.2;18.2;;;
+;Natrii chloridum Ph. Eur;;;;;0.3;2.7;11.4;;0.58;
+;Natrii citras Ph. Eur;;;;0.1;0.5;4.1;;;0.2;
+;Natrii cyclamas Ph. Eur;;;;0.1;1;7.8;;;;
+;Natrii dihydrogenphosphas dihydricus Ph. Eur;;;;0.1;0.4;3.4;;;0.21;0.47
+;Natrii disulfis purissimus;;;;;0.2;1.3;5.4;10.2;;
+;Natrii edetas Ph. Eur;;;0.1;0.5;3.7;29.3;;;0.15;
+;Natrii fluoridum Ph. Eur;;;;;0.3;2.7;;;;
+;Natrii glycerophosphas;;;;0.2;1.7;13.3;;;;
+;Natrii hydrogenocarbonas Ph. Eur;;;;;0.2;1.4;6.2;;0.38;
+;Natrii hydroxidum Ph. Eur;;;;;0.4;3;;;;
+;Natrii hypochlorosi solutio chirurgicalis (Dakin);;;;;0.3;2.6;11.3;;;
+;Natrii iodidum Ph. Eur;;;;0.2;1.5;12.4;;;;
+;Natrii laurilsulfas Ph. Eur;;;;0.2;1.3;10.3;;;;
+;Natrii metabisulfis Ph. Eur;;;;0.2;1.5;12.4;;;;
+;Natrii nitras Ph. V;;;;0.1;0.7;5.8;;;;
+;Natrii paraminosalicylas (PAS) Ph. Eur;;0.1;0.8;6;;;;;;
+;Natrii salicylas Ph. Eur;;;;0.1;1;7.9;;;;
+;Natrii stearas Ph. VIII;;;;0.2;1.3;10.8;;;;
+;Natrii sulfas anhydricus Ph. Eur;;;;;0.3;2.2;9.5;;;
+;Natrii sulfas decahydricus Ph. Eur;;;;;0.3;2.2;9.5;;;
+;Natrii thiosulfas Ph. Eur;;;;0.1;0.6;4.6;19.7;;0.17;
+nALT;Natriumacetat-Trihydrat;;;;;;;;;;0.61
+nALT;Natriumbutyrat DAC;;;;;;;;;0.33;
+nALT;Natriumhydrogencarbonat;;;;;;;;;;0.46
+nALT;Natriummonohydrogenphosphat-Dodecahydrat Ph. Eur.;;;;;;;;;0.13;
+nALT;Natriumpropionat Ph. Eur.;;;;;;;;;0.35;0.6
+nALT;Natriumtetraborat Ph. Eur.;;;;;;;;;0.28;
+;Neo-PCL aqua solubile;;;;0.1;1;7.8;;;;
+;Neomycini sulfas Ph. Eur;;;0.4;3.1;;;;;0.06;0.79
+nALT;Neostigminbromid Ph. Eur.;;;;;;;;;0.12;
+;Niaouli aetheroleum;;;;0.2;2;15.8;;;;
+;Nicethamidi guttae orales 250 mg/ml Ph. VIII;;;;0.3;2.2;17.3;;;;
+;Nicethamidum Ph. Eur;;;0.1;0.6;4.8;;;;;
+;Nicotinamidum Ph. Eur;;;;0.2;1.5;12.1;;;;
+;Noscapini hydrochloridum Ph. Eur;;0.2;1.2;9.8;78.9;;;;;
+nALT;Nystatin;;;;;;;;;;0.77
+;Olivae oleum Ph. Eur (ml);;;;0.1;0.6;5;21.6;;;
+nALT;Omeprazol;;;;;;;;;;0.66
+St;Opii crocata tinctura Ph. VI;;;0.2;1.2;9.7;;;;;
+St;Opii tinctura normata Ph. VIII;;;0.1;1.1;9.2;;;;;
+nALT;Opium;;;;;;;;;;0.67
+;Orthosiphonis folium Ph. VIII;;;;0.1;0.8;6.4;;;;
+;Oryzae amylum Ph. Eur;;;;;0.3;2.6;11.3;;;0.57
+nALT;Oxazepam;;;;;;;;;;0.63
+;Oxybuprocaini hydrochloridum (Novesin) Ph. Eur;0.1;0.4;3.5;28.3;;;;;0.11;
+nALT;Oxybutininhydrochlorid Ph. Eur.;;;;;;;;;0.08;
+;Oxygenium Ph. Eur (vide: Mittel- und Gegenständeliste, Anhang 2 KLV);;;;;;;;;;
+nALT;Oxytetracyclinhydrochlorid Ph. Eur.;;;;;;;;;0.08;
+;Panthenolum, D- (vide: Dexpanthenolum Ph. Eur);;;0.1;0.5;3.9;;;;;
+;Papain 6000 USP-E/mg;;;0.1;0.9;6.9;55.6;;;;
+nALT;Papaverin;;;;;;;;;;0.73
+;Papaverini hydrochloridum Ph. Eur;;;0.2;1.8;14.2;;;;;0.72
+;Parabeni concentratum 10% FH;;;;0.4;2.9;23;;;;
+;Paracetamolum Ph. Eur;;;;0.2;1.4;11.5;;;;0.72
+;Paraffini liquidi emulsio oralis Ph. VIII;;;;0.1;0.9;7.4;31.9;59.7;;
+;Paraffinum liquidum Ph. Eur (g);;;;;0.3;2.2;9.6;18;;
+;Paraffinum liquidum Ph. Eur (ml);;;;;0.3;2.3;9.9;18.5;;
+;Paraffinum perliquidum Ph. Eur (g);;;;;0.3;2.2;9.7;18.1;;
+;Paraffinum perliquidum Ph. Eur (ml);;;;;0.3;2.1;9.1;17;;
+;Paraffinum solidum Ph. Eur;;;;;0.2;1.8;7.7;;;
+;Paraldehydum Ph. Eur;;;;0.1;1.1;9.2;;;;
+;Passiflorae herba Ph. VIII;;;;0.1;0.8;6.4;;;;
+;Passiflorae tinctura (ml);;;;0.1;1;8.3;;;;
+;Patentblau V ca. 50% (bleu patenté env. 50%) (B.9/E 131);;0.1;0.6;5;40.2;;;;;
+;Pectinum;;;;0.2;1.4;11;;;;
+;Pentobarbitalum natricum Ph. Eur;;;0.2;1.5;12.4;;;;;
+;Pentobarbitalum Ph. Eur;;;0.2;1.4;11.4;91;;;;
+;Pepsini pulvis Ph. Eur;;;0.1;0.8;6.5;;;;;
+;Perseae gratissimae oleum;;;;0.2;1.3;10.4;;;;
+St;Pethidini hydrochloridum Ph. Eur;;0.2;1.1;6.7;40.1;;;;;
+;Phenacetinum Ph. Eur;;;0.1;0.5;3.8;30.7;;;;
+;Phenazonum Ph. Eur;;;;0.2;2;16;;;;0.75
+;Phenobarbitalum natricum Ph. Eur;;;;0.4;3.2;25.3;;;;0.68
+;Phenobarbitalum Ph. Eur;;;;0.4;3.1;;;;;0.68
+;Phenolum Ph. Eur;;;;0.2;1.9;15.6;;;;
+;Phenoxyethanolum Ph. Eur;;;;0.4;2.8;;;;;
+nALT;Phenylbutazon;;;;;;;;;;0.83
+;Phenylephrini hydrochloridum Ph. Eur;;0.3;2.2;17.6;;;;;0.19;
+;Phenytoinum natricum Ph. Eur;;0.1;0.5;4;;;;;;
+;Phthalylsulfathiazolum Ph. Eur;0.4;3;24.3;;;;;;;
+;Physostigmini salicylas Ph. Eur;0.4;2.8;22.7;183;;;;;0.09;
+;Pilocarpini hydrochloridum Ph. Eur;0.1;0.6;5;40.1;;;;;0.14;
+;Pilocarpini nitras Ph. Eur;;;;0.1;;;;;0.14;
+;Pimpinellae radix Ph. VI concisa;;;;0.2;1.2;9.9;;;;
+;Pimpinellae tinctura (g);;;;0.1;1.2;9.3;;;;
+;Pimpinellae tinctura (ml);;;;0.2;1.4;11.4;;;;
+;Pini pumilionis aetheroleum Ph. VIII (ml);;;;0.2;1.3;10.4;;;;
+;Piperazini citras Ph. Eur;;;;0.2;1.2;9.9;;;;
+;Piperazini sirupus Ph. VIII;;;;0.1;0.6;4.5;19.2;;;
+;Piperazinum hydricum Ph. Eur;;;;0.4;3.2;25.3;;;;
+nALT;Piroxicam;;;;;;;;;;0.66
+;Pix lithanthracis Ph. VI;;;;0.2;2;15.8;;;;
+;Pix oxycedri Ph. VI;;;;0.3;2.2;17.6;;;;
+;Plantaginis folium Ph. VIII;;;;0.1;0.6;4.4;;;;
+;Plantaginis sirupus Ph. V;;;;0.1;0.4;3.2;13.8;;;
+;Podophyllinum Ph. VIII;;0.1;0.6;5;40.5;;;;;
+;Podophyllotoxinum;2.8;22.2;;;;;;;;
+;Polidocanolum;;;0.1;0.4;3.6;;;;;
+nALT;Polihexanid DAC;;;;;;;;;0.07;
+;Polyethylenglycola (vide: Macrogola);;;;;;;;;;
+;Polygalae radix Ph. Eur;;;;0.3;2.3;18.2;;;;
+;Polygalae sirupus Ph. VIII (g);;;;0.1;1;8.3;35.4;;;
+;Polymyxin B Sulfat Ph. (x1000 UI);;;;;0.35;2.7;13.35;21.35;0.05;
+;Polyoxymethylenum Ph. VIII;;;;0.1;0.7;5.3;;;;
+;Polysorbatum 20 Ph. (Tween 20) Ph. Eur;;;;0.1;1.1;8.5;;;;
+;Polysorbatum 60 Ph. (Tween 60) Ph. Eur;;;;0.1;1;8.3;;;;
+;Polysorbatum 80 Ph. (Tween 80) Ph. Eur;;;;0.1;1.1;8.5;;;;
+;Ponceau 4R 85% (B.7/4 E 124);;;0.4;3.1;25.1;;;;;
+nALT;Povidon 25 Ph. Eur.;;;;;;;;;0.01;
+nALT;Prednisolonhydrogensuccinat USP;;;;;;;;;0.09;
+;Prednisoloni acetas Ph. Eur;;0.3;2.4;19.6;;;;;;0.75
+;Prednisolonum Ph. Eur;;0.2;1.9;15.2;;;;;;0.7
+;Prednisonum Ph. Eur;;0.3;2.4;19.6;;;;;;0.75
+;Procainamidi hydrochloridum Ph. Eur;;;0.3;2.4;19.6;;;;;
+;Procaini hydrochloridum Ph. Eur;;;;0.3;2.6;21.2;;;0.12;0.8
+;Progesteronum Ph. Eur;;0.3;2.7;21.4;;;;;;
+;Promethazini hydrochloridum Ph. Eur;;;0.3;2.3;18.6;;;;;0.77
+;Propylenglycolum Ph. Eur;;;;;0.3;2.5;10.6;;;
+;Propylis parahydroxybenzoas Ph. Eur;;;;0.3;2.4;;;;;
+;Propyphenazonum Ph. Eur;;;;0.2;1.9;15.6;;;;0.84
+;Psyllii semen Ph. Eur;;;;0.1;0.5;4.1;17.5;;;
+;Pyridoxini hydrochloridum Ph. Eur;;;0.1;0.9;6.8;;;;;0.69
+;Pyrogallolum Ph. VII;;;0.1;1.2;9.4;75.9;;;;
+;Quercus cortex Ph. VIII;;;;;0.4;2.9;12.3;;;
+;Quercus extractum liquidum (ml);;;;0.2;1.9;15.6;;;;
+;Quillaiae cortex Ph. VIII;;;;0.1;0.9;7.1;30.3;;;
+;Quillaiae tinctura normata Ph. VII (ml);;;;0.1;1;8.3;;;;
+;Ratanhiae extractum siccum normatum Ph. VIII;;;0.2;1.9;15.2;;;;;
+;Ratanhiae radix Ph. Eur;;;;0.1;0.6;4.5;;;;
+;Ratanhiae tinctura normata Ph. VIII (ml);;;;0.2;1.3;10.4;;;;
+;Reserpinum Ph. Eur;;0.2;1.5;12.4;99.6;;;;;
+;Resorcinolum Ph. Eur;;;;0.3;2.5;19.8;;;;
+;Rhamni purshiani cortex Ph. Eur;;;;0.1;0.7;;;;;
+;Rhei extractum siccum normatum Ph. VIII;;;0.1;1.1;9;;;;;0.7
+;Rhei radix Ph. Eur;;;;0.1;1;8.3;;;;
+nALT;Ribavirin Ph. Eur.;;;;;;;;;0.07;
+;Riboflavinum Ph. Eur;;;0.1;1.1;8.5;;;;;
+;Ricini oleum Ph. Eur;;;;;0.4;2.8;12.1;;;
+;Rosae aqua conservata;;;;;0.2;1.9;8.3;;;
+;Rosmarini aetheroleum Ph. VIII (ml);;;;0.2;1.6;12.4;;;;
+nALT;Rosskastaniensamentrockenextrakt, Eingestellter;;;;;;;;;;0.64
+;Rubi idaei sirupus Ph. VIII;;;;;0.3;2.1;9.1;;;
+;Rutosidum Ph. VIII;;;0.1;1.1;9.1;;;;;
+;Saccharinum natricum Ph. Eur;;;;0.2;1.5;11.7;;;;
+;Saccharinum Ph. Eur;;;;0.2;1.7;13.9;;;;
+;Saccharum Ph. Eur;;;;;0.2;1.7;7.2;;0.06;
+;Sal anticatarrhale compositum Ph. VIII;;;;;0.4;2.8;12.1;;;
+L;Sal marinum (pro balneo) (max. 10 kg);;;;;0.1;0.7;2.8;5.3;;
+;Sal purgans compositum Ph. VIII;;;;0.1;0.6;4.6;19.7;36.9;;
+;Salicylamidum;;;;0.3;2.4;19.5;;;;0.7
+;Salolum Ph. VI;;;;0.3;2.2;17.6;;;;
+;Salviae aetheroleum Ph. VIII;;;0.1;0.4;3.3;;;;;
+;Salviae folium Ph. VIII;;;;0.1;0.8;6.7;28.8;;;
+;Salviae trilobae folii extractum liquidum;;;;0.3;2.7;21.7;93.1;;;
+;Salviae trilobae folium Ph. VIII;;;;0.1;1.1;8.5;;;;
+;Sambuci flos Ph. Eur;;;;0.1;1.2;9.3;;;;
+;Saniculae herba concisa;;;;0.1;1.2;9.6;;;;
+;Sapo kalinus Ph. VIII;;;;0.1;0.5;3.9;16.6;;;
+;Scopolamini hydrobromidum Ph. Eur;0.1;0.8;6.2;;;;;;0.07;
+;Sennae folium Ph. Eur;;;;0.1;0.4;3.5;;;;
+;Sennae fructus angustifoliae Ph. Eur concisus;;;;;0.4;3;;;;
+;Serpylli herba concisa;;;;0.1;0.6;4.5;;;;
+;Sesami oleum Ph. Eur (ml);;;;0.2;1.4;11.4;;;;
+nALT;Silbereiweiß-Acetyltannat, Boraxfreies DAC;;;;;;;;;0.15;
+nALT;Silbereiweiß-Acetyltannat, Boraxhaltiges DAC;;;;;;;;;0.1;
+;Silica colloidalis anhydrica Ph. Eur (Aerosil);;;;0.2;1.3;10.2;;;;
+;Silica colloidalis hydrica Ph. Eur;;;;0.1;1;7.7;;;;
+;Silicii dioxidum 99:1;;;;0.6;4.6;37.4;;;;
+;Sinapis nigrae semen Ph. VIII;;;;0.1;0.4;3.3;14.2;;;
+;Sirupus roborans PM;;;;0.1;0.6;4.5;19.3;36;;
+;Sirupus roborans PM sine Kalii hydrogenphosphas;;;;0.1;0.8;6.8;29.2;54.8;;
+;Sirupus simplex Ph. VIII (g);;;;;0.2;1.4;6.1;;;
+;Sirupus simplex Ph. VIII (ml);;;;;0.2;1.8;7.7;;;
+nALT;Sojalecithin;;;;;;;;;;0.87
+;Solani amylum Ph. Eur;;;;;0.3;2;8.6;;;
+;Solutio zinco-cuprica composita Ph. VIII;;;;;0.4;3;13;;;
+;Sorbitolum 70% cristallisabile Ph. Eur (g);;;;0.1;1.1;8.7;37.2;;;
+;Sorbitolum 70% non cristallisabile Ph. Eur (g);;;;;0.3;2.4;10.5;;;
+;Sorbitolum Ph. Eur;;;;;0.4;3.1;13.3;;;
+;Span 80;;;;0.1;1.2;9.5;;;;
+;Species anticystiticae Ph. VIII;;;;0.1;0.7;5.7;;;;
+;Species carminativae Ph. VIII;;;;0.1;0.8;6.4;;;;
+;Species diureticae Ph. VIII;;;;0.1;0.7;5.7;;;;
+;Species laxantes Ph. VIII;;;;0.1;0.7;5.7;;;;
+;Species pectorales Ph. VIII;;;;0.1;1.1;9.2;;;;
+;Species sedativae Ph. VIII;;;;0.1;1;8.2;;;;
+;Spiraeae flos Ph. V;;;;0.1;1.1;8.8;;;;
+;Spiritus aethereus Ph. VI (Hofmann);;;0.1;0.5;3.9;31.1;;;;
+;Spiritus ammonii anisatus Ph. VIII (g);;;;0.2;1.4;11.3;;;;
+;Spiritus ammonii anisatus Ph. VIII (ml);;;;0.2;1.2;9.8;;;;
+;Spiritus aromaticus Ph. V (g);;;;0.1;0.8;6.4;;;;
+L;Spiritus aromaticus Ph. V (ml);;;;0.1;0.7;5.8;;;;
+;Spiritus balsamicus Ph. V;;;;0.2;1.9;15.4;;;;
+;Strychnini nitras Ph. VII;;0.1;0.9;6.9;;;;;;
+nALT;Sulfacetamid-Natrium Ph. Eur.;;;;;;;;;0.14;
+;Sulfadimidinum natricum;;;;0.3;2.1;17.2;;;;
+nALT;Sulfanilamid;;;;;;;;;;0.62
+;Sulfathiazolum Ph. Eur;;;0.1;1.1;9;;;;0.61;
+;Sulfur ad usum externum Ph. Eur;;;;;0.4;3.1;13.5;;;
+;Sulfur sublimatum crudum Ph. VI;;;;;0.4;2.9;12.7;;;
+nALT;Sulindac;;;;;;;;;;0.72
+;Talcum Ph. Eur;;;;;0.2;1.9;8.2;15.4;;
+;Talcum purificatum Ph. VI;;;;0.1;0.7;5.7;24.6;46.1;;
+;Tanninum Ph. VIII;;;;0.3;2.4;19.7;;;0.02;
+;Taraxaci extractum liquidum;;;;0.3;2.2;17.6;;;;
+;Tensophen (vide: Allgemeine Bestimmungen);;;;;;;;;;
+;Terebinthina laricina Ph. VIII;;;0.1;0.5;3.9;31.1;;;;
+;Terebinthinae aetheroleum medicinale Ph. VIII (g);;;;;0.4;3.1;;;;
+;Terebinthinae aetheroleum medicinale Ph. VIII (ml);;;;;0.4;3.1;;;;
+;Terpini hydras Ph. VIII;;;;0.3;2.1;;;;;
+;Terra ochra citrina Ph. V;;;;;0.3;2.4;;;;
+;Terra ochra rubra Ph. V;;;;;0.3;2.4;;;;
+;Terra silicea pulvis;;;;;0.4;2.9;;;;
+nALT;Testosteron;;;;;;;;;;0.82
+;Testosteroni propionas Ph. Eur;;0.3;2;16.2;;;;;;
+;Tetracaini hydrochloridum Ph. Eur;;;0.3;2.1;17.2;;;;0.11;
+nALT;Tetracyclinhydrochlorid;;;;;;;;;;0.60
+;Theobrominum Ph. Eur;;;0.3;2.2;17.5;;;;;
+nALT;Theophyllin;;;;;;;;;;0.66
+;Theophyllinum et ethylendiaminum Ph. Eur;;;0.1;0.5;3.1;18.8;;;;0.69
+;Theophyllinum monohydricum Ph. Eur;;;0.1;0.8;6;;;;;0.65
+;Thesit;;;0.1;0.4;3.6;;;;;
+nALT;Thiaminchloridhydrochlorid;;;;;;;;;;0.70
+;Thiamini hydrochloridum Ph. Eur;;;0.1;0.5;4.2;;;;;
+;Thiomersalum Ph. VIII;;0.2;1.8;14.2;;;;;;
+;Thymi aetheroleum Ph. VIII;;;;0.2;1.9;;;;;
+;Thymi extractum liquidum normatum Ph. VIII;;;;0.2;1.3;10.4;;;;
+;Thymi herba Ph. Eur;;;;0.1;0.8;6.2;;;;
+;Thymi sirupus Ph. VIII (g);;;;;0.4;3.2;13.8;;;
+;Thymi sirupus Ph. VIII (ml);;;;0.1;0.5;3.9;16.5;;;
+;Thymolum Ph. Eur;;;;0.2;1.6;12.5;;;;
+;Tiliae flos Ph. Eur;;;;0.2;1.3;10.3;;;;
+;Titanii dioxidum Ph. Eur;;;;0.1;0.6;4.8;;;;
+nALT;Tobramycinsulfat USP;;;;;;;;;0.04;
+L;Tocopheroli acetas, alpha- Ph. Eur (max 5 g);;;0.1;0.5;4.4;;;;;
+;Tragacantha Ph. Eur;;;0.1;0.6;4.8;;;;;
+nALT;Triamcinolonacetonid-Verreibung 10 % mit Mannitol;;;;;;;;;;0.59
+nALT;Triamcinolonacetonid-Verreibung 10 % mit Stärke;;;;;;;;;;0.62
+;Triclosanum USP25;;;0.4;3.1;24.9;;;;;
+;Triethanolaminum Ph. VIII;;;;;0.3;2.6;;;;
+nALT;Triglyceride, Mittelkettige;;;;;;;;;;0.96
+;Tritici amylum Ph. Eur;;;;;0.2;1.9;8.3;;;
+;Tumenol-Ammonium;;;;0.2;1.7;;;;;
+;Tylose MH 300;;;;0.2;1.9;15.2;;;;
+;(vide: Methylhydroxyethylcellulosum);;;;;;;;;;
+;Tyramin hydrochlorid;0.1;0.5;4.2;34.2;;;;;;
+;Unguentum cetylicum Ph. VIII;;;;0.1;0.5;4.3;18.7;;;
+;Unguentum hydrophilicum anionicum Ph. VIII;;;;0.1;0.7;5.5;23.9;;;
+;Unguentum hydrophilicum non ionogenicum Ph. VIII;;;;0.1;0.7;5.4;23.3;;;
+;Unguentum leniens Ph. VIII;;;;0.1;0.7;5.5;23.9;;;
+;Unguentum resinosum Ph. VIII;;;;0.2;1.3;10.6;45.7;;;
+;Unguentum salicylicum compositum Ph. VIII;;;;0.1;0.8;6.8;29.1;;;
+;Ureum Ph. VIII (Carbamidum);;;;0.1;0.6;4.5;;;;
+;Urticae folium concisum;;;;0.1;0.4;3.3;;;;
+;Uvae ursi extractum liquidum;;;;0.3;2.4;19.7;;;;
+;Uvae ursi folium Ph. Eur;;;;0.1;0.7;5.7;;;;
+;Valerianae extractum spirituosum siccum;;;0.1;0.7;5.5;;;;;0.62
+;Valerianae radix Ph. Eur concisa;;;;0.2;1.5;11.7;;;;
+;Valerianae radix pulvis;;;;0.1;0.9;7.2;;;;
+;Valerianae tinctura Ph. VIII (g);;;;0.1;0.6;5;;;;
+;Valerianae tinctura Ph. VIII (ml);;;;0.1;0.6;4.6;;;;
+nALT;Vancomycinhydrochlorid Ph. Eur.;;;;;;;;;0.02;
+;Vanillinum Ph. Eur;;;;0.3;2.2;;;;;
+;Vaselinum album Ph. VIII;;;;;0.2;2;8.5;16;;
+;Vaselinum flavum Ph. VIII;;;;;0.2;1.9;8.3;15.6;;
+;Verbasci flos Ph. VIII;;;;0.1;1.1;8.5;;;;
+;Vert brillant (vide: Brillantgrün);;;0.3;2.4;19.7;;;;;
+;Vini gallici spiritus ad us ext. (g);;;;;0.4;2.8;12.2;;;
+;Vini gallici spiritus ad us ext. (ml);;;;;0.3;2.7;11.5;;;
+;Vini gallici spiritus ad us ext. cum sale (g);;;;;0.4;3;13.1;;;
+;Vini gallici spiritus ad us ext. cum sale (ml);;;;;0.4;3;12.7;;;
+L;Vinum meridianum dulce Ph. VIII;;;;0.1;0.5;3.9;16.9;;;
+;Vitamini A acetas 1,5 Mio IE/g;;;0.1;0.8;6.8;;;;;
+;Vitamini A palmitas 1,0 Mio IE/g;;;0.1;0.7;5.7;;;;;
+;Witepsol H-15 Pastillenform/en pastilles;;;;0.1;0.6;4.6;19.9;;;
+;Witepsol W-45 Pastillenform/en pastilles;;;;0.1;0.6;4.6;19.9;;;
+;Xylitolum Ph. Eur;;;;0.2;1.3;10.9;;;;
+;Zinci chloridum Ph. Eur;;;;0.3;2;16.3;;;;
+;Zinci oxidum Ph. Eur;;;;0.1;0.5;3.9;16.9;;;
+;Zinci pasta 25% Ph. VIII;;;;0.1;0.6;4.5;19.2;;;
+;Zinci pasta mollis Ph. VIII;;;;0.1;0.9;6.9;29.6;;;
+;Zinci stearas Ph. Eur;;;;0.2;1.5;11.7;50.3;;;
+;Zinci sulfas Ph. Eur;;;;0.1;1;8.4;;;;
+;Zinci undecylenas Ph. Eur;;;0.1;0.6;5.1;41.1;;;;
+;Zinci unguentum Ph. VIII;;;;0.1;1.1;8.9;;;;
+;Zingiberis rhizoma Ph. VIII;;;;0.1;0.7;5.3;;;;
+nALT;Zinksulfat-Heptahydrat Ph. Eur.;;;;;;;;;0.09;
+;Zuckercouleur, saure, wässrige Lös./caramel pour sol. acid. et aq.;;;;0.1;0.5;4.2;;;;

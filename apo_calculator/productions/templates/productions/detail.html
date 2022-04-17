@@ -4,6 +4,7 @@
 
   <h1>{{ productions.name }} (LotNr: {{ productions.lot_nr }} )</h1>
   <p>{{ productions.calc_date }}</p>
+  
   {% if productions.galenical_form == 'capsules' %}
       {% include "productions/_partials/caps_cards.html" with mass_balance_release_note=mass_balance_release_note%}
   {% endif %}

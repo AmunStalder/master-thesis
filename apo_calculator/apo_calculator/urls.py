@@ -40,4 +40,5 @@ urlpatterns = [
     #for Suppositories
     path('suppositories/', include('suppositories.urls', namespace = 'suppositories')),
     path('suppos_prod/', include('suppos_prod.urls', namespace = 'suppos_prod')),
+    path('substances/', include('substances.urls', namespace = 'substances')),
 ]

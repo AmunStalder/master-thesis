@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'suppositories',
     'suppos_prod',
     'suppos_mass_balance',
+    'substances',
     'eyedrops_prod',
 ]
 
