@@ -1,9 +1,10 @@
-from .forms import ProductionsForm
+from .forms import ProductionsForm, IngredientForm
 from django.views.generic import TemplateView, FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.http import HttpResponse, FileResponse
 from . import models
 from django.urls import reverse_lazy
 from .utils import render_to_pdf
+
 # from .utils import render_to_pdf
 #Import the easy_pdf rendering
 
@@ -75,4 +76,19 @@ class ProductionUpdateView(UpdateView):
     )
 class ProductionDeleteView(DeleteView):
     model = models.Productions
+    success_url = reverse_lazy("productions:list")
+
+class IngredientCreateView(CreateView):
+    template_name = 'productions/Ingredient_form.html'
+    model = models.Ingredient
+    form_class = IngredientForm
+    def get_initial(self):
+        return { 'production': models.Productions.objects.get(pk=self.kwargs['pk']) }
+
+class IngredientUpdateView(UpdateView):
+    model = models.Ingredient
+    form_class = IngredientForm
+
+class IngredientDeleteView(DeleteView):
+    model = models.Ingredient
     success_url = reverse_lazy("productions:list")

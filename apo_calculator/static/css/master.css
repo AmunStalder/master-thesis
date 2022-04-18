@@ -4,11 +4,22 @@
 #brand-image{
   height: 50px;
 }
+
 .custom-jumbo{
     background-color: #eee;
     padding: 10%;
 }
 
+.sticky-header{
+  position: sticky;
+  top: 0;
+  background-color: #eee;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.bottom-border{
+  border-bottom: 1px solid black;
+}
 .myborder{
-  border: solid 4px black; 
+  border: solid 4px black;
 }

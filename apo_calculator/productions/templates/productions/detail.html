@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body_block %}
-
   <h1>{{ productions.name }} (LotNr: {{ productions.lot_nr }} )</h1>
   <p>{{ productions.calc_date }}</p>
-  
+  <hr class="featurette-divider">
+  <h3>Ingredients</h3>
+  {% if productions.ingredient_set.all %}
+    {% include "productions/_partials/ingredients.html" %}
+  {% endif %}
+  <p><a class="btn btn-primary" href="{% url 'productions:add_ingredient' pk=productions.pk %}">Add ingredient</a></p>
   {% if productions.galenical_form == 'capsules' %}
       {% include "productions/_partials/caps_cards.html" with mass_balance_release_note=mass_balance_release_note%}
   {% endif %}

@@ -10,4 +10,7 @@ urlpatterns = [
     path('update/<int:pk>/', views.ProductionUpdateView.as_view(), name='update'),
     path('delete/<int:pk>/', views.ProductionDeleteView.as_view(), name='delete'),
     path('pdf/<int:pk>/', views.ProductionPdfView.as_view(), name='pdf'),
+    path('add_ingredient/<int:pk>/', views.IngredientCreateView.as_view(), name='add_ingredient'),
+    path('update_ingredient/<int:pk>/', views.IngredientUpdateView.as_view(), name='update_ingredient'),
+    path('delete_ingredient/<int:pk>/', views.IngredientDeleteView.as_view(), name='delete_ingredient'),
 ]

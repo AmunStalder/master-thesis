@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% block body_block %}
+
+  {% if not substances_list %}
+    <h1>No Substances saved in database </h1>
+  {% else %}
+    <h1>List of substances</h1>
+  {% endif %}
+  <p></p>
+  <table class="table">
+    <thead style="position: sticky;top: 0;background-color: #eee;border-collapse: collapse;" class="thead-dark">
+      <tr>
+        <th class="sticky-header" scope="col" >Substance</th>
+        <th class="sticky-header" scope="col" >ALT-price?</th>
+        <th class="sticky-header" scope="col" >Displacement value</th>
+        <th class="sticky-header" scope="col" >Freezing point depression</th>
+        <th class="sticky-header" scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for substance in substances_list %}
+      <tr>
+        <td> {{ substance.name }} </td>
+        <td>{% if substance.infos != "nALT" %}<span>&#10003;</span>{% endif %}</td>
+        <td>{% if substance.displacement_value %}<span>&#10003;</span>{% endif %}</td>
+        <td>{% if substance.freezing_point_depression %}<span>&#10003;</span>{% endif %}</td>
+
+        <td><a class="btn btn-primary" href="{% url 'substances:detail' pk=substance.pk %}">Show</a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
