@@ -91,4 +91,6 @@ class IngredientUpdateView(UpdateView):
 
 class IngredientDeleteView(DeleteView):
     model = models.Ingredient
-    success_url = reverse_lazy("productions:list")
+    def get_success_url(self):
+        ingredient = models.Ingredient.objects.get(pk=self.kwargs['pk'])
+        return reverse_lazy("productions:detail", kwargs={'pk':ingredient.production.pk})

@@ -5,8 +5,9 @@ from django.shortcuts import redirect
 from django.urls import reverse, reverse_lazy
 import math
 
-from productions.models import Productions
-from .models import SupposProd, SupposDisplacementValue
+from productions.models import Productions, Ingredient
+from .models import SupposProd
+from substances.models import Substance
 
 class SupposProdWizardView(SessionWizardView):
     template_name = "suppos_prod/prod_form.html"
@@ -21,7 +22,8 @@ class SupposProdWizardView(SessionWizardView):
             #M = N *(E -f*A), where M = required mass witepsol
             N = data['amount_of_suppos']
             E = data['calibration_value']
-            f = SupposDisplacementValue.objects.get(substance=data['active_substance_1']).value
+            #this was changed
+            f = Substance.objects.get(name=data['active_substance_1']).displacement_value
             A = data['conc_per_suppo']/1000
             required_mass_witepsol = N*(E - f*A)
             initial.update({'required_mass_active_substance': round(required_mass_active_substance,4)})
@@ -37,6 +39,7 @@ class SupposProdWizardView(SessionWizardView):
         except:
             self.instance = SupposProd()
             self.instance.production = Productions.objects.get(pk=self.kwargs['pk'])
+            self.instance.active_substance_1 = Ingredient.objects.get(production=Productions.objects.get(pk=self.kwargs['pk']))
         return self.instance
 
     def get_context_data(self, form, **kwargs):

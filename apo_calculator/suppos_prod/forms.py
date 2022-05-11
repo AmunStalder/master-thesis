@@ -1,6 +1,7 @@
 from django import forms
 from .models import SupposProd
-from productions.models import Productions
+from productions.models import Productions, Ingredient
+from substances.models import Substance
 
 class SupposProdForm1(forms.ModelForm):
     class Meta:
@@ -19,6 +20,7 @@ class SupposProdForm1(forms.ModelForm):
         self.fields['production'].disabled = True
         self.fields['active_substance_1'].label = 'Active substance'
         self.fields['active_substance_1'].widget.attrs['placeholder'] = 'Choose the active substance'
+        self.fields['active_substance_1'].disabled = True
         self.fields['conc_per_suppo'].label = 'Concentration per suppository [mg]'
         self.fields['conc_per_suppo'].widget.attrs['placeholder'] = 'Enter desired concentration of active substance per suppository'
         self.fields['amount_of_suppos'].label = 'Amount of suppositories (incl. excess) [pc.]'

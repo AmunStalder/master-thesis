@@ -1,4 +1,6 @@
 {% load static %}
+<div class="prodbg" style="  background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
+  <h3>Results</h3>
 {% if productions.capsprod or productions.uniformity %}
 <table class="table ">
   <thead class="thead-dark">
@@ -35,8 +37,9 @@
 <p></p>
 <p></p>
 <hr class="featurette-divider">
-<div class="container text-center">
-  <div class="row">
+<div class="container " style="background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
+  <h3>Calculations</h3>
+  <div class="row text-center">
       {% if not productions.capsprod %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Prod.png' %}" height="150" width="150">

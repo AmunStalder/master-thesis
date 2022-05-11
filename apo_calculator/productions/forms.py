@@ -1,5 +1,6 @@
 from django import forms
 from .models import Productions, Ingredient
+from substances.models import Substance
 
 class ProductionsForm(forms.ModelForm):
     class Meta:
@@ -10,6 +11,7 @@ class ProductionsForm(forms.ModelForm):
             'name',
         ]
 
+#can be commented out if ingredient is chosen during prod
 class IngredientForm(forms.ModelForm):
     class Meta:
         model = Ingredient
@@ -19,8 +21,9 @@ class IngredientForm(forms.ModelForm):
         ]
     def __init__(self, *args, **kwargs):
         super(IngredientForm, self).__init__(*args, **kwargs)
-        # Select only capsules
-        self.fields['production'].queryset = Productions.objects.filter(galenical_form='capsules')
+
         self.fields['production'].disabled = True
-        # Change labels and placeholders
+        # Filter for ingredients that have a displacement value
+
+        self.fields['substance'].queryset = Substance.objects.filter(displacement_value__isnull = False)
         self.fields['substance'].label = 'Substance'

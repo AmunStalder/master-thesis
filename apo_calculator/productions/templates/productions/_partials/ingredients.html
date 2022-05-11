@@ -8,8 +8,9 @@
 </thead>
 <tbody>
   {% for ingredient in productions.ingredient_set.all %}
+  
     <tr>
-      <td>{{ ingredient.substance }}</td>
+      <td><a class="link-secondary" href="{% url 'substances:detail' pk=ingredient.substance.pk %}">{{ ingredient.substance }}</a></td>
       <td>{{ ingredient.actual_amount|default_if_none:"&nbsp;" }}</td>
       <td><a class="btn btn-warning" href="{% url 'productions:update_ingredient' pk=ingredient.pk %}">Edit<a></td>
       <td> <a class="btn btn-danger" href="{% url 'productions:delete_ingredient' pk=ingredient.pk %}">Delete</a></td>

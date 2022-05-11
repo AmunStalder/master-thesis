@@ -18,6 +18,7 @@ class Productions(models.Model):
     galenical_form = models.CharField(max_length=16, choices=CHOICES,)
     name           = models.CharField(max_length= 256, )
 
+
     def __str__(self):
         return '{}, {}'.format(self.lot_nr, self.name)
 
@@ -36,7 +37,7 @@ class Ingredient(models.Model):
     substance = models.ForeignKey(Substance, on_delete=models.CASCADE, )
     target_amount = models.FloatField(null=True)
     actual_amount = models.FloatField(null=True)
-    price_per_amount = models.FloatField(null=True)
+    price_per_amount = models.FloatField(null=True, blank=True)
 
     def __str__(self):
         return '{}'.format(self.substance)
