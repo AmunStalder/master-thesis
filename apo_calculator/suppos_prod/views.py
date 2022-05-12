@@ -7,10 +7,12 @@ import math
 
 from productions.models import Productions, Ingredient
 from .models import SupposProd
+from .forms import SupposProdForm1, SupposProdForm2
 from substances.models import Substance
 
 class SupposProdWizardView(SessionWizardView):
     template_name = "suppos_prod/prod_form.html"
+    form_list = [SupposProdForm1, SupposProdForm2]
     instance = None
 
     def get_form_initial(self, step):

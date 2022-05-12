@@ -93,7 +93,14 @@ class IngredientCreateView(CreateView):
 
 class IngredientUpdateView(UpdateView):
     model = models.Ingredient
-    form_class = SupposIngredientForm
+    def get_form_class(self):
+        if models.Productions.objects.get(pk=self.kwargs['pk']).galenical_form == "suppositories":
+            return SupposIngredientForm
+        elif models.Productions.objects.get(pk=self.kwargs['pk']).galenical_form == "capsules":
+            return CapsIngredientForm
+
+    def get_initial(self):
+        return { 'production': models.Productions.objects.get(pk=self.kwargs['pk']) }
 
 class IngredientDeleteView(DeleteView):
     model = models.Ingredient
