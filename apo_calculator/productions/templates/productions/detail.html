@@ -10,9 +10,9 @@
     {% if productions.ingredient_set.all %}
       {% include "productions/_partials/ingredients.html" %}
     {% endif %}
-    {% if productions.ingredient_set.count == 0 %}
+
     <p><a class="btn btn-primary" href="{% url 'productions:add_ingredient' pk=productions.pk %}">Add ingredient</a></p>
-    {% endif %}
+
   </div>
   <p></p>
   <p></p>

@@ -16,6 +16,7 @@ class SupposProd(models.Model):
     calc_date                      = models.DateTimeField(default=datetime.now, blank=True, )
     production                     = models.OneToOneField(Productions, on_delete=models.CASCADE, primary_key=True)
     amount_of_suppos               = models.IntegerField()
+    # ForeignKey may be better
     active_substance_1             = models.OneToOneField(Ingredient, on_delete=models.CASCADE)
     conc_per_suppo                 = models.FloatField()
     calibration_value              = models.FloatField()

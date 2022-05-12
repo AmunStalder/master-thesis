@@ -33,7 +33,10 @@
     {% endif %}
   </tbody>
 </table>
+{% else %}
+<p>No results to show yet. Please add ingredients and make a calculation.</p>
 {% endif %}
+</div>
 <p></p>
 <p></p>
 <hr class="featurette-divider">
@@ -69,6 +72,10 @@
               <a class="btn btn-primary" href="#" role="button">Learn more</a>
           </div>
         </div>
+      {% else  %}
+      <p style="text-align: left;">All possible calculations have been made.</p>
       {% endif %}
   </div>
 </div>
+<p></p>
+  <hr class="featurette-divider">

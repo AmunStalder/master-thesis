@@ -1,4 +1,4 @@
-from .forms import ProductionsForm, IngredientForm
+from .forms import ProductionsForm, SupposIngredientForm, CapsIngredientForm
 from django.views.generic import TemplateView, FormView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.http import HttpResponse, FileResponse
 from . import models
@@ -81,13 +81,19 @@ class ProductionDeleteView(DeleteView):
 class IngredientCreateView(CreateView):
     template_name = 'productions/Ingredient_form.html'
     model = models.Ingredient
-    form_class = IngredientForm
+    #choose ingredient form with pre-selection of possible substances based on galenical form
+    def get_form_class(self):
+        if models.Productions.objects.get(pk=self.kwargs['pk']).galenical_form == "suppositories":
+            return SupposIngredientForm
+        elif models.Productions.objects.get(pk=self.kwargs['pk']).galenical_form == "capsules":
+            return CapsIngredientForm
+
     def get_initial(self):
         return { 'production': models.Productions.objects.get(pk=self.kwargs['pk']) }
 
 class IngredientUpdateView(UpdateView):
     model = models.Ingredient
-    form_class = IngredientForm
+    form_class = SupposIngredientForm
 
 class IngredientDeleteView(DeleteView):
     model = models.Ingredient
