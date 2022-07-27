@@ -1,19 +1,43 @@
 {% extends "base.html" %}
 {% load django_bootstrap5 %}
 {% load i18n %}
+{% load static %}
 {% block body_block %}
-
+{% if wizard.steps.step1 == 1 %}
+<p class="text-center"><img src="{% static 'img/Caps_prod_step_1.png' %}" style="max-width: 50%;" alt=""></p>
+{% endif %}
+{% if wizard.steps.step1 == 2 %}
+<p class="text-center"><img src="{% static 'img/Caps_prod_step_2.png' %}" style="max-width: 50%;" alt=""></p>
+{% endif %}
+{% if wizard.steps.step1 == 3 %}
+<p class="text-center"><img src="{% static 'img/Caps_prod_step_3.png' %}" style="max-width: 50%;" alt=""></p>
+{% endif %}
+{% if wizard.steps.step1 == 4 %}
+<p class="text-center"><img src="{% static 'img/Caps_prod_step_4.png' %}" style="max-width: 50%;" alt=""></p>
+{% endif %}
+{% if wizard.steps.step1 == 5 %}
+<p class="text-center">
+  <video width="620" height="440" style="transform: rotate(-90deg);" autoplay>
+   <source src="{% static 'vid/Caps_prod_step_5.mp4' %}" type="video/mp4">
+  </video></p>
+{% endif %}
   <h1>
       Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
   </h1>
+  {% if wizard.steps.step1 == 1 %}
+    <p>Please choose an appropriate amount of tablets incl. excess and enter their total weight.</p>
+  {% endif %}
   {% if wizard.steps.step1 == 2 %}
-    <p>For {{ amount_of_caps }} capsules à {{ conc_per_cap }}mg, a total of {{ total_amount }}mg is needen. Using tablets à {{ conc_per_tab }}mg, {{ needed_amount_of_tabs }} tablets are needed. With an excess of 10%, the suggested amount of tablets for mortaring is about <b>{{ suggested_amount_of_tabs }}</b>pc. * </p>
+    <p>Mortar all weighed tablets using mortar and pestle and sieve the powder (250-355µm). Weigh the mass of required tablet powder and enter it below.</p>
   {% endif %}
   {% if wizard.steps.step1 == 3 %}
-    <p> {{ amount_of_weighed_tabs }} weighed tablets have a mass of {{ mass_all_tabs }} mg. These tablets are now mortared to generate the tabletpowder. For the required {{ needed_amount_of_tabs }} tabs, <b>{{ required_mass_powder }} mg </b> * are needed for the production of the powdermix.</p>
+    <p>Choose an appropriate capsule size.</p>
   {% endif %}
   {% if wizard.steps.step1 == 4 %}
     <p> Dilute the weighed amount of tablet powder ana partes aquales up to about 50% of final mass. Then, use the sandwich method to fill the measuring cylinder up to the required volume for the powdermix.</p>
+  {% endif %}
+  {% if wizard.steps.step1 == 5 %}
+    <p> Mix the powder homogenously and fill the capsules!</p>
   {% endif %}
   <form class="custom-form" method="post">
     {% csrf_token %}
@@ -32,7 +56,7 @@
       <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Previous step" %}</button>
       <!-- <button type="submit" class="btn btn-primary" value="{{ wizard.steps.prev }}">Previous step</button> -->
       {% endif %}
-      {% if wizard.steps.step1 == 4 %}
+      {% if wizard.steps.step1 == 5 %}
         <input type="submit"  value="Submit">
       {% else %}
         <input type="submit" value="Next">

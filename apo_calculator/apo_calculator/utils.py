@@ -4,6 +4,8 @@ from django.template.loader import get_template
 from xhtml2pdf import pisa
 import matplotlib.pyplot as plt
 import base64
+import numpy as np
+np.set_printoptions(suppress=True)
 from io import BytesIO
 
 class UniformityCalculator:
@@ -103,7 +105,8 @@ class UniformityCalculator:
         graph = self.get_graph()
         return graph
 
-
+def myround(x, base=0.05):
+    return base * round(x/base)
 
 def render_to_pdf(template_src, context_dict={}):
     template = get_template(template_src)
@@ -113,3 +116,85 @@ def render_to_pdf(template_src, context_dict={}):
     if not pdf.err:
         return HttpResponse(result.getvalue(), content_type='application/pdf')
     return None
+
+
+def firstNonNan(listfloats):
+    counter = 0
+    for item in listfloats:
+        if np.isnan(item) == False:
+            return [item, counter]
+        counter = counter + 1
+
+def calculate_price_per_ingredient(weight, substance_price):
+    amounts = np.array([0.0001,0.001, 0.01, 0.1, 1, 10, 100, 500, 1000, 10000])
+    division = []
+    price_combo = []
+    price = 0
+    for amount in amounts:
+        division.append(weight / amount)
+
+    #if below 1 mg, take first non Nan
+    if division[1] < 1:
+        price_combo = firstNonNan(substance_price)
+        price = price_combo[0]
+        return price
+    #if above or equal to 1000g:
+    elif division[8] >= 1:
+        substance_price = substance_price[::-1]
+        price_combo = firstNonNan(substance_price)
+        substance_price[::-1]
+        price = price_combo[0]*division[9-price_combo[1]]
+        return price
+    #if between 1 and 1000 (excl. 1000):
+    else:
+        index = 0
+        for div in division:
+            if 1 <= div < 10:
+                index = division.index(div)
+        #two possibilities: is NaN or is not NaN
+        #if NaN
+        if np.isnan(substance_price[index]):
+            #if NaN: price can be on the right...
+            try:
+                price_combo = firstNonNan(substance_price[index:])
+                price = price_combo[0]
+                return myround(price)
+            # or on the left
+            except:
+                substance_price = substance_price[::-1]
+                price_combo = firstNonNan(substance_price)
+                substance_price[::-1]
+                price = price_combo[0]*division[9-price_combo[1]]
+                return myround(price)
+        #if not NaN:
+        else:
+            if division[index]*substance_price[index] < substance_price[index+1] and not np.isnan(substance_price[index+1]):
+                price = division[index]*substance_price[index]
+                return myround(price)
+            elif division[index]*substance_price[index] > substance_price[index+1] and not np.isnan(substance_price[index+1]):
+                price = substance_price[index+1]
+                return myround(price)
+            else:
+                price = division[index]*substance_price[index]
+                return myround(price)
+
+def price_per_ingredient(weight, substance):
+    substance_price = [
+        #For calculation purposes we add two None's in the beginning and the end
+        None,
+        substance.price_0_001_g_ml,
+        substance.price_0_01_g_ml,
+        substance.price_0_1_g_ml,
+        substance.price_1_g_ml,
+        substance.price_10_g_ml,
+        substance.price_100_g_ml,
+        substance.price_500_g_ml,
+        substance.price_1000_g_ml,
+        None,
+        ]
+    for i in range(0,len(substance_price)):
+        if substance_price[i] == None:
+            substance_price[i] = np.NaN
+        else:
+            pass
+    return calculate_price_per_ingredient(weight, substance_price)

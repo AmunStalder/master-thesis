@@ -5,29 +5,22 @@
   <h1>{{ productions.name }} (LotNr: {{ productions.lot_nr }} )</h1>
   <p>{{ productions.calc_date }}</p>
   <hr class="featurette-divider hr-thick">
-  <div class="prodbg" style="  background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
-    <h3>Ingredients</h3>
-    {% if productions.ingredient_set.all %}
-      {% include "productions/_partials/ingredients.html" %}
-    {% endif %}
-
-    <p><a class="btn btn-primary" href="{% url 'productions:add_ingredient' pk=productions.pk %}">Add ingredient</a></p>
-
-  </div>
-  <p></p>
-  <p></p>
+      {% include "productions/_partials/general_info.html" %}
   <hr class="featurette-divider">
-
-
-  {% if productions.galenical_form == 'capsules' %}
-      {% include "productions/_partials/caps_cards.html" with mass_balance_release_note=mass_balance_release_note%}
+      {% include "productions/_partials/ingredients.html" %}
+  <hr class="featurette-divider">
+  {% if productions.galenical_form == "suppositories" %}
+    {% include "productions/_partials/results_suppos.html" %}
+  {% else %}
+    {% include "productions/_partials/results_caps.html" %}
   {% endif %}
+
+  <hr class="featurette-divider">
   {% if productions.galenical_form == 'suppositories' %}
       {% include "productions/_partials/suppos_cards.html" %}
+  {% else %}
+      {% include "productions/_partials/caps_cards.html" %}
   {% endif %}
-  <p>
-    <a class="btn btn-warning" href="{% url 'productions:update' pk=productions.pk %}">Edit Name/LotNr<a>
-    <a class="btn btn-danger" href="{% url 'productions:delete' pk=productions.pk %}">Delete production</a>
-    <a class="btn btn-primary" href="{% url 'productions:pdf' pk=productions.pk %}">Generate PDF</a>
-  </p>
+  <a class="btn btn-primary" href="{% url 'productions:pdf' pk=productions.pk %}">Generate PDF</a>
+  <a class="btn btn-danger" href="{% url 'productions:delete' pk=productions.pk %}">Delete production</a>
 {% endblock %}

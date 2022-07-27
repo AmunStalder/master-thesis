@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block body_block %}
+
+{% include "substances/_partials/fmp-detail.html" %}
+  <p>
+    <a class="btn btn-primary" href="{% url 'substances:fmp-list'%}">Go back</a>
+    <a class="btn btn-warning" href="{% url 'substances:fmp-update' pk=finishedmedicinalproduct.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'substances:fmp-delete' pk=finishedmedicinalproduct.pk %}">Delete</a>
+  </p>
+{% endblock %}

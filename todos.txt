@@ -1,0 +1,2 @@
+Make model for caps_mass_balance
+make detail view for caps_mass_balance

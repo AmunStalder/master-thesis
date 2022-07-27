@@ -1,0 +1,29 @@
+{% load static %}
+<div class="prodbg" style="  background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
+  <h3>General information</h3>
+  <table class="table ">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Galenical form</th>
+      <th scope="col"># Dose units (excl. excess)</th>
+      <th scope="col"># Dose units (incl. excess)</th>
+      <th scope="col">ALT price (CHF)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ productions.get_galenical_form_display }}</td>
+      <td>{{ productions.dose_units }}</td>
+      <td>{{ productions.dose_units_incl_excess }}</td>
+      <td>{{ productions.altprice.final_price|floatformat:2 }}</td>
+    </tr>
+  </tbody>
+  </table>
+  <p>
+    {% if not productions.supposprod and not productions.capsprod %}
+      <a class="btn btn-warning" href="{% url 'productions:update' pk=productions.pk %}">Edit<a>
+    {% endif %}
+  </p>
+</div>
+<p></p>
+<p></p>

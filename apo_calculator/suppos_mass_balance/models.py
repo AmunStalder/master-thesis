@@ -6,14 +6,14 @@ from productions.models import Productions
 class SupposMassBalance(models.Model):
     calc_date                         = models.DateTimeField(default=datetime.now, blank=True, )
     production                        = models.OneToOneField(Productions, on_delete=models.CASCADE, primary_key=True)
-    conc_per_suppo_actual             = models.FloatField()
-    conc_per_suppo_diff               = models.FloatField()
+    theoretical_mass_bulk             = models.FloatField()
+    mass_balance_diff                 = models.FloatField()
     release_note                      = models.BooleanField()
 
     def save(self, *args, **kwarg):
-        self.conc_per_suppo_actual    = self.production.supposuniformity.mean*self.production.supposprod.conc_suppomass_per_g_actual
-        self.conc_per_suppo_diff      = self.conc_per_suppo_actual/self.production.supposprod.conc_per_suppo*100 -100
-        if -10 <= self.conc_per_suppo_diff <= 10:
+        self.theoretical_mass_bulk    = self.production.supposuniformity.mean * self.production.dose_units_incl_excess
+        self.mass_balance_diff        = (self.theoretical_mass_bulk-self.production.supposprod.target_mass_bulk)/self.production.supposprod.calculated_mass_bulk*100
+        if -10 <= self.mass_balance_diff <= 10:
             self.release_note = True
         else:
             self.release_note = False

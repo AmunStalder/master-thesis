@@ -1,0 +1,76 @@
+{% load static %}
+<div class="prodbg" style="  background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
+  <h3>Results</h3>
+{% if productions.supposuniformity or productions.supposprod or productions.ambvvalue%}
+<table class="table ">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Calculation</th>
+      <th scope="col">Result</th>
+      <th scope="col">Pass / Fail?</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if productions.supposprod %}
+    <tr>
+      <th scope="row"> Production calculation</th>
+      <td>
+        {{ productions.supposprod.calculated_mass_bulk|floatformat:2 }} g of suppository bulk was produced for {{ productions.dose_units_incl_excess }} suppositories.
+        {% if productions.supposprod.release_note %} None of the ingredients, nor the final suppository bulk differs by more than 10% from target value.{% else %}
+        One or more ingredients (or final mass) differ more than 10% of target value.{% endif %}
+      </td>
+      {% if productions.supposprod.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+      <td><a class="btn btn-primary" href="{% url 'suppos_prod:edit' pk=productions.pk %}">Update</a></td>
+    </tr>
+    {% endif %}
+    {% if productions.supposuniformity %}
+      <tr>
+        <th scope="row"> Uniformity of mass</th>
+        <td>
+          <b>Target:</b> Not more than 2 suppos differ more than +/- 5% of mean weight of a suppo, no suppo differs more than +/- 10%. <br>
+          <b>Actual:</b> {{ productions.supposuniformity.counter_above_1_diff }} suppos differ by more than {{ productions.supposuniformity.diff }}%,
+          {{ productions.supposuniformity.counter_above_1_diff }} suppos differ by more than {{ productions.supposuniformity.diff_x2 }}%.
+        </td>
+
+        {% if productions.supposuniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+        <td><a class="btn btn-primary" href="{% url 'suppositories:detail' pk=productions.supposuniformity.pk %}">Show</a></td>
+      </tr>
+    {% endif %}
+    {% if productions.supposuniformity and productions.supposprod %}
+      <tr>
+        <th scope="row"> Mass balance</th>
+        <td>
+          <b>Target:</b> The target mass of the bulk should not differ by more than 10% compared to the mean mass of a suppo mulitplied by the amount of suppos incl. excess.<br>
+          <b>Actual:</b> The difference is {% if productions.supposmassbalance.mass_balance_diff >= 0 %}+{% else %}{% endif %}{{ productions.supposmassbalance.mass_balance_diff|floatformat:2 }}%.
+        {% if productions.supposmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+        <td><a class="btn btn-primary" href="{% url 'suppos_mass_balance:detail' pk=productions.pk %}">Show</a></td>
+      </tr>
+    {% endif %}
+    {% if productions.ambvvalue %}
+      <tr>
+        <th scope="row"> MPLO Value</th>
+        <td>
+          <b>Target:</b> The MPLO value should not exceed 100 (for pharmacies with cantonal production allowance)<br>
+          <b>Actual:</b> The MPLO value is {{ productions.ambvvalue.value }}.
+        {% if productions.ambvvalue.value <= 100 %} <td style="color:green;"> {{ productions.ambvvalue.value }}</td>{% else %}<td style="color:orange;">{{ productions.ambvvalue.value }}</td>{% endif %}
+        <td><a class="btn btn-primary" href="{% url 'productions:edit_ambv_value' pk=productions.pk %}">Update</a></td>
+      </tr>
+    {% endif %}
+    {% if productions.altprice.final_price %}
+      <tr>
+        <th scope="row"> ALT Price </th>
+        <td>
+          The final price of the production has been calculated according to Swiss law.
+        <td style="color:green;"> CHF {{ productions.altprice.final_price }}</td>
+        <td></td>
+      </tr>
+
+    {% endif %}
+  </tbody>
+</table>
+{% else %}
+<p>No results to show yet. Please add ingredients and make a calculation.</p>
+{% endif %}
+</div>
+<p></p>
+<p></p>

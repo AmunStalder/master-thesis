@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'suppos_mass_balance',
     'substances',
     'eyedrops_prod',
+    'alt_price',
 ]
 
 MIDDLEWARE = [

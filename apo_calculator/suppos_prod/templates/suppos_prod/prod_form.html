@@ -1,13 +1,35 @@
 {% extends "base.html" %}
 {% load django_bootstrap5 %}
 {% load i18n %}
+{% load static %}
 {% block body_block %}
+
+{% if wizard.steps.step1 == 1 %}
+<p class="text-center"><img src="{% static 'img/Suppos_prod_step_1.png' %}" style="max-width: 50%;" alt=""></p>
+{% endif %}
+{% if wizard.steps.step1 == 2 %}
+  {% if ingredient_count == 2 %}
+    <p class="text-center"><img src="{% static 'img/Suppos_prod_step_2_1.png' %}" style="max-width: 50%;" alt=""></p>
+  {% endif %}
+  {% if ingredient_count == 3 %}
+    <p class="text-center"><img src="{% static 'img/Suppos_prod_step_2_2.png' %}" style="max-width: 50%;" alt=""></p>
+  {% endif %}
+  {% if ingredient_count == 4 %}
+    <p class="text-center"><img src="{% static 'img/Suppos_prod_step_2_3.png' %}" style="max-width: 50%;" alt=""></p>
+  {% endif %}
+  {% if ingredient_count > 4 %}
+    <p class="text-center"><img src="{% static 'img/Suppos_prod_step_2_4.png' %}" style="max-width: 50%;" alt=""></p>
+  {% endif %}
+{% endif %}
+{% if wizard.steps.step1 == 3 %}
+<p class="text-center"><img src="{% static 'img/Suppos_prod_step_3.png' %}" style="max-width: 25%;" alt=""></p>
+{% endif %}
 
   <h1>
       Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
   </h1>
   {% if wizard.steps.step1 == 2 %}
-    <p>The following amounts of active substance and witepsol are needed. Please prepare the substances and enter the weighed amounts.</p>
+  <p>Please weigh all mortared and sieved APIs in a weighing boat. For witepsol, weigh an extra 5g and melt it. All APIs are mixed and the witepsol is added lege artis to the target amount.</p>
   {% endif %}
   <form class="custom-form" method="post">
     {% csrf_token %}
@@ -22,9 +44,7 @@
       {% endif %}
       {% if wizard.steps.prev %}
       <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "First step" %}</button>
-      <!-- <button type="submit" class="btn btn-primary" value="{{ wizard.steps.first }}">First step</button> -->
       <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Previous step" %}</button>
-      <!-- <button type="submit" class="btn btn-primary" value="{{ wizard.steps.prev }}">Previous step</button> -->
       {% endif %}
       {% if wizard.steps.step1 == wizard.steps.count %}
         <input type="submit"  value="Submit">

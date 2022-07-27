@@ -13,4 +13,6 @@ urlpatterns = [
     path('add_ingredient/<int:pk>/', views.IngredientCreateView.as_view(), name='add_ingredient'),
     path('update_ingredient/<int:pk>/', views.IngredientUpdateView.as_view(), name='update_ingredient'),
     path('delete_ingredient/<int:pk>/', views.IngredientDeleteView.as_view(), name='delete_ingredient'),
+    path('add_ambv_value/<int:pk>/', views.AMBVValueCreateView.as_view(), name='add_ambv_value'),
+    path('edit_ambv_value/<int:pk>/', views.AMBVValueUpdateView.as_view(), name='edit_ambv_value'),
 ]

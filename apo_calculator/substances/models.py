@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class Substance(models.Model):
     #nALT = not part of Arzneimittelliste mit Tarif
@@ -30,3 +30,29 @@ class Substance(models.Model):
 
     def __str__(self):
         return self.name
+
+class FinishedMedicinalProduct(models.Model):
+    tablets   = "tablets"
+
+    CHOICES = [
+        (tablets, 'Tablets'),
+    ]
+    name                      = models.CharField(max_length=128, blank=False, null=False, unique=True)
+    main_ingredient           = models.CharField(max_length=128, blank=False, null=False)
+    manufacturer              = models.CharField(max_length=128, blank=False, null=False)
+    galenical_form            = models.CharField(max_length=32, choices=CHOICES, blank=True, null=False)
+    dose_units_per_package    = models.IntegerField()
+    conc_per_dose_unit_mg     = models.FloatField()
+    price_chf                 = models.FloatField()
+
+
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        '''
+            Needs to be defined in order to redirect to a page
+            upon successful filling in the form
+        '''
+        return reverse("substances:fmp-detail", kwargs={'pk':self.pk})

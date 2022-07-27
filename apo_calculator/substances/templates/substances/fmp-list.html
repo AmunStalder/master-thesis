@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% block body_block %}
+
+  {% if not finishedmedicinalproducts_list %}
+    <h1>No FMPs saved in database </h1>
+  {% else %}
+    <h1>List of FMPs</h1>
+  {% endif %}
+  <p></p>
+  <a class="btn btn-primary" href="{% url 'substances:fmp-create' %}">Add new</a>
+  <p></p>
+  <table class="table">
+    <thead style="position: sticky;top: 0;background-color: #eee;border-collapse: collapse;" class="thead-dark">
+      <tr>
+        <th class="sticky-header" scope="col" >Product</th>
+        <th class="sticky-header" scope="col" >API</th>
+        <th class="sticky-header" scope="col" >Manufacturer</th>
+        <th class="sticky-header" scope="col" >Pcs. per package</th>
+        <th class="sticky-header" scope="col" >Concentration per dose unit</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in finishedmedicinalproducts_list %}
+      <tr>
+        <td><a href="{% url 'substances:fmp-detail' pk=item.pk %}">{{ item.name }}</a></td>
+        <td> {{ item.main_ingredient }} </td>
+        <td> {{ item.manufacturer }} </td>
+        <td> {{ item.dose_units_per_package }} </td>
+        <td> {{ item.conc_per_dose_unit_mg }} </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

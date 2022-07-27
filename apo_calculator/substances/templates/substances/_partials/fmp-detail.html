@@ -1,0 +1,41 @@
+<h1 class="center"> Details about {{ finishedmedicinalproduct.name }}</h1>
+<div class="container border">
+  <div class="row">
+    <div class="col">
+      <table class="table abstand">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Manufacturer </th>
+            <td scope="row">{{ finishedmedicinalproduct.manufacturer }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Active ingredient</th>
+            <td>{{ finishedmedicinalproduct.main_ingredient }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Concentration of active ingredient</th>
+            <td>{{ finishedmedicinalproduct.conc_per_dose_unit_mg }} mg/tablet</td>
+          </tr>
+          <tr>
+            <th scope="row">Galenical form</th>
+            <td>{{ finishedmedicinalproduct.galenical_form }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Dose units per package</th>
+            <td>{{ finishedmedicinalproduct.dose_units_per_package }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td>{{ finishedmedicinalproduct.price_chf }} CHF</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

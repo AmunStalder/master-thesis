@@ -1,18 +1,19 @@
 from django.views.generic import DetailView, DeleteView
 from formtools.wizard.views import SessionWizardView
 from django.forms.models import construct_instance
+
 from django.shortcuts import redirect
 from django.urls import reverse, reverse_lazy
 import math
 
 from productions.models import Productions, Ingredient
 from .models import SupposProd
-from .forms import SupposProdForm1, SupposProdForm2
+from .forms import SupposProdForm1, inline_SupposProdForm2, SupposProdForm3
 from substances.models import Substance
 
 class SupposProdWizardView(SessionWizardView):
     template_name = "suppos_prod/prod_form.html"
-    form_list = [SupposProdForm1, SupposProdForm2]
+    form_list = [SupposProdForm1, inline_SupposProdForm2, SupposProdForm3]
     instance = None
 
     def get_form_initial(self, step):
@@ -20,59 +21,53 @@ class SupposProdWizardView(SessionWizardView):
         #we define initial values for steps
         if step == '1':
             data = self.get_cleaned_data_for_step('0')
-            required_mass_active_substance = data['amount_of_suppos']*data['conc_per_suppo']
             #M = N *(E -f*A), where M = required mass witepsol
-            N = data['amount_of_suppos']
-            E = data['calibration_value']
+            production = Productions.objects.get(pk = self.kwargs['pk'])
+            N = production.dose_units_incl_excess
+            E = data['calib_value_suppo_mould']
             #this was changed
-            f = Substance.objects.get(name=data['active_substance_1']).displacement_value
-            A = data['conc_per_suppo']/1000
-            required_mass_witepsol = N*(E - f*A)
-            initial.update({'required_mass_active_substance': round(required_mass_active_substance,4)})
-            initial.update({'required_mass_witepsol': round(required_mass_witepsol,4)})
+            sum = 0
+            for ingredient in Ingredient.objects.filter(production=Productions.objects.get(pk = self.kwargs['pk'])).exclude(substance = Substance.objects.get(name="Witepsol H-15 Pastillenform/en pastilles")):
+                sum = sum + ingredient.substance.displacement_value * ingredient.conc_per_dose_unit / 1000
+            witepsol = Ingredient.objects.get(production=production, substance=Substance.objects.get(name="Witepsol H-15 Pastillenform/en pastilles"))
+            witepsol.target_amount_for_bulk = round(N*(E - sum),4)
+            witepsol.save()
         return initial
 
     def get_form_instance(self, step):
         #if instance already exists (for update)
-        try:
-            self.instance = SupposProd.objects.get(pk=self.kwargs['pk'])
-        #for new calculation make new instance and prefill with production
-        #that was given by kwargs (pk=production.pk)
-        except:
-            self.instance = SupposProd()
-            self.instance.production = Productions.objects.get(pk=self.kwargs['pk'])
-            self.instance.active_substance_1 = Ingredient.objects.get(production=Productions.objects.get(pk=self.kwargs['pk']))
+        if step != '1':
+            # self.instance = Productions.objects.get(pk=self.kwargs['pk'])
+            try:
+                self.instance = SupposProd.objects.get(production=Productions.objects.get(pk = self.kwargs['pk']))
+            #for new calculation make new instance and prefill with production
+            #that was given by kwargs (pk=production.pk)
+            except:
+                self.instance = SupposProd()
+                self.instance.production = Productions.objects.get(pk=self.kwargs['pk'])
+                # self.SupposProdInstance.active_substance_1 = Ingredient.objects.get(production=Productions.objects.get(pk=self.kwargs['pk']))
+        else:
+            self.instance = Productions.objects.get(pk = self.kwargs['pk'])
         return self.instance
+
+
 
     def get_context_data(self, form, **kwargs):
         context = super().get_context_data(form=form, **kwargs)
-        #in step 2 some calculations are performed on the input data of step 0
-        #and passed ad context data to step 1.
-        # if self.steps.current == '1':
-        #     data = self.get_cleaned_data_for_step('0')
-        #     context.update(data)
-        # if self.steps.current == '2':
-        #     data1 = self.get_cleaned_data_for_step('0')
-        #     data2 = self.get_cleaned_data_for_step('1')
-        #     needed_amount_of_tabs = data1['amount_of_caps']*data1['conc_per_cap'] / data1['conc_per_tab']
-        #     required_mass_powder = round( needed_amount_of_tabs * data2['mass_all_tabs'] / data2['amount_of_weighed_tabs'],4)
-        #     data2['required_mass_powder'] = required_mass_powder
-        #     context.update(data1)
-        #     context.update(data2)
-        #
-        # if self.steps.current == '3':
-        #     data = self.get_all_cleaned_data()
-        #     required_volume = data['caps_size']*data['amount_of_caps']
-        #     data['required_volume'] = required_volume
-        #     context.update(data)
-
+        prod = Productions.objects.get(pk = self.kwargs['pk'])
+        ingredient_count = prod.ingredient_set.count
+        context["ingredient_count"] = ingredient_count
         return context
 
     def done(self, form_list, **kwargs):
-        for form in form_list:
+        #Save ingredients
+        if form_list[1].is_valid():
+            form_list[1].save()
+        for form in [form_list[0]]:
             self.instance = construct_instance(form, self.instance, form._meta.fields, form._meta.exclude)
         self.instance.save()
-        return redirect("suppos_prod:detail", pk=self.instance.pk)
+
+        return redirect("productions:detail", pk=self.kwargs['pk'])
 
 class SupposProdDetailView(DetailView):
     model = Productions

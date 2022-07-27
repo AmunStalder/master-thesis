@@ -1,82 +1,62 @@
 {% load static %}
-<div class="prodbg" style="  background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
-  <h3>Results</h3>
-{% if productions.supposuniformity or productions.supposprod%}
-<table class="table ">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Calculation</th>
-      <th scope="col">Result</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% if productions.supposprod %}
-    <tr>
-      <th scope="row"> Production calculation</th>
-      <td> Produced {{ productions.supposprod.mass_suppomass_actual|floatformat:1 }} g of suppository base for {{ productions.supposprod.amount_of_suppos }} suppositories. </td>
-      <td><a class="btn btn-primary" href="{% url 'suppos_prod:detail' pk=productions.supposprod.pk %}">Show</a></td>
-    </tr>
-    {% endif %}
-    {% if productions.supposuniformity %}
-      <tr>
-        <th scope="row"> Uniformity of mass</th>
-        {% if productions.supposuniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'suppositories:detail' pk=productions.supposuniformity.pk %}">Show</a></td>
-      </tr>
-    {% endif %}
-    {% if productions.supposuniformity and productions.supposprod %}
-      <tr>
-        <th scope="row"> Mass balance</th>
-        {% if productions.supposmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'suppos_mass_balance:detail' pk=productions.pk %}">Show</a></td>
-      </tr>
-    {% endif %}
-  </tbody>
-</table>
-{% else %}
-<p>No results to show yet. Please add ingredients and make a calculation.</p>
-{% endif %}
-
-</div>
-<p></p>
-<p></p>
 <hr class="featurette-divider">
 <div class="container " style="background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
   <h3>Calculations</h3>
   <div class="row text-center">
-      {% if not productions.supposprod and not productions.ingredient_set.count == 0 %}
+    {% if not productions.ambvvalue %}
+      <div class="card bg-light mb-3" style="width: 25%;">
+        <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/AMBV.png' %}" height="150" width="150">
+        <div class="card-body">
+          <h5 class="card-title">Calculate <a href="https://www.fedlex.admin.ch/eli/cc/2018/786/de#annex_3">AMBV value</a></h5>
+            <p class="card-text">Calculate the Risk value according to the Medicinal Products Licensing Ordinance Annex 3.</p>
+            <a class="btn btn-primary" href="{% url 'productions:add_ambv_value' pk=productions.pk%}" role="button">Add</a>
+        </div>
+      </div>
+    {% endif %}
+    {% if not productions.supposprod and productions.ingredient_set.count >= 2 %}
+      <div class="card bg-light mb-3" style="width: 25%;">
+        <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Suppositories_Prod.png' %}" height="150" width="150">
+        <div class="card-body">
+          <h5 class="card-title">Add Production calculation</h5>
+            <p class="card-text">Create suppositories using the "Displacement factor" method.</p>
+            <a class="btn btn-primary" href="{% url 'suppos_prod:add_new' pk=productions.pk%}" role="button">Add</a>
+            <!-- add url template toag to supposprod add new -->
+        </div>
+      </div>
+    {% endif %}
+    {% if not productions.supposuniformity %}
+      <div class="card bg-light mb-3" style="width: 25%;">
+        <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Gaussian.png' %}" height="150" width="150">
+        <div class="card-body">
+          <h5 class="card-title">Check uniformity of mass</h5>
+            <p class="card-text">Check uniformity of mass according to the European Pharmacopoeia.</p>
+            <a class="btn btn-primary" href="{% url 'suppositories:uniformity' pk=productions.pk %}" role="button">Check</a>
+        </div>
+      </div>
+    {% endif %}
+    {% if not productions.supposprod or not productions.supposuniformity %}
+      <div class="card bg-light mb-3" style="width: 25%;">
+        <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Mass_Balance.png' %}" height="150" width="150">
+        <div class="card-body">
+          <h5 class="card-title">Mass balance</h5>
+            <p class="card-text">The mass balance will be automatically calculated from the production calculation and the uniformity of mass. </p>
+            <a class="btn btn-primary" href="#" role="button">Learn more</a>
+        </div>
+      </div>
+      {% endif %}
+      {% if not productions.altprice.final_price %}
         <div class="card bg-light mb-3" style="width: 25%;">
-          <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Prod.png' %}" height="150" width="150">
+          <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Money.png' %}" height="150" width="150">
           <div class="card-body">
-            <h5 class="card-title">Add Production calculation</h5>
-              <p class="card-text">Create suppositories using the "Verdrängungsfaktormethode".</p>
-              <a class="btn btn-primary" href="{% url 'suppos_prod:add_new' pk=productions.pk%}" role="button">Add</a>
-              <!-- add url template toag to supposprod add new -->
+            <h5 class="card-title">Price calculation</h5>
+              <p class="card-text">Calculate the price according to "Arzneimittellist mit Tarif."</p>
+              <a class="btn btn-primary" href="{% url 'alt_price:add' pk=productions.pk %}" role="button">Calculate</a>
           </div>
         </div>
       {% endif %}
-      {% if not productions.supposuniformity %}
-        <div class="card bg-light mb-3" style="width: 25%;">
-          <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Capsules_Gaussian.png' %}" height="150" width="150">
-          <div class="card-body">
-            <h5 class="card-title">Check uniformity of mass</h5>
-              <p class="card-text">Check uniformity of mass according to the European Pharmacopoeia.</p>
-              <a class="btn btn-primary" href="{% url 'suppositories:uniformity' pk=productions.pk %}" role="button">Check</a>
-          </div>
-        </div>
-      {% endif %}
-      {% if not productions.supposprod or not productions.supposuniformity %}
-        <div class="card bg-light mb-3" style="width: 25%;">
-          <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Mass_Balance.png' %}" height="150" width="150">
-          <div class="card-body">
-            <h5 class="card-title">Mass balance</h5>
-              <p class="card-text">The mass balance will be automatically calculated from the production calculation and the uniformity of mass. </p>
-              <a class="btn btn-primary" href="#" role="button">Learn more</a>
-          </div>
-        </div>
-      {% else %}
-      <p style="text-align: left;">All possible calculations have been made.</p>
-      {% endif %}
+    {% if False %}
+    <p style="text-align: left;">All possible calculations have been made.</p>
+    {% endif %}
   </div>
 </div>
 <p></p>

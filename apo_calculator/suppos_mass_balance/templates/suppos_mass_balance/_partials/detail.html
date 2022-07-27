@@ -13,19 +13,23 @@
         <tbody>
           <tr>
             <th scope="row">Mass of produced suppository base</th>
-            <td scope="row">{{ productions.supposprod.mass_suppomass_actual|floatformat:4 }} g</td>
+            <td scope="row">{{ productions.supposprod.calculated_mass_bulk|floatformat:2 }} g</td>
           </tr>
           <tr>
             <th scope="row">Mean mass of a suppository</th>
             <td>{{ productions.supposuniformity.mean|floatformat:4 }} g</td>
           </tr>
           <tr>
-            <th scope="row"> Concentration per suppository (target / actual)</th>
-            <td>{{ productions.supposprod.conc_per_suppo|floatformat:1 }} / {{ productions.supposmassbalance.conc_per_suppo_actual|floatformat:1 }} mg/suppo</td>
+            <th scope="row"> Amount of suppositories (for whole bulk)</th>
+            <td>{{ productions.dose_units_incl_excess }} </td>
           </tr>
           <tr>
-            <th scope="row">Relative difference</th>
-            <td>{{ productions.supposmassbalance.conc_per_suppo_diff|floatformat:2 }} %</td>
+            <th scope="row">Mean * amount</th>
+            <td>{{ productions.supposmassbalance.theoretical_mass_bulk|floatformat:2 }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Difference:</th>
+            <td>{{ productions.supposmassbalance.mass_balance_diff|floatformat:2 }} %</td>
           </tr>
           <tr>
             <th scope="row">RESULT:</th>
