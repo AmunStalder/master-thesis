@@ -72,7 +72,10 @@ class Ingredient(models.Model):
         elif self.production.galenical_form == "capsules" and self.is_filler_excipient == False:
             self.conc_per_bulk = self.production.dose_units_incl_excess * self.conc_per_dose_unit / 1000
             self.required_amount_of_tabs = self.conc_per_bulk * 1000 / (self.fmp.conc_per_dose_unit_mg)
-            self.required_amount_of_tabs_incl_excess = math.ceil(self.required_amount_of_tabs*1.1)
+            if self.required_amount_of_tabs_incl_excess:
+                pass
+            else:
+                self.required_amount_of_tabs_incl_excess = math.ceil(self.required_amount_of_tabs*1.1)
         else:
             pass
 
@@ -86,7 +89,10 @@ class Ingredient(models.Model):
 
 
     def __str__(self):
-        return '{}'.format(self.substance)
+        if self.substance:
+            return '{}'.format(self.substance)
+        else:
+            return '{}'.format(self.fmp)
 
     def get_absolute_url(self):
         '''

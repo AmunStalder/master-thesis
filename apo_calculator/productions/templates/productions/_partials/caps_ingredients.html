@@ -1,0 +1,64 @@
+{% load static %}
+<div class="prodbg" style="  background-color: #f7f7f7; padding: 20px 20px 20px 20px;">
+  <h3>Ingredients</h3>
+{% if productions.ingredient_set.all %}
+  <table class="table ">
+    {% for ingredient in productions.ingredient_set.all %}
+      {% if ingredient.fmp %}
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">FMP tablets</th>
+            <th scope="col">Target conc. of <br>API per tablet [mg]</th>
+            <th scope="col">Target amount <br>tablet powder [g]</th>
+            <th scope="col">Actual amount <br>tablet powder [g]</th>
+            <th scope="col">ALT price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="link-secondary" href="{% url 'substances:fmp-detail' pk=ingredient.fmp.pk %}">{{ ingredient.fmp }}</a></td>
+            <td>{{ ingredient.conc_per_dose_unit|default_if_none:"&nbsp;" }}</td>
+            <td>{{ ingredient.target_amount_for_bulk|default_if_none:"&nbsp;" }}</td>
+            <td>{{ ingredient.actual_amount_for_bulk|default_if_none:"&nbsp;" }} {% if ingredient.diff_amount_for_bulk %}({% if ingredient.diff_amount_for_bulk >= 0 %}+{% endif %}{{ ingredient.diff_amount_for_bulk|default_if_none:"&nbsp;"|floatformat:2 }} %) {% endif %}</td>
+            <td> CHF {{ ingredient.price_per_amount|default_if_none:"&nbsp;" }}</td>
+            {% if not productions.capsprod  %}
+              <td><a class="btn btn-warning" href="{% url 'productions:update_ingredient' pk=ingredient.pk %}">Edit<a></td>
+              <td> <a class="btn btn-danger" href="{% url 'productions:delete_ingredient' pk=ingredient.pk %}">Delete</a></td>
+            {% endif %}
+          </tr>
+        </tbody>
+      {% endif %}
+      {% if ingredient.is_filler_excipient and ingredient.substance %}
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Ingredient</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Actual <br>amount [g]</th>
+            <th scope="col">ALT price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="link-secondary" href="{% url 'substances:detail' pk=ingredient.substance.pk %}">{{ ingredient.substance }}</a></td>
+            <td>{{ ingredient.conc_per_dose_unit|default_if_none:"&nbsp;" }}</td>
+            <td>{{ ingredient.target_amount_for_bulk|default_if_none:"&nbsp;" }}</td>
+            <td>{{ ingredient.actual_amount_for_bulk|default_if_none:"&nbsp;" }} {% if ingredient.diff_amount_for_bulk %}({% if ingredient.diff_amount_for_bulk >= 0 %}+{% endif %}{{ ingredient.diff_amount_for_bulk|default_if_none:"&nbsp;"|floatformat:2 }} %) {% endif %}</td>
+            <td> CHF {{ ingredient.price_per_amount|default_if_none:"&nbsp;"|floatformat:2 }}</td>
+
+            {% if not productions.capsprod %}
+              <td><a class="btn btn-warning" href="{% url 'productions:update_ingredient' pk=ingredient.pk %}">Edit<a></td>
+              <td> <a class="btn btn-danger" href="{% url 'productions:delete_ingredient' pk=ingredient.pk %}">Delete</a></td>
+            {% endif %}
+          </tr>
+        </tbody>
+      {% endif %}
+    {% endfor %}
+  </table>
+{% endif %}
+{% if productions.ingredient_set.count <= 1  %}
+    <p><a class="btn btn-primary" href="{% url 'productions:add_ingredient' pk=productions.pk %}">Add ingredient</a></p>
+{% endif %}
+</div>
+<p></p>
+<p></p>

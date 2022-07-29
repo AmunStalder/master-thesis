@@ -96,7 +96,11 @@ class UniformityCalculator:
         plt.fill_between([self.plus_1_diff, self.plus_2_diff] , -0.5, 0.5, color = "#ffdabf")
         plt.fill_between([self.plus_2_diff, self.mean * (1+4*self.diff/100)] , -0.5, 0.5, color = "#ffe8e8")
         plt.scatter(X,Y, marker='.')
-        plt.xlabel('weight [mg]')
+        if self.gal_form == 'caps':
+            x_label = 'Mean content [mg]'
+        else:
+            x_label = 'Weight [g]'
+        plt.xlabel(x_label)
         plt.xlim([self.mean * (1-4*self.diff/100), self.mean * (1+4*self.diff/100)])
         plt.yticks([])
         # for i, label in enumerate(annotations):
