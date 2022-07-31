@@ -35,7 +35,7 @@ class CapsProdWizardView(SessionWizardView):
             data1 = self.get_cleaned_data_for_step('1')
             mass_required_volume = data['mass_required_volume_incl_tara']-data['tara_meas_cylinder']
             mannitol = Ingredient.objects.get(production = Productions.objects.get(pk = self.kwargs['pk']), is_filler_excipient = True)
-            mannitol.actual_amount_for_bulk = mass_required_volume/1000-data1['actual_amount_for_bulk']
+            mannitol.actual_amount_for_bulk = (mass_required_volume*1000-data1['actual_amount_for_bulk'])/1000
             mannitol.save()
 
             initial.update({"mass_required_volume": mass_required_volume})

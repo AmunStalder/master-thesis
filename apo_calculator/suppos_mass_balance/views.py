@@ -1,4 +1,4 @@
-from django.views.generic import DetailView
+from django.views.generic import DetailView, TemplateView
 from django.http import HttpResponse, FileResponse
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -8,3 +8,7 @@ from productions import models
 class SupposMassBalanceView(DetailView):
     model = models.Productions
     template_name = 'suppos_mass_balance/detail.html'
+
+class SupposMassBalanceInfoView(TemplateView):
+    model = models.Productions
+    template_name = 'suppos_mass_balance/info.html'

@@ -1,6 +1,6 @@
 digraph model_graph {
   // Dotfile by Django-Extensions graph_models
-  // Created: 2022-07-11 14:58
+  // Created: 2022-07-31 13:39
   // Cli Options: -a
 
   fontname = "Roboto"
@@ -549,6 +549,14 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto"><B>fmp</B></FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto"><B>ForeignKey (id)</B></FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto"><B>production</B></FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto"><B>ForeignKey (id)</B></FONT>
@@ -566,6 +574,14 @@ digraph model_graph {
   
     <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto">actual_amount_for_bulk</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">conc_per_bulk</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
     </TD></TR>
@@ -605,7 +621,31 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">required_amount_of_tabs</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">required_amount_of_tabs_incl_excess</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto">target_amount_for_bulk</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">weight_tabs_incl_excess</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
     </TD></TR>
@@ -920,79 +960,7 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">amount_of_caps</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">IntegerField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">amount_of_weighed_tabs</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">IntegerField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT COLOR="#7B7B7B" FACE="Roboto">calc_date</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT COLOR="#7B7B7B" FACE="Roboto">DateTimeField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto">caps_size</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">conc_per_cap</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">conc_per_tab</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">conc_powdermix_per_g_actual</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">conc_powdermix_per_g_diff</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">conc_powdermix_per_g_target</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">mass_all_tabs</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
     </TD></TR>
@@ -1016,15 +984,7 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">required_amount_of_tabs</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">required_mass_powder</FONT>
+    <FONT FACE="Roboto">release_note</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
     </TD></TR>
@@ -1041,14 +1001,6 @@ digraph model_graph {
   
     <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto">tara_meas_cylinder</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">weighed_mass_powder</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
     </TD></TR>
@@ -1094,14 +1046,6 @@ digraph model_graph {
   
     <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto">calculated_mass_powder_mix</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">conc_per_cap_actual</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
     </TD></TR>
@@ -1301,40 +1245,6 @@ digraph model_graph {
 
 
 
-
-  suppos_prod_models_SupposDisplacementValue [label=<
-    <TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
-    <TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
-    <FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
-    SupposDisplacementValue
-    </B></FONT></TD></TR>
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto"><B>id</B></FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto"><B>BigAutoField</B></FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">substance</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">CharField</FONT>
-    </TD></TR>
-  
-  
-  
-    <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">value</FONT>
-    </TD><TD ALIGN="LEFT">
-    <FONT FACE="Roboto">FloatField</FONT>
-    </TD></TR>
-  
-  
-    </TABLE>
-    >]
 
   suppos_prod_models_SupposProd [label=<
     <TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
@@ -1604,14 +1514,11 @@ digraph model_graph {
     </TABLE>
     >]
 
-
-
-
-  eyedrops_prod_models_EyeDropsFreezingPointDepressionValue [label=<
+  substances_models_FinishedMedicinalProduct [label=<
     <TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
     <TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
     <FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
-    EyeDropsFreezingPointDepressionValue
+    FinishedMedicinalProduct
     </B></FONT></TD></TR>
   
   
@@ -1624,7 +1531,31 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">substance</FONT>
+    <FONT FACE="Roboto">conc_per_dose_unit_mg</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">dose_units_per_package</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Roboto">galenical_form</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Roboto">CharField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">main_ingredient</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">CharField</FONT>
     </TD></TR>
@@ -1632,7 +1563,23 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
-    <FONT FACE="Roboto">value</FONT>
+    <FONT FACE="Roboto">manufacturer</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">CharField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">name</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">CharField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">price_chf</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
     </TD></TR>
@@ -1669,9 +1616,89 @@ digraph model_graph {
   
   
     <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">betmg_price</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">caps_mixing</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">caps_other_25</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">caps_shell_25</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">caps_sieving</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">caps_up_to_25</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
     <FONT FACE="Roboto">final_price</FONT>
     </TD><TD ALIGN="LEFT">
     <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">manual_price</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">packaging_price</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">FloatField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">pulvis_100_ml</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
+    </TD></TR>
+  
+  
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Roboto">pulvis_50_ml</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Roboto">IntegerField</FONT>
     </TD></TR>
   
   
@@ -1761,6 +1788,9 @@ digraph model_graph {
   productions_models_Ingredient -> substances_models_Substance
   [label=" substance (ingredient)"] [arrowhead=none, arrowtail=dot, dir=both];
 
+  productions_models_Ingredient -> substances_models_FinishedMedicinalProduct
+  [label=" fmp (ingredient)"] [arrowhead=none, arrowtail=dot, dir=both];
+
   productions_models_AMBVValue -> productions_models_Productions
   [label=" production (ambvvalue)"] [arrowhead=none, arrowtail=none, dir=both];
 
@@ -1794,7 +1824,6 @@ digraph model_graph {
 
   suppos_mass_balance_models_SupposMassBalance -> productions_models_Productions
   [label=" production (supposmassbalance)"] [arrowhead=none, arrowtail=none, dir=both];
-
 
 
 

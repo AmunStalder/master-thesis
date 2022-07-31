@@ -12,7 +12,7 @@ class SupposMassBalance(models.Model):
 
     def save(self, *args, **kwarg):
         self.theoretical_mass_bulk    = self.production.supposuniformity.mean * self.production.dose_units_incl_excess
-        self.mass_balance_diff        = (self.theoretical_mass_bulk-self.production.supposprod.target_mass_bulk)/self.production.supposprod.calculated_mass_bulk*100
+        self.mass_balance_diff        = (self.theoretical_mass_bulk-self.production.supposprod.actual_mass_bulk)/self.production.supposprod.actual_mass_bulk*100
         if -10 <= self.mass_balance_diff <= 10:
             self.release_note = True
         else:

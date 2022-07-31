@@ -5,9 +5,9 @@
   <h1>{{ productions.name }} (LotNr: {{ productions.lot_nr }} )</h1>
   <p>{{ productions.calc_date }}</p>
   <hr class="featurette-divider hr-thick">
-      {% include "productions/_partials/general_info.html" %}
+  {% include "productions/_partials/general_info.html" %}
   <hr class="featurette-divider">
-  {% if productions.galencial_form == "suppositories" %}
+  {% if productions.galenical_form == "suppositories" %}
     {% include "productions/_partials/suppos_ingredients.html" %}
   {% else %}
     {% include "productions/_partials/caps_ingredients.html" %}
@@ -19,7 +19,7 @@
     {% include "productions/_partials/results_caps.html" %}
   {% endif %}
   <hr class="featurette-divider">
-  {% if productions.galenical_form == 'suppositories' %}
+  {% if productions.galenical_form == "suppositories" %}
       {% include "productions/_partials/suppos_cards.html" %}
   {% else %}
       {% include "productions/_partials/caps_cards.html" %}

@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'suppos_prod',
     'suppos_mass_balance',
     'substances',
-    'eyedrops_prod',
     'alt_price',
 ]
 
@@ -65,6 +64,21 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'apo_calculator.urls'
 
+GRAPH_MODELS ={
+'app_labels': [
+        'productions',
+        'authenticate',
+        'capsules',
+        'caps_prod',
+        'caps_mass_balance',
+        'suppositories',
+        'suppos_prod',
+        'suppos_mass_balance',
+        'substances',
+        'alt_price',
+],
+'graph_models': True,
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

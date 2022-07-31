@@ -14,26 +14,20 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Active substance / displacement value</th>
-            <td>{{ productions.supposprod.active_substance_1 }} / {{ productions.supposprod.active_substance_1.value }}</td>
-            <th scope="row"> Used mass of active substance (target/actual)</th>
-            <td> {{ productions.supposprod.required_mass_active_substance|floatformat:1 }} / {{ productions.supposprod.weighed_mass_active_substance|floatformat:1 }} mg</td>
-          </tr>
-          <tr>
-            <th scope="row">Amount of suppositories</th>
-            <td>{{ productions.supposprod.amount_of_suppos }} pc.</td>
+            <th scope="row">Amount of suppositories incl. excess</th>
+            <td>{{ productions.dose_units_incl_excess }} pc.</td>
             <th scope="row">Used mass of witepsol (target/actual)</th>
-            <td>{{ productions.supposprod.required_mass_witepsol|floatformat:4 }} / {{ productions.supposprod.weighed_mass_witepsol|floatformat:4 }} g</td>
-          </tr>
-          <tr>
-            <th scope="row">Target concentration per suppository</th>
-            <td>{{ productions.supposprod.conc_per_suppo }} mg/suppo</td>
-            <th scope="row">Concentration (target/actual))</th>
-            <td>{{ productions.supposprod.conc_suppomass_per_g_target|floatformat:1 }} / {{ productions.supposprod.conc_suppomass_per_g_actual|floatformat:1 }} mg/g</td>
+            {% for ingredient in productions.ingredient_set.all  %}
+              {% if ingredient.is_filler_excipient %}
+                <td>{{ ingredient.target_amount_for_bulk|floatformat:2 }} / {{ ingredient.target_amount_for_bulk|floatformat:2 }} g</td>
+              {% endif %}
+            {% endfor %}
           </tr>
           <tr>
             <th scope="row">Calibration value of suppository mould</th>
-            <td>{{ productions.supposprod.calibration_value }} g/suppo</td>
+            <td>{{ productions.supposprod.calib_value_suppo_mould }} mg/suppo</td>
+            <th scope="row">RESULT</th>
+            {% if productions.supposprod.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
           </tr>
         </tbody>
       </table>

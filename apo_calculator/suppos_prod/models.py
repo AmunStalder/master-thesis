@@ -5,12 +5,6 @@ from productions.models import Productions, Ingredient
 from suppos_mass_balance.models import SupposMassBalance
 from substances.models import Substance
 
-class SupposDisplacementValue(models.Model):
-    substance       = models.CharField(max_length=64,)
-    value           = models.FloatField()
-
-    def __str__(self):
-        return self.substance
 
 class SupposProd(models.Model):
     calc_date                       = models.DateTimeField(default=datetime.now, blank=True, )
@@ -49,7 +43,7 @@ class SupposProd(models.Model):
                 self.release_note = False
                 break
 
-        if self.release_note and self.diff_calculated_mass_bulk <= 10:
+        if self.release_note and self.diff_actual_mass_bulk <= 10:
             self.release_note = True
         else:
             self.release_note = False

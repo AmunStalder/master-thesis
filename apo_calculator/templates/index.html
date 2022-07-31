@@ -1,18 +1,166 @@
 {% extends "base.html" %}
+{% load static %}
 {% block body_block %}
-      <h1 class="display-4">Welcome to Apo-Calculator!</h1>
-      <p class="lead">This website has been programmed for pharmacists by a
-        pharmacist. Apo-Calculator offers help for everyday calculations
-        in the pharmacy laboratory like the following: <span class="glyphicon glyphicon-user"></span>
-    </p>
-    <ul>
-      <li></li>
-    </ul>
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <p class="lead">
-        {% if not user.is_authenticated %}
-          <a class="btn btn-primary btn-lg" href="{% url 'authenticate:signup' %}" role="button">Signup</a>
-        {% endif %}
-      </p>
+  <h1 class="display-4">Welcome to Apo-Calculator!</h1>
+  <p class="lead">
+    This website has been programmed for pharmacists by a
+    pharmacist. Apo-Calculator offers help for everyday calculations
+    in the pharmacy laboratory like the following:
+  </p>
+  <p class="lead">
+    {% if not user.is_authenticated %}
+      <a class="btn btn-primary btn-lg" href="{% url 'authenticate:signup' %}" role="button">Signup</a>
+    {% endif %}
+  </p>
+  <p>
+    <br>
+  </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/Capsules_Nav.png' %}" alt="">
+      </div>
+      <div class="col-8">
+        <h3>The Capsules Module</h3>
+        <p class="lead">
+          The capsules module allows the production of tailor-made capsules for your customers.
+          Finished medicinal products (tablets) can be added to the FMP database and they can be chosen as ingredient for your capsules.
+          A wizard will guide you through all important steps and no manual calculations have to be performed anymore.
+          The volumentric measuring cylinder method will be used for this type of production.
+        </p>
+        <div class="text-center">
+          <a href="{% url 'productions:create' %}"><img style="width: 10%;" src="{% static 'img/Plus_Nav.png' %}" alt=""> <br>Add new</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <p><br></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h3>The Suppositories Module</h3>
+        <p class="lead">
+          The suppositories module allows the production of individualized suppos.
+          Substances from the substance database that have a displacement factor can be chosen as ingredient the suppos.
+          A wizard will guide you through all important steps and no manual calculations have to be performed anymore.
+          The displacement factor method will be used for this type of production.
+        </p>
+        <div class="text-center">
+          <a href="{% url 'productions:create' %}">
+            <img style="width: 10%;" src="{% static 'img/Plus_Nav.png' %}" alt=""> <br>
+            Add new
+          </a>
+        </div>
+      </div>
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/Suppositories_Nav.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+  <p><br></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/Capsules_Gaussian.png' %}" alt="">
+      </div>
+      <div class="col-8">
+        <h3>The Uniformity of Mass Module</h3>
+        <p class="lead">
+          The uniformity of mass of single-dosed drug forms is performed by weighing 20 capsules or suppositories individually
+          and determining the mean weight with the corresponding thresholds. The Apo-Calculator allows adding such a calculation
+          to a production using an input form. All calculations are performed automatically and the results are shown in a visualization graph.
+        </p>
+        <a class="btn btn-primary" href="{% url 'capsules:info' %}">Learn more</a>
+      </div>
+    </div>
+  </div>
+  <p><br></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h3>The Mass Balance module</h3>
+        <p class="lead">
+          During the production of capsules or suppositories, some of the powder mix or suppository mass may get lost during transfers
+          or by sticking to surfaces. Using the Mass Balance Module, you can identify such a loss by comparing the results of the manual
+          production steps with the uniformity of mass.
+        </p>
+        <a class="btn btn-primary" href="{% url 'caps_mass_balance:info' %}">Learn more (Caps)</a>
+        <a class="btn btn-primary" href="{% url 'suppos_mass_balance:info' %}">Learn more (Suppos)</a>
+      </div>
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/Mass_Balance.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+  <p><br></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/AMBV.png' %}" alt="">
+      </div>
+      <div class="col-8">
+        <h3>Medicinal Products Licencing Ordinance Value</h3>
+        <p class="lead">
+          The MPLO value is a risk-based approach based on Swiss law to determine the risk associated with an extemporaneous preparation.
+          Five factors must be set, and they are finally multiplied to generate the MPLO value, which should be under 100 for a cantonal manufacturing license.
+          Manual calculation becomes obsolete using this module.
+        </p>
+        <a class="btn btn-primary" href="https://www.fedlex.admin.ch/eli/cc/2018/786/de#annex_3">Go to Ordinance</a>
+      </div>
+    </div>
+  </div>
+  <p><br></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h3>The ALT-Calculator</h3>
+        <p class="lead">
+          The prices of extemporaneous preparations are regulated by Swiss law.
+          The "Arzneimittelliste mit Tarif" defines the rules for the calculation of the price.
+          The lengthy process is automatized using the integrated price calculation.
+        </p>
+        <a class="btn btn-primary" href="https://www.bag.admin.ch/dam/bag/de/dokumente/kuv-leistungen/arzneimittel/arzneimittellistemittarif/ALT_Gesamtliste_Ausgabe%2001.01.2021.pdf.download.pdf/ALT_Gesamtliste_Ausgabe%2001.01.2021.pdf">Download ALT</a>
+      </div>
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/Money.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+  <p><br></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/Substance_database.png' %}" alt="">
+      </div>
+      <div class="col-8">
+        <h3>The Substance Database</h3>
+        <p class="lead">
+          The integrated substance database contains all substances listed in the
+          "Arzneimittelliste mit Tarif" including their prices and relevant
+          physicochemical properties such as the displacement factor or freezing
+          point depression, if applicable.
+        </p>
+        <a class="btn btn-primary" href="{% url 'substances:list'%}">Go to database</a>
+      </div>
+    </div>
+  </div>
+  <p><br></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h3>The Finished Medicinal Products (FMP) database</h3>
+        <p class="lead">
+          The integrated FMP database allows to enter any type of tablets for the production of capsules.
+          Relevant information such as active pharmaceutical ingredient, manufacturer,
+          dose per tablet, dose units per package etc. can be added.
+        </p>
+        <a class="btn btn-primary" href="{% url 'substances:fmp-list'%}">Go to database</a>
+      </div>
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/FMP_database.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+  <p><br></p>
 {% endblock %}

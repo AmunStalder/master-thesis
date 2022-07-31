@@ -62,7 +62,6 @@ class Ingredient(models.Model):
     target_amount_for_bulk = models.FloatField(null=True)
     actual_amount_for_bulk = models.FloatField(null=True)
     diff_amount_for_bulk   = models.FloatField(null=True)
-
     is_filler_excipient    = models.BooleanField(choices = CHOICES, null = True, default=False)
     price_per_amount       = models.FloatField(null=True)
 
@@ -80,11 +79,14 @@ class Ingredient(models.Model):
             pass
 
         if self.actual_amount_for_bulk is not None and self.target_amount_for_bulk is not None:
+            print(17)
             self.diff_amount_for_bulk = (self.actual_amount_for_bulk-self.target_amount_for_bulk) / self.target_amount_for_bulk * 100
         if self.actual_amount_for_bulk is not None and self.substance:
             self.price_per_amount = price_per_ingredient(self.actual_amount_for_bulk, self.substance)
         if self.fmp:
             self.price_per_amount = self.fmp.price_chf
+        else:
+            pass
         super(Ingredient, self).save(*args, **kwarg)
 
 

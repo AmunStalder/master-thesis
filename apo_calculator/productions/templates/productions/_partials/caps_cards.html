@@ -8,8 +8,8 @@
         <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/AMBV.png' %}" height="150" width="150">
         <div class="card-body">
           <h5 class="card-title">Calculate <a href="https://www.fedlex.admin.ch/eli/cc/2018/786/de#annex_3">AMBV value</a></h5>
-            <p class="card-text">Calculate the Risk value according to the Medicinal Products Licensing Ordinance Annex 3.</p>
-            <a class="btn btn-primary" href="{% url 'productions:add_ambv_value' pk=productions.pk%}" role="button">Add</a>
+          <p class="card-text">Calculate the Risk value according to the Medicinal Products Licensing Ordinance Annex 3.</p>
+          <a class="btn btn-primary" href="{% url 'productions:add_ambv_value' pk=productions.pk%}" role="button">Add</a>
         </div>
       </div>
     {% endif %}
@@ -39,11 +39,11 @@
         <div class="card-body">
           <h5 class="card-title">Mass balance</h5>
             <p class="card-text">The mass balance will be automatically calculated from the production calculation and the uniformity of mass. </p>
-            <a class="btn btn-primary" href="#" role="button">Learn more</a>
+            <a class="btn btn-primary" href="{% url 'caps_mass_balance:info'%}" role="button">Learn more</a>
         </div>
       </div>
-    {% else  %}
-    {% if productions.altprice.final_price %}
+    {% endif  %}
+    {% if not productions.altprice and productions.capsprod %}
       <div class="card bg-light mb-3" style="width: 25%;">
         <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Money.png' %}" height="150" width="150">
         <div class="card-body">
@@ -52,8 +52,6 @@
             <a class="btn btn-primary" href="{% url 'alt_price:add' pk=productions.pk %}" role="button">Calculate</a>
         </div>
       </div>
-    {% endif %}
-    <p style="text-align: left;">All possible calculations have been made.</p>
     {% endif %}
   </div>
 </div>

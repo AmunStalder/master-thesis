@@ -31,7 +31,9 @@ class ProductionPdfView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductionPdfView, self).get_context_data(**kwargs)
+        is_pdf = True
         # add extra context if needed
+        context['is_pdf'] = is_pdf
         return context
 
     def render_to_response(self, context, **kwargs):

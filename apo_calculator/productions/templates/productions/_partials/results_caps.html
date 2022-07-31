@@ -14,47 +14,61 @@
       {% if productions.capsprod %}
       <tr>
         <th scope="row"> Production calculation</th>
-        <td>
+        <td style="width:60%">
           {{ productions.capsprod.mass_required_volume|floatformat:2 }} g of powder mix was produced for {{ productions.dose_units_incl_excess }} capsules. <br>
           {% if productions.capsprod.release_note %} None of the ingredients, nor the final powder mix differs by more than 10% from target value.{% else %}
           One or more ingredients (or final mass) differ by more than 10% of target value.{% endif %}
         </td>
         {% if productions.capsprod.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-        <td><a class="btn btn-primary" href="{% url 'caps_prod:edit' pk=productions.pk %}">Update</a></td>
+        {% if is_pdf %}{% else %}<td><a class="btn btn-primary" href="{% url 'caps_prod:edit' pk=productions.pk %}">Update</a></td>{% endif %}
       </tr>
       {% endif %}
       {% if productions.uniformity %}
         <tr>
           <th scope="row"> Uniformity of mass</th>
-          <td>
-            <b>Target:</b> Not more than 2 caps differ by more than +/- {{ productions.uniformity.diff }}% of mean weight of a capsule, no capsule differs by more than +/- {{ productions.uniformity.diff_2x }}%. <br>
+          <td style="width:60%">
+            <b>Target:</b> Not more than 2 caps differ by more than +/- {{ productions.uniformity.diff }}% of mean weight of a capsule, no capsule differs by more than +/- {{ productions.uniformity.diff_x2 }}%. <br>
             <b>Actual:</b> {{ productions.uniformity.counter_above_1_diff }} caps differ by more than {{ productions.uniformity.diff }}%,
             {{ productions.uniformity.counter_above_1_diff }} caps differ by more than {{ productions.uniformity.diff_x2 }}%.
           </td>
 
           {% if productions.uniformity.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-          <td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=productions.uniformity.pk %}">Show</a></td>
+          {% if is_pdf %}{% else %}<td><a class="btn btn-primary" href="{% url 'capsules:detail' pk=productions.uniformity.pk %}">Show</a></td>{% endif %}
         </tr>
       {% endif %}
-      {% if productions.supposuniformity and productions.supposprod %}
+      {% if productions.uniformity and productions.capsprod %}
         <tr>
           <th scope="row"> Mass balance</th>
-          <td>
-            <b>Target:</b> The target mass of the bulk should not differ by more than 10% compared to the mean mass of a suppo mulitplied by the amount of suppos incl. excess.<br>
-            <b>Actual:</b> The difference is {% if productions.supposmassbalance.mass_balance_diff >= 0 %}+{% else %}{% endif %}{{ productions.supposmassbalance.mass_balance_diff|floatformat:2 }}%.
-          {% if productions.supposmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
-          <td><a class="btn btn-primary" href="{% url 'suppos_mass_balance:detail' pk=productions.pk %}">Show</a></td>
+          <td style="width:60%">
+            <b>Target:</b> The target mass of the bulk should not differ by more than 10% compared to the mean content of a capsule mulitplied by the amount of caps incl. excess.<br>
+            <b>Actual:</b> The difference is {% if productions.capssmassbalance.mass_balance_diff >= 0 %}+{% else %}{% endif %}{{ productions.capsmassbalance.diff_mass_balance|floatformat:2 }}%.
+          {% if productions.capsmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
+          {% if is_pdf %}{% else %}<td><a class="btn btn-primary" href="{% url 'caps_mass_balance:detail' pk=productions.pk %}">Show</a></td>{% endif %}
         </tr>
       {% endif %}
       {% if productions.ambvvalue %}
         <tr>
           <th scope="row"> MPLO Value</th>
-          <td>
+          <td style="width:60%">
             <b>Target:</b> The MPLO value should not exceed 100 (for pharmacies with cantonal production allowance)<br>
             <b>Actual:</b> The MPLO value is {{ productions.ambvvalue.value }}.
           {% if productions.ambvvalue.value <= 100 %} <td style="color:green;"> {{ productions.ambvvalue.value }}</td>{% else %}<td style="color:orange;">{{ productions.ambvvalue.value }}</td>{% endif %}
-          <td><a class="btn btn-primary" href="{% url 'productions:edit_ambv_value' pk=productions.pk %}">Update</a></td>
+          {% if is_pdf %}{% else %}<td><a class="btn btn-primary" href="{% url 'productions:edit_ambv_value' pk=productions.pk %}">Update</a></td>{% endif %}
         </tr>
+      {% endif %}
+      {% if productions.altprice.final_price %}
+        <tr>
+          <th scope="row"> ALT Price </th>
+          <td style="width:60%">
+            The final price of the production has been calculated according to Swiss law. <br>
+            <b>Substances:</b> CHF {{ productions.altprice.substances_price|floatformat:2 }}<br>
+            <b>Manual steps:</b> CHF {{ productions.altprice.manual_price }}<br>
+            <b>Narcotics taxes:</b> CHF {{ productions.altprice.betmg_price }}<br>
+            <b>Packaging:</b> CHF {{ productions.altprice.packaging_price }}
+          <td style="color:green;"> CHF {{ productions.altprice.final_price|floatformat:2 }}</td>
+          <td></td>
+        </tr>
+
       {% endif %}
     </tbody>
   </table>

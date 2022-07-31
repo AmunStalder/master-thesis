@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import datetime
-from productions.models import Productions
+from productions.models import Productions, Ingredient
 from caps_mass_balance.models import CapsMassBalance
 # Create your models here.
 class CapsProd(models.Model):
@@ -30,7 +30,14 @@ class CapsProd(models.Model):
     required_volume                = models.FloatField()
     mass_required_volume_incl_tara = models.FloatField()
     mass_required_volume           = models.FloatField()
+    release_note                   = models.FloatField()
     def save(self, *args, **kwarg):
+        for ingredient in Ingredient.objects.filter(production = self.production, is_filler_excipient = False):
+            if abs(ingredient.diff_amount_for_bulk) <= 10:
+                self.release_note = True
+            else:
+                self.release_note = False
+                break
         super(CapsProd, self).save(*args, **kwarg)
 
         if hasattr(self.production, 'uniformity'):

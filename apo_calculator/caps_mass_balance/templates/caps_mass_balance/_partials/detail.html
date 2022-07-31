@@ -28,10 +28,6 @@
             <td>{{ productions.capsmassbalance.diff_mass_balance|floatformat:1 }} %</td>
           </tr>
           <tr>
-            <th scope="row">Actual concentration per capsule</th>
-            <td>{{ productions.capsmassbalance.conc_per_cap_actual|floatformat:3 }} mg/cap</td>
-          </tr>
-          <tr>
             <th scope="row">RESULT:</th>
             {% if productions.capsmassbalance.release_note %} <td style="color:green;">PASSED</td>{% else %}<td style="color:red;">FAILED</td>{% endif %}
           </tr>

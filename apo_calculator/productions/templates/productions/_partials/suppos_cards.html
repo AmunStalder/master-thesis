@@ -40,11 +40,11 @@
         <div class="card-body">
           <h5 class="card-title">Mass balance</h5>
             <p class="card-text">The mass balance will be automatically calculated from the production calculation and the uniformity of mass. </p>
-            <a class="btn btn-primary" href="#" role="button">Learn more</a>
+            <a class="btn btn-primary" href="{% url 'suppos_mass_balance:info'%}" role="button">Learn more</a>
         </div>
       </div>
       {% endif %}
-      {% if not productions.altprice.final_price %}
+      {% if not productions.altprice.final_price and productions.supposprod %}
         <div class="card bg-light mb-3" style="width: 25%;">
           <img class="rounded-circle border border-3 mx-auto" src="{% static 'img/Money.png' %}" height="150" width="150">
           <div class="card-body">
@@ -54,9 +54,6 @@
           </div>
         </div>
       {% endif %}
-    {% if False %}
-    <p style="text-align: left;">All possible calculations have been made.</p>
-    {% endif %}
   </div>
 </div>
 <p></p>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+  <h1 class="display-4">The Uniformity of Mass Module</h1>
+  <p>
+    <br>
+    <br>
+  </p>
+  <p>The uniformity of mass of single-dosed drug forms is performed by weighing 20 capsules or suppositories
+    individually and determining the mean weight with the corresponding thresholds. The Apo-Calculator allows
+    adding such a calculation to a production using an input form. In the below example, the input data for
+    suppositories (left two columns) is used to determine the relevant calculated data (right two columns).
+    An algorithm determines whether the requirements from the Pharmacopeia are met, and the test result is
+    displayed on the bottom right. The uniformity of mass module furthermore shows the distribution of weights
+    in a custom-made graph with green (i.e., up to +/- 1 threshold), orange (i.e., from +/- 1 up to +/- 2 thresholds),
+    and red (over +/- 2 thresholds). The three highest and lowest values are displayed as blue dots.
+  </p>
+  <div class="container text-center"">
+    <img style="width: 70%;" src="{% static 'img/uniformity.png' %}" alt="">
+  </div>
+
+{% endblock %}

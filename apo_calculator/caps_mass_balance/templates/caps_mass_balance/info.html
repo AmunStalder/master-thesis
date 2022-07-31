@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+  <h1 class="display-4">The Mass Balance Module for Capsules</h1>
+  <p>
+    <br>
+    <br>
+  </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <img style="width: 100%;" src="{% static 'img/Mass_Balance.png' %}" alt="">
+      </div>
+      <div class="col-8">
+        <p class="lead">
+          During the production of capsules, some of the powder mix may get lost during transfers
+          or by sticking to surfaces. The uniformity of mass only considers the distribution of masses,
+          meaning that it does not consider a possible loss of bulk. This means that the uniformity of mass
+          test can be passed even if, e.g., 20 % of the bulk was lost during a transfer. <br>
+          For that, the mass balance test is performed to identify a possible loss of bulk.
+          In the case of capsules, the mean content of a capsule is multiplied by the total
+          amount of produced capsules. This value is then compared to the total mass of
+          produced bulk, and the difference should not be more than +/- 10 %.
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

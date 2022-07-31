@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <head>
   <style>
     th {text-align: left;}
@@ -7,6 +8,29 @@
   </style>
 </head>
 <body>
+{% if productions.ingredient_set %}
+  <h1 class="center">Ingredients</h1>
+  <table class="table abstand">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Ingredient</th>
+        <th scope="col">Target amount </th>
+        <th scope="col">Actual amount </th>
+        <th scope="col">Difference [%]</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ingredient in productions.ingredient_set.all %}
+        <tr>
+          <td scope="row">{{ingredient.substance|default_if_none:"&nbsp;"}} {{ ingredient.fmp|default_if_none:"&nbsp;"   }}</td>
+          <td scope="row">{% if ingredient.target_amount_for_bulk %}{{ingredient.target_amount_for_bulk|floatformat:2}}{% else %}-{% endif %}</td>
+          <td scope="row">{{ingredient.actual_amount_for_bulk|floatformat:2}} </td>
+          <td scope="row">{% if ingredient.diff_amount_for_bulk %}{{ingredient.diff_amount_for_bulk|floatformat:2}}{% else %}-{% endif %} </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
 {% if productions.capsprod %}
   {% include "caps_prod/_partials/detail.html" %}
 {% endif %}
@@ -25,4 +49,18 @@
 {% if productions.supposmassbalance %}
   {% include "suppos_mass_balance/_partials/detail.html" %}
 {% endif %}
+<div>
+    <pdf:nextpage />
+</div>
+{% if productions.galenical_form == "capsules" %}
+  {% include "productions/_partials/results_caps.html" %}
+{% endif %}
+{% if productions.galenical_form == "suppositories" %}
+  {% include "productions/_partials/results_suppos.html" %}
+{% endif %}
+
+<h1>Final release</h1>
+<p>[  ] Release approved</p>
+<p>[  ] No release, because   ____________________________________________________.</li></p>
+<p>Date: __________   Signature: ___________________</p>
 </body>

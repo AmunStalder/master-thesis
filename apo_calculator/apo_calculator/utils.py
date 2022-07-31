@@ -141,14 +141,14 @@ def calculate_price_per_ingredient(weight, substance_price):
     if division[1] < 1:
         price_combo = firstNonNan(substance_price)
         price = price_combo[0]
-        return price
+        return myround(price)
     #if above or equal to 1000g:
     elif division[8] >= 1:
         substance_price = substance_price[::-1]
         price_combo = firstNonNan(substance_price)
         substance_price[::-1]
         price = price_combo[0]*division[9-price_combo[1]]
-        return price
+        return myround(price)
     #if between 1 and 1000 (excl. 1000):
     else:
         index = 0
